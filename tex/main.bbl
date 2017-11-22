@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{article_A_Hands-On_Introduction_to_Molecular_Dynamics}
+Vincent~E. Lamberti, Lloyd~D. Fosdick, Elizabeth~R. Jessup, and Carolyn J.~C.
+  Schauble.
+\newblock A hands-on introduction to molecular dynamics.
+\newblock {\em Journal of Chemical Education}, 79(5):601, 2002.
+
+\bibitem{materialphysics}
+Martin~O Steinhauser and Stefan Hiermaier.
+\newblock A review of computational methods in materials science: Examples from
+  shock-wave and polymer physics.
+\newblock {\em International Journal of Molecular Sciences}, 10(12):5135--5216,
+  12 2009.
+
+\bibitem{GORECKI1989245}
+J.~Gorecki and J.~Gryko.
+\newblock Molecular dynamics simulation of a chemical reaction.
+\newblock {\em Computer Physics Communications}, 54(2):245 -- 249, 1989.
+
+\end{thebibliography}

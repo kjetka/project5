@@ -1,0 +1,126 @@
+\documentclass[12pt, a4paper]{article}
+%\usepackage[norsk]{babel}  % For norsk oppsett
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{gensymb}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\usepackage[final]{pdfpages}
+\usepackage{python}
+\usepackage{fancyhdr}			% Header...
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{caption}
+%\usepackage{subfig}
+%\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage{braket}
+\usepackage{physics}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{cite}
+\usepackage{MnSymbol}% http://ctan.org/pkg/mnsymbol
+\usepackage{answers}                
+%\usepackage[backend=biber,style=numeric-comp]{biblatex}                    
+%\usepackage[toc,page]{appendix} % For english
+\usepackage{appendix}
+\pagenumbering{arabic}
+\usepackage{multicol}
+\usepackage{datatool}
+\usepackage[colorlinks]{hyperref}
+
+%\usepackage{pgfplotstable}
+%\usepackage{booktabs}
+
+
+\renewcommand\appendixpagename{Appendiks}% Appendiks istedenfor Appendices
+
+%\renewcommand\appendixpagename{Appendiks}% Appendiks istedenfor Appendices
+
+
+%\usepackage{minted}
+
+\date{\today}
+
+
+
+
+
+%\newcommand{\exp}[1]{e^{#1}}
+
+\def\dx{\frac{\delta}{\delta x}}
+\def\dy{\frac{\delta}{\delta y}}
+\def\dz{\frac{\delta}{\delta z}}
+
+
+\newcommand{\E}[1]{\cdot 10^{#1}}
+\newcommand{\nyfigur}[2]{
+		\begin{figure}[H]
+			\centering
+		\includegraphics[width = #1 \linewidth]{#2}
+	\end{figure}}
+\newcommand{\Nyfigur}[4]{
+	\begin{figure}[H]
+		\includegraphics[width = #1 \linewidth]{#2}
+	\caption{#4}
+	\label{#3}
+	\end{figure}
+}
+
+
+%matlab colors:
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+% For faster processing, load Matlab syntax for listings
+\lstloadlanguages{matlab}
+\lstset{language = matlab,
+  			backgroundcolor=\color{white},   % choose the background color
+  			numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+ 			rulecolor=\color{black},     
+ 			stringstyle=\color{mymauve},     % string literal style
+ 			keywordstyle=\color{blue},
+ 			otherkeywords={*,...}, 
+ 			commentstyle=\color{mygreen},    
+ 			breaklines = true,      
+			showspaces = false,
+			showstringspaces = False, 
+			formfeed=\clearpage,
+			frame = single,
+			stepnumber=1,                    
+			breakautoindent=true,
+			columns=flexible,
+			keepspaces=true,
+			%title=\lstname
+}
+%python:
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{160,160,160}
+\definecolor{red}{RGB}{155,0,0}
+\definecolor{green}{RGB}{0,102,0}
+ 
+\lstset{language=Python, 
+        basicstyle=\ttfamily\small, 
+        keywordstyle=\color{keywords},
+        commentstyle=\color{comments},
+        stringstyle=\color{red},
+        showstringspaces=false,
+        identifierstyle=\color{green},
+        frame = single
+        brakelines = True
+        }
+
+\pagestyle{plain}
+
+% Numbered exercises
+%\newcounter{excount}[chapter]
+\newenvironment{exercise}[1][]{\addtocounter{excount}{1} \noindent {\bf Oppgave
+    \arabic{excount} \ \ #1}\hspace{2mm}}{\vspace{4mm}}

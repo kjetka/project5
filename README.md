@@ -1,4 +1,2 @@
-# project5
-Project 5 fys4150, Molecular dynamics
-
-Colaboration between Vilde Mari Johansen and Kjetil Karlsen
+# Project4 
+All the files in project 4 in FYS4150 fall 2017
