@@ -6,9 +6,9 @@
 using std::endl; using std::cout;
 
 
-IO::IO(const char *filename)
-{
-    open(filename);
+IO::IO(const char *filename){
+    open(filename);     // spr: How is this  ofstream outfile; outfile.open(filename);
+
 }
 
 IO::~IO() {

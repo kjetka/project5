@@ -55,9 +55,11 @@ void UnitConverter::initializeMDUnits() {
 }
 
 void UnitConverter::makeSureInitialized() {
-    if(!UnitConverter::initialized) UnitConverter::initialize(MDUnits);
+    if(!UnitConverter::initialized)    UnitConverter::initialize(MDUnits);
 }
 
+
+// spr: ??? type == MDUnits????
 void UnitConverter::initialize(Units type) {
     if(type == MDUnits) UnitConverter::initializeMDUnits();
 }
@@ -66,10 +68,18 @@ double UnitConverter::pressureToSI(double P) {UnitConverter::makeSureInitialized
 double UnitConverter::pressureFromSI(double P) {UnitConverter::makeSureInitialized(); return P/UnitConverter::P0; }
 
 double UnitConverter::temperatureToSI(double T) {UnitConverter::makeSureInitialized(); return UnitConverter::T0*T; }
-double UnitConverter::temperatureFromSI(double T) {UnitConverter::makeSureInitialized(); return T/UnitConverter::T0; }
+
+double UnitConverter::temperatureFromSI(double T){
+    UnitConverter::makeSureInitialized();
+    return T/UnitConverter::T0;
+}
 
 double UnitConverter::massToSI(double m) {UnitConverter::makeSureInitialized(); return UnitConverter::m0*m; }
-double UnitConverter::massFromSI(double m) {UnitConverter::makeSureInitialized(); return m/UnitConverter::m0; }
+
+double UnitConverter::massFromSI(double m) {
+    UnitConverter::makeSureInitialized();
+    return m/UnitConverter::m0;
+}
 
 double UnitConverter::lengthToSI(double L) {UnitConverter::makeSureInitialized(); return UnitConverter::a0*L; }
 double UnitConverter::lengthFromSI(double L) {UnitConverter::makeSureInitialized(); return L/UnitConverter::a0; }

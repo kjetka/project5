@@ -4,14 +4,14 @@
 
 class System; // Promise the compiler that this is a class even though we haven't included system.h here
 
-class StatisticsSampler
-{
+class StatisticsSampler{
 private:
     std::ofstream m_file;
     double m_kineticEnergy = 0;
     double m_potentialEnergy = 0;
     double m_temperature = 0;
     double m_density = 0;
+
 public:
     StatisticsSampler();
     void saveToFile(System &system);

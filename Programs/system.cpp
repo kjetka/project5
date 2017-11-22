@@ -5,13 +5,12 @@
 #include "unitconverter.h"
 #include "math/random.h"
 
-System::System()
-{
+System::System(){
 
 }
 
-System::~System()
-{
+// spr ???
+System::~System(){
     for(Atom *atom : m_atoms) {
         delete atom;
     }
@@ -28,6 +27,8 @@ void System::removeTotalMomentum() {
 
 void System::createFCCLattice(int numberOfUnitCellsEachDimension, double latticeConstant, double temperature) {
     // You should implement this function properly. Right now, 100 atoms are created uniformly placed in the system of size (10, 10, 10).
+
+    // spr: not uniformely??
 
     for(int i=0; i<100; i++) {
         Atom *atom = new Atom(UnitConverter::massFromSI(6.63352088e-26));
@@ -49,7 +50,7 @@ void System::calculateForces() {
 }
 
 void System::step(double dt) {
-    m_integrator.integrate(*this, dt);
+    m_integrator.integrate(*this, dt); //linking to velocity verlet
     m_steps++;
     m_time += dt;
 }

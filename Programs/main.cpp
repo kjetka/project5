@@ -11,18 +11,24 @@
 
 using namespace std;
 
-int main(int numberOfArguments, char **argumentList)
-{
+int main(int numberOfArguments, char **argumentList){
+
+
+    // Initial values setting up system
     int numberOfUnitCells = 5;
     double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
-
+ //IF we are using the command line for input variables:
+ /*
     // If a first argument is provided, it is the number of unit cells
     if(numberOfArguments > 1) numberOfUnitCells = atoi(argumentList[1]);
     // If a second argument is provided, it is the initial temperature (measured in kelvin)
-    if(numberOfArguments > 2) initialTemperature = UnitConverter::temperatureFromSI(atof(argumentList[2]));
+    if(numberOfArguments > 2)
+        initialTemperature = UnitConverter::temperatureFromSI(atof(argumentList[2]));
     // If a third argument is provided, it is the lattice constant determining the density (measured in angstroms)
-    if(numberOfArguments > 3) latticeConstant = UnitConverter::lengthFromAngstroms(atof(argumentList[3]));
+    if(numberOfArguments > 3)
+        latticeConstant = UnitConverter::lengthFromAngstroms(atof(argumentList[3]));
+*/
 
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
 
@@ -32,15 +38,16 @@ int main(int numberOfArguments, char **argumentList)
     cout << "One unit of mass is " << UnitConverter::massToSI(1.0) << " kg" << endl;
     cout << "One unit of temperature is " << UnitConverter::temperatureToSI(1.0) << " K" << endl;
 
+    // setting up system
     System system;
     system.createFCCLattice(numberOfUnitCells, latticeConstant, initialTemperature);
     system.potential().setEpsilon(1.0);
     system.potential().setSigma(1.0);
+    system.removeTotalMomentum(); //??????????????????
 
-    system.removeTotalMomentum();
 
     StatisticsSampler statisticsSampler;
-    IO movie("../results/movie.xyz"); // To write the state to file
+    IO movie("../results/movie.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
 
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
@@ -48,6 +55,7 @@ int main(int numberOfArguments, char **argumentList)
             setw(20) << "KineticEnergy" <<
             setw(20) << "PotentialEnergy" <<
             setw(20) << "TotalEnergy" << endl;
+
     for(int timestep=0; timestep<1000; timestep++) {
         system.step(dt);
         statisticsSampler.sample(system);

@@ -12,6 +12,7 @@ enum Units {SIUnits = 0, MDUnits = 1};
 class UnitConverter
 {
 public:
+    // static: instance not bound to class
     static double m0;
     static double q0;
     static double hbar0;
