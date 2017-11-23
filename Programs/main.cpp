@@ -15,7 +15,7 @@ int main(int numberOfArguments, char **argumentList){
 
 
     // Initial values setting up system
-    int numberOfUnitCells = 5;
+    int nrUnitCellsEachDirection =4;
     double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
  //IF we are using the command line for input variables:
@@ -31,23 +31,29 @@ int main(int numberOfArguments, char **argumentList){
 */
 
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-
+    /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
     cout << "One unit of velocity is " << UnitConverter::velocityToSI(1.0) << " meters/second" << endl;
     cout << "One unit of time is " << UnitConverter::timeToSI(1.0) << " seconds" << endl;
     cout << "One unit of mass is " << UnitConverter::massToSI(1.0) << " kg" << endl;
     cout << "One unit of temperature is " << UnitConverter::temperatureToSI(1.0) << " K" << endl;
-
+*/
     // setting up system
-    int nrAtoms = 100;
-    System system(nrAtoms);
-    system.createFCCLattice(numberOfUnitCells, latticeConstant, initialTemperature);
+    System system(nrUnitCellsEachDirection);
+
+    double density = pow(nrUnitCellsEachDirection,3)*4/pow((nrUnitCellsEachDirection*latticeConstant),3);
+    cout << "Density, (atoms/MD volume) : "<<density << endl;
+
+    double densitySi = pow(nrUnitCellsEachDirection,3)*4.0/(pow(UnitConverter::lengthToSI(nrUnitCellsEachDirection*latticeConstant),3));
+    cout << "Density, (atoms/Å^3) : "<<densitySi << endl;
+
+    system.createFCCLattice(latticeConstant, initialTemperature);
     system.potential().setEpsilon(1.0);
     system.potential().setSigma(1.0);
     system.removeTotalMomentum(); //??????????????????
-    /*
+
     StatisticsSampler statisticsSampler;
-    IO movie("../results/movie_a.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+    IO movie("../results/movie_c.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
 
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
@@ -72,6 +78,6 @@ int main(int numberOfArguments, char **argumentList){
     }
     cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
     movie.close();
-*/
+
     return 0;
 }
