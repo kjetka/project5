@@ -54,6 +54,9 @@ void System::test_removeTotalMomentum(){
     if (totalMomentumTest.length() > almost0){
         std::cout<<   "ERROR: " <<std::endl;
         std::cout<< "   length of totalMomentum greater than "<< almost0<< " after System::removeTotalMomentum was called"    <<std::endl;
+        totalMomentumTest.print("   totalMomentumTest");
+        std::cout<< "   length of totalMomentum is "<< totalMomentumTest.length()<<std::endl;
+
         exit(EXIT_FAILURE);
     }
 
