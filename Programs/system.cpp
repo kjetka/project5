@@ -45,6 +45,17 @@ void System::removeTotalMomentum() {
     }
     test_removeTotalMomentum();
 }
+void System::test_removeTotalMomentum(){
+    vec3 totalMomentumTest;
+    for(auto& atom : m_atoms){
+        totalMomentumTest += atom->velocity*atom->mass();
+    }
+    double almost0 = 1e-13;
+    if (totalMomentumTest.length() > almost0){
+        std::cout<<   "ERROR: " <<std::endl;
+        std::cout<< "   length of totalMomentum greater than "<< almost0<< " after System::removeTotalMomentum was called"    <<std::endl;
+        exit(EXIT_FAILURE);
+    }
 
 void System::test_removeTotalMomentum(){
     vec3 totalMomentumTest;

@@ -84,6 +84,6 @@ int main(int numberOfArguments, char **argumentList){
     }
     cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
     movie.close();
-
+*/
     return 0;
 }
