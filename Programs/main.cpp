@@ -45,7 +45,6 @@ int main(int numberOfArguments, char **argumentList){
     system.potential().setSigma(1.0);
     system.removeTotalMomentum(); //??????????????????
 
-
     StatisticsSampler statisticsSampler;
     IO movie("../results/movie.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
 
@@ -58,7 +57,7 @@ int main(int numberOfArguments, char **argumentList){
 
     for(int timestep=0; timestep<1000; timestep++) {
         system.step(dt);
-        statisticsSampler.sample(system);
+        statisticsSampler.sample(system); // system - same as *this within a object.
         if( timestep % 100 == 0 ) {
             // Print the timestep every 100 timesteps
             cout << setw(20) << system.steps() <<

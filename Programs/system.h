@@ -6,12 +6,12 @@
 #include "velocityverlet.h"
 #include "lennardjones.h"
 
-class System
-{
+class System{
+
 private:
     vec3 m_systemSize;
     VelocityVerlet m_integrator;
-    std::vector<Atom*> m_atoms;
+    std::vector<Atom*> m_atoms; // list of pointers to atoms.
     LennardJones m_potential; //spr?? m_potential instance LennardJones?
     double m_time = 0;
     int m_steps = 0;

@@ -10,7 +10,7 @@ System::System(){
 }
 
 // spr ???
-System::~System(){
+System::~System(){ //destructur. If say want multiple systems in a loop - otherways memeory overkill. If not - loose pointers but not the memory.
     for(Atom *atom : m_atoms) {
         delete atom;
     }
@@ -28,14 +28,12 @@ void System::removeTotalMomentum() {
 void System::createFCCLattice(int numberOfUnitCellsEachDimension, double latticeConstant, double temperature) {
     // You should implement this function properly. Right now, 100 atoms are created uniformly placed in the system of size (10, 10, 10).
 
-    // spr: not uniformely??
-
     for(int i=0; i<100; i++) {
         Atom *atom = new Atom(UnitConverter::massFromSI(6.63352088e-26));
         double x = Random::nextDouble(0, 10); // random number in the interval [0,10]
         double y = Random::nextDouble(0, 10);
         double z = Random::nextDouble(0, 10);
-        atom->position.set(x,y,z);
+        atom->position.set(x,y,z); // spr -> ?
         atom->resetVelocityMaxwellian(temperature);
         m_atoms.push_back(atom);
     }
