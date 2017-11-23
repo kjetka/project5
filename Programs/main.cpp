@@ -39,14 +39,15 @@ int main(int numberOfArguments, char **argumentList){
     cout << "One unit of temperature is " << UnitConverter::temperatureToSI(1.0) << " K" << endl;
 
     // setting up system
-    System system;
+    int nrAtoms = 100;
+    System system(nrAtoms);
     system.createFCCLattice(numberOfUnitCells, latticeConstant, initialTemperature);
     system.potential().setEpsilon(1.0);
     system.potential().setSigma(1.0);
     system.removeTotalMomentum(); //??????????????????
-
+    /*
     StatisticsSampler statisticsSampler;
-    IO movie("../results/movie.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+    IO movie("../results/movie_a.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
 
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
@@ -69,8 +70,8 @@ int main(int numberOfArguments, char **argumentList){
         }
         movie.saveState(system);
     }
-
+    cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
     movie.close();
-
+*/
     return 0;
 }

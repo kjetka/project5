@@ -15,13 +15,16 @@ private:
     LennardJones m_potential; //spr?? m_potential instance LennardJones?
     double m_time = 0;
     int m_steps = 0;
+    int nrAtoms = 0;
 
 public:
-    System();
+    System(int nrAtoms_);
     ~System();
     void createFCCLattice(int numberOfUnitCellsEachDimension, double latticeConstant, double temperature);
     void applyPeriodicBoundaryConditions();
     void removeTotalMomentum();
+    void test_removeTotalMomentum();
+
     void calculateForces();
     void step(double dt);
 

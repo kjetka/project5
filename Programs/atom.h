@@ -5,7 +5,7 @@
 class Atom
 {
 private:
-    float m_mass;
+    double m_mass;
 public:
     vec3 position;
     vec3 velocity;
