@@ -13,6 +13,7 @@ void VelocityVerlet::integrate(System &system, double dt){
         atom->velocity += atom->force*dthalf/atom->mass();
         atom->position += atom->velocity*dt/atom->mass();
     }
+
     system.applyPeriodicBoundaryConditions();
     system.calculateForces(); // New positions, recompute forces
 
@@ -20,3 +21,4 @@ void VelocityVerlet::integrate(System &system, double dt){
         atom->velocity += atom->force*dthalf/atom->mass();
     }
 }
+
