@@ -19,5 +19,7 @@ public:
     void setSigma(double sigma);
     double epsilon() const;
     void setEpsilon(double epsilon);
+    void findMaxForceRadius();
+    void setMaxForceRadius(double maxRadii);
 };
 #endif
