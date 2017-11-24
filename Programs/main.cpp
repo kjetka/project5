@@ -20,6 +20,7 @@ int main(int numberOfArguments, char **argumentList){
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
 
+
     //IF we are using the command line for input variables:
  /*
     // If a first argument is provided, it is the number of unit cells
