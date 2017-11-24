@@ -7,6 +7,7 @@ private:
     double m_sigma = 1.0;
     double m_epsilon = 1.0;
     double m_potentialEnergy = 0;
+    double m_maxRadii;
 
 public:
     LennardJones() {
@@ -18,5 +19,7 @@ public:
     void setSigma(double sigma);
     double epsilon() const;
     void setEpsilon(double epsilon);
+    void findMaxForceRadius();
+    void setMaxForceRadius(double maxRadii);
 };
 #endif

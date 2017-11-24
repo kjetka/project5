@@ -44,6 +44,7 @@ int main(int numberOfArguments, char **argumentList){
     system.createFCCLattice(numberOfUnitCells, latticeConstant, initialTemperature);
     system.potential().setEpsilon(1.0);
     system.potential().setSigma(1.0);
+    system.potential().findMaxForceRadius();
     system.removeTotalMomentum(); //??????????????????
 
     StatisticsSampler statisticsSampler;
