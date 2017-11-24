@@ -5,8 +5,10 @@
 
 // spr: Funker dette?
 Atom::Atom(double mass) :
-    m_mass(mass){
-    }
+    m_mass(mass)
+{
+    
+}
 
 void Atom::resetForce(){
     force.zeros();

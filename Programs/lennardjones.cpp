@@ -1,19 +1,17 @@
 #include "lennardjones.h"
 #include "system.h"
-#include <cmath>
 
-double LennardJones::potentialEnergy() const
-{
+double LennardJones::potentialEnergy() const{
     return m_potentialEnergy;
 }
 
-double LennardJones::sigma() const
-{
+double LennardJones::sigma() const{
     return m_sigma;
 }
 
 void LennardJones::setSigma(double sigma){
     m_sigma = sigma;
+    m_maxRadii = 2*sigma;
 }
 
 double LennardJones::epsilon() const{
@@ -24,26 +22,35 @@ void LennardJones::setEpsilon(double epsilon){
     m_epsilon = epsilon;
 }
 
-
-void LennardJones::findMaxForceRadius(){
-    double r = m_sigma;
-    double Force = 24*m_epsilon*(2*pow(m_sigma/r, 12)-pow(m_sigma/r, 6))/r;
-    double limit = 0.04;
-    double maxRadii;
-    while ((r >= m_sigma+0.2) && (abs(Force)>=limit)){
-        r += 0.01;
-        double sigmaDivRadii = m_sigma/r;
-        Force = 24*m_epsilon*(2*pow(sigmaDivRadii, 12)-pow(sigmaDivRadii, 6))/r;
-    }
-    maxRadii = r;
-    setMaxForceRadius(maxRadii);
-    std::cout<< maxRadii<<std::endl;
-}
-
-void LennardJones::setMaxForceRadius(double maxRadii){
-    m_maxRadii = maxRadii;
-}
-
 void LennardJones::calculateForces(System &system){
+    double rij = 1; //FIXX!!!!!!!!!!!!!!!!
+    double xij = 1;
+    double yij = 1;
+    double zij = 1;
+    double epsilon24 = 24*m_epsilon;
+    double sigmaDivRij6 = 1.0;
+    int i =0; int j = 0;
+
+    for(auto& atom_i : system.atoms()){
+        for(auto& atom_j : system.atoms()){
+            vec3 r_vec = atom_i->position - atom_j->position;
+            double r = r_vec.length();
+            if(r!=0 || r<= m_maxRadii){
+
+                for(int gange=0;gange<6;gange++) { sigmaDivRij6*=m_sigma/r;}
+                atom_i->force +=  epsilon24*( 2*sigmaDivRij6*sigmaDivRij6 - sigmaDivRij6  ) * r_vec/(r*r);
+            }
+        }
+    }
+
+
+    double rij2 = rij*rij;
+    double Fx = epsilon24*( 2*sigmaDivRij6*sigmaDivRij6 - sigmaDivRij6  ) * xij/(rij2);
+    double Fy = epsilon24*( 2*sigmaDivRij6*sigmaDivRij6 - sigmaDivRij6  ) * yij/(rij2);
+    double Fz = epsilon24*( 2*sigmaDivRij6*sigmaDivRij6 - sigmaDivRij6  ) * zij/(rij2);
+
+
+
     m_potentialEnergy = 0; // Remember to compute this in the loop
+
 }

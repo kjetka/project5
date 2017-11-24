@@ -61,12 +61,10 @@ void UnitConverter::makeSureInitialized() {
 
 // spr: ??? type == MDUnits????
 void UnitConverter::initialize(Units type) {
-    if(type == MDUnits) // "boolean" right now useless.
-        UnitConverter::initializeMDUnits();
+    if(type == MDUnits) UnitConverter::initializeMDUnits();
 }
 
 double UnitConverter::pressureToSI(double P) {UnitConverter::makeSureInitialized(); return UnitConverter::P0*P; }
-
 double UnitConverter::pressureFromSI(double P) {UnitConverter::makeSureInitialized(); return P/UnitConverter::P0; }
 
 double UnitConverter::temperatureToSI(double T) {UnitConverter::makeSureInitialized(); return UnitConverter::T0*T; }

@@ -11,17 +11,21 @@ class System{
 private:
     vec3 m_systemSize;
     VelocityVerlet m_integrator;
-    std::vector<Atom*> m_atoms; // list of pointers to atoms.
-    LennardJones m_potential; //spr?? m_potential instance LennardJones?
+    std::vector<Atom*> m_atoms;
+    LennardJones m_potential_class;
     double m_time = 0;
     int m_steps = 0;
+    int numberOfUnitCellsEachDimension=0;
+    int nrAtoms = 0;
 
 public:
-    System();
+    System(int numberOfUnitCellsEachDimension_);
     ~System();
-    void createFCCLattice(int numberOfUnitCellsEachDimension, double latticeConstant, double temperature);
+    void createFCCLattice(double latticeConstant, double temperature);
     void applyPeriodicBoundaryConditions();
     void removeTotalMomentum();
+    void test_removeTotalMomentum();
+
     void calculateForces();
     void step(double dt);
 
@@ -38,7 +42,7 @@ public:
         m_systemSize = systemSize; }
 
     LennardJones &potential() {
-        return m_potential; }
+        return m_potential_class; }
 
     double time() {
         return m_time; }

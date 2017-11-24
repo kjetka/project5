@@ -15,11 +15,12 @@ int main(int numberOfArguments, char **argumentList){
 
 
     // Initial values setting up system
-    int numberOfUnitCells = 5;
+    int nrUnitCellsEachDirection =2;
     double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
+    //double sigma = UnitConverter::lengthFromAngstroms(3.405)
 
- //IF we are using the command line for input variables:
+    //IF we are using the command line for input variables:
  /*
     // If a first argument is provided, it is the number of unit cells
     if(numberOfArguments > 1) numberOfUnitCells = atoi(argumentList[1]);
@@ -32,23 +33,33 @@ int main(int numberOfArguments, char **argumentList){
 */
 
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-
+    /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
     cout << "One unit of velocity is " << UnitConverter::velocityToSI(1.0) << " meters/second" << endl;
     cout << "One unit of time is " << UnitConverter::timeToSI(1.0) << " seconds" << endl;
     cout << "One unit of mass is " << UnitConverter::massToSI(1.0) << " kg" << endl;
     cout << "One unit of temperature is " << UnitConverter::temperatureToSI(1.0) << " K" << endl;
-
+*/
     // setting up system
-    System system;
-    system.createFCCLattice(numberOfUnitCells, latticeConstant, initialTemperature);
-    system.potential().setEpsilon(1.0);
-    system.potential().setSigma(1.0);
-    system.potential().findMaxForceRadius();
-    system.removeTotalMomentum(); //??????????????????
+    System system(nrUnitCellsEachDirection);
+
+    double density = pow(nrUnitCellsEachDirection,3)*4/pow((nrUnitCellsEachDirection*latticeConstant),3);
+    cout << "Density, (atoms/MD volume) : "<<density << endl;
+
+    double densitySi = pow(nrUnitCellsEachDirection,3)*4.0/(pow(UnitConverter::lengthToSI(nrUnitCellsEachDirection*latticeConstant),3));
+    cout << "Density, (atoms/Å^3) : "<<densitySi << endl;
+
+    system.createFCCLattice(latticeConstant, initialTemperature);
+    //system.potential().setEpsilon(1.0);
+
+    //system.potential().setSigma(1.0);
+    system.potential().setEpsilon(UnitConverter::temperatureFromSI(119.8));
+    system.potential().setSigma(UnitConverter::lengthFromAngstroms(3.405));
+    system.removeTotalMomentum();
 
     StatisticsSampler statisticsSampler;
-    IO movie("../results/movie.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+    IO movie("../results/movie_c.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+
 
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
@@ -71,7 +82,7 @@ int main(int numberOfArguments, char **argumentList){
         }
         movie.saveState(system);
     }
-
+    cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
     movie.close();
 
     return 0;

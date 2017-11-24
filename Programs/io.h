@@ -9,7 +9,7 @@ private:
     ofstream file;
 public:
     IO(const char *filename);
-    ~IO();
+    ~IO();          //spr ~???
 
     void saveState(System &system);
     void open(const char *filename);
