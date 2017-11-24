@@ -22,6 +22,7 @@ void LennardJones::setEpsilon(double epsilon){
     m_epsilon = epsilon;
 }
 
+
 void LennardJones::calculateForces(System &system){
 
     m_potentialEnergy = 0;

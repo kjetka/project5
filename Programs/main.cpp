@@ -43,12 +43,6 @@ int main(int numberOfArguments, char **argumentList){
     // setting up system
     System system(nrUnitCellsEachDirection);
 
-    double density = pow(nrUnitCellsEachDirection,3)*4/pow((nrUnitCellsEachDirection*latticeConstant),3);
-    cout << "Density, (atoms/MD volume) : "<<density << endl;
-
-    double densitySi = pow(nrUnitCellsEachDirection,3)*4.0/(pow(UnitConverter::lengthToSI(nrUnitCellsEachDirection*latticeConstant),3));
-    cout << "Density, (atoms/Å^3) : "<<densitySi << endl;
-
     system.createFCCLattice(latticeConstant, initialTemperature);
     //system.potential().setEpsilon(1.0);
 

@@ -9,8 +9,7 @@ StatisticsSampler::StatisticsSampler(){
 
 }
 
-void StatisticsSampler::saveToFile(System &system)
-{
+void StatisticsSampler::saveToFile(System &system){
     // Save the statistical properties for each timestep for plotting etc.
     // First, open the file if it's not open already
     if(!m_file.good()) {
@@ -51,5 +50,7 @@ void StatisticsSampler::sampleTemperature(System &system){
 }
 
 void StatisticsSampler::sampleDensity(System &system){
-    // see main!
+    double V = system.volume(system.systemSize());
+    int atoms = system.atoms();
+    m_density = atoms/V;
 }
