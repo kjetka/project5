@@ -44,11 +44,11 @@ void LennardJones::calculateForces(System &system){
             }
             double r = r_vec.length();
 
-            if(r<= m_maxRadii){
+            //if(r<= m_maxRadii){
             for(int gange=0;gange<6;gange++) { sigmaDivR6*=m_sigma/r;}
             atom_i->force +=  epsilon24*( 2*sigmaDivR6*sigmaDivR6 - sigmaDivR6  ) * r_vec/(r*r);
             m_potentialEnergy += epsilon4*(  sigmaDivR6*sigmaDivR6- sigmaDivR6   );
-            }
+            //}
         }
 
     }
