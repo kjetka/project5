@@ -19,9 +19,9 @@ int main(int numberOfArguments, char **argumentList){
     double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
-    int timeLimit = 1e5;
+    int timeLimit = 1e4;
     //IF we are using the command line for input variables:
- /*
+    /*
     // If a first argument is provided, it is the number of unit cells
     if(numberOfArguments > 1) numberOfUnitCells = atoi(argumentList[1]);
     // If a second argument is provided, it is the initial temperature (measured in kelvin)
@@ -59,7 +59,7 @@ int main(int numberOfArguments, char **argumentList){
 
     StatisticsSampler statisticsSampler;
     IO movie("../results/movie_c.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
-
+    IO properties("../results/properties.txt");
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
             setw(20) << "Temperature" <<
@@ -72,12 +72,13 @@ int main(int numberOfArguments, char **argumentList){
         statisticsSampler.sample(system); // system - same as *this within a object.
         if( timestep % 100 == 0 ) {
             // Print the timestep every 100 timesteps
-            propertiesFile << setw(20) << system.steps() <<
+            cout << setw(20) << system.steps() <<
                     setw(20) << system.time() <<
                     setw(20) << statisticsSampler.temperature() <<
                     setw(20) << statisticsSampler.kineticEnergy() <<
                     setw(20) << statisticsSampler.potentialEnergy() <<
                     setw(20) << statisticsSampler.totalEnergy() << endl;
+            statisticsSampler.saveToFile(system);
         }
         movie.saveState(system);
     }
