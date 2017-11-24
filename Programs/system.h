@@ -16,7 +16,7 @@ private:
     double m_time = 0;
     int m_steps = 0;
     int numberOfUnitCellsEachDimension=0;
-    int nrAtoms = 0;
+    int m_nrAtoms = 0;
 
 public:
     System(int numberOfUnitCellsEachDimension_);
@@ -58,5 +58,8 @@ public:
 
     void setSteps(int steps) {
         m_steps = steps; }
+    int nrAtoms(){
+        return m_nrAtoms;
+    }
 };
 #endif

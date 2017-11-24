@@ -7,9 +7,10 @@ using std::ofstream;
 class IO{
 private:
     ofstream file;
+    ofstream propertiesFile;
 public:
     IO(const char *filename);
-    ~IO();          //spr ~???
+    ~IO();
 
     void saveState(System &system);
     void open(const char *filename);

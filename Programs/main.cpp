@@ -15,11 +15,11 @@ int main(int numberOfArguments, char **argumentList){
 
 
     // Initial values setting up system
-    int nrUnitCellsEachDirection =5;
+    int nrUnitCellsEachDirection =3;
     double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
-
+    int timeLimit = 1e5;
     //IF we are using the command line for input variables:
  /*
     // If a first argument is provided, it is the number of unit cells
@@ -67,12 +67,12 @@ int main(int numberOfArguments, char **argumentList){
             setw(20) << "PotentialEnergy" <<
             setw(20) << "TotalEnergy" << endl;
 
-    for(int timestep=0; timestep<10000; timestep++) {
+    for(int timestep=0; timestep<timeLimit; timestep++) {
         system.step(dt);
         statisticsSampler.sample(system); // system - same as *this within a object.
         if( timestep % 100 == 0 ) {
             // Print the timestep every 100 timesteps
-            cout << setw(20) << system.steps() <<
+            propertiesFile << setw(20) << system.steps() <<
                     setw(20) << system.time() <<
                     setw(20) << statisticsSampler.temperature() <<
                     setw(20) << statisticsSampler.kineticEnergy() <<

@@ -9,7 +9,7 @@ System::System(int numberOfUnitCellsEachDimension_){
  //nrAtoms = nrAtoms_;
  numberOfUnitCellsEachDimension = numberOfUnitCellsEachDimension_;
  int AtomsPerUnitCell = 4;
- nrAtoms = pow(numberOfUnitCellsEachDimension,3) * AtomsPerUnitCell;
+ m_nrAtoms = pow(numberOfUnitCellsEachDimension,3) * AtomsPerUnitCell;
 }
 
 // spr ???
@@ -26,7 +26,7 @@ void System::applyPeriodicBoundaryConditions() {
     for(auto& atom : m_atoms){ //python: for i in list...
         for(int i=0;i<3; i++){
             if (atom->position[i] < 0) atom->position[i] += m_systemSize[i];
-            if (atom->position[i] < m_systemSize[i]) atom->position[i] -= m_systemSize[i];
+            if (atom->position[i] > m_systemSize[i]) atom->position[i] -= m_systemSize[i];
         }
     }
 }
@@ -39,7 +39,7 @@ void System::removeTotalMomentum(){
     }
 
 
-    vec3 everyMomentumChange = totalMomentum/nrAtoms;
+    vec3 everyMomentumChange = totalMomentum/m_nrAtoms;
     for(auto& atom : m_atoms){
         atom->velocity -= everyMomentumChange/atom->mass();
     }

@@ -47,7 +47,7 @@ void StatisticsSampler::samplePotentialEnergy(System &system){
 }
 
 void StatisticsSampler::sampleTemperature(System &system){
-    // Hint: reuse the kinetic energy that we already calculated
+    m_temperature = (2.0/3.0)*m_kineticEnergy/(double)(system.nrAtoms());
 }
 
 void StatisticsSampler::sampleDensity(System &system){
