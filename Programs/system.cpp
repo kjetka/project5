@@ -31,7 +31,7 @@ void System::applyPeriodicBoundaryConditions() {
     }
 }
 
-void System::removeTotalMomentum() {
+void System::removeTotalMomentum(){
     // Find the total momentum and remove momentum equally on each atom so the total momentum becomes zero.
     vec3 totalMomentum;
     for(auto& atom : m_atoms){
@@ -51,11 +51,10 @@ void System::test_removeTotalMomentum(){
     for(auto& atom : m_atoms){
         totalMomentumTest += atom->velocity*atom->mass();
     }
-    double almost0 = 1e-13;
+    double almost0 = 1e-12;
     if (totalMomentumTest.length() > almost0){
         std::cout<<   "ERROR: " <<std::endl;
         std::cout<< "   length of totalMomentum greater than "<< almost0<< " after System::removeTotalMomentum was called"    <<std::endl;
-        totalMomentumTest.print("   totalMomentumTest");
         std::cout<< "   length of totalMomentum is "<< totalMomentumTest.length()<<std::endl;
 
         exit(EXIT_FAILURE);
@@ -125,7 +124,9 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
 void System::calculateForces() {
     for(Atom *atom : m_atoms) {
         atom->resetForce();
+
     }
+
     m_potential_class.calculateForces(*this); // this is a pointer, *this is a reference to this object
 }
 

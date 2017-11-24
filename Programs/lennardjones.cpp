@@ -11,7 +11,7 @@ double LennardJones::sigma() const{
 
 void LennardJones::setSigma(double sigma){
     m_sigma = sigma;
-    m_maxRadii = 2*sigma;
+    m_maxRadii = 5*sigma;
 }
 
 double LennardJones::epsilon() const{
@@ -23,15 +23,43 @@ void LennardJones::setEpsilon(double epsilon){
 }
 
 void LennardJones::calculateForces(System &system){
-    double rij = 1; //FIXX!!!!!!!!!!!!!!!!
-    double xij = 1;
-    double yij = 1;
-    double zij = 1;
+
+    m_potentialEnergy = 0;
     double epsilon24 = 24*m_epsilon;
-    double sigmaDivRij6 = 1.0;
-    int i =0; int j = 0;
+    double epsilon4 = 4*m_epsilon;
+    double sigmaDivR6 = 1.0;
+    //int i =0; int j = 0;
+
+    int i_length = system.atoms().size();
+
+    for(int i=0; i<i_length; i++){
+        Atom *atom_i = system.atoms()[i];
+        for(int j=i+1;j<i_length; j++){
+            Atom *atom_j = system.atoms()[j];
+            vec3 r_vec = atom_i->position - atom_j->position;
+            for(int u =0; u<3;u++){
+                double L = system.systemSize()[u];
+                if(r_vec[u] > L*0.5) r_vec[u] -=  L;
+                if(r_vec[u] <=-L*0.5) r_vec[u] +=  L;
+            }
+            double r = r_vec.length();
+
+            if(r<= m_maxRadii){
+            for(int gange=0;gange<6;gange++) { sigmaDivR6*=m_sigma/r;}
+            atom_i->force +=  epsilon24*( 2*sigmaDivR6*sigmaDivR6 - sigmaDivR6  ) * r_vec/(r*r);
+            m_potentialEnergy += epsilon4*(  sigmaDivR6*sigmaDivR6- sigmaDivR6   );
+            }
+        }
+
+    }
+
+   /*
+
+
+
 
     for(auto& atom_i : system.atoms()){
+
         for(auto& atom_j : system.atoms()){
             vec3 r_vec = atom_i->position - atom_j->position;
             double r = r_vec.length();
@@ -52,5 +80,5 @@ void LennardJones::calculateForces(System &system){
 
 
     m_potentialEnergy = 0; // Remember to compute this in the loop
-
+*/
 }

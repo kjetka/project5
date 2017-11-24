@@ -5,8 +5,7 @@
 
 using std::ofstream; using std::cout; using std::endl;
 
-StatisticsSampler::StatisticsSampler()
-{
+StatisticsSampler::StatisticsSampler(){
 
 }
 
@@ -36,25 +35,21 @@ void StatisticsSampler::sample(System &system)
     saveToFile(system);
 }
 
-void StatisticsSampler::sampleKineticEnergy(System &system)
-{
+void StatisticsSampler::sampleKineticEnergy(System &system){
     m_kineticEnergy = 0; // Remember to reset the value from the previous timestep
     for(Atom *atom : system.atoms()) {
-
+        m_kineticEnergy += 0.5*atom->mass()*atom->velocity.lengthSquared();
     }
 }
 
-void StatisticsSampler::samplePotentialEnergy(System &system)
-{
+void StatisticsSampler::samplePotentialEnergy(System &system){
     m_potentialEnergy = system.potential().potentialEnergy();
 }
 
-void StatisticsSampler::sampleTemperature(System &system)
-{
+void StatisticsSampler::sampleTemperature(System &system){
     // Hint: reuse the kinetic energy that we already calculated
 }
 
-void StatisticsSampler::sampleDensity(System &system)
-{
-
+void StatisticsSampler::sampleDensity(System &system){
+    // see main!
 }

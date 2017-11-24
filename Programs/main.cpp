@@ -15,7 +15,7 @@ int main(int numberOfArguments, char **argumentList){
 
 
     // Initial values setting up system
-    int nrUnitCellsEachDirection =2;
+    int nrUnitCellsEachDirection =5;
     double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
@@ -60,7 +60,6 @@ int main(int numberOfArguments, char **argumentList){
     StatisticsSampler statisticsSampler;
     IO movie("../results/movie_c.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
 
-
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
             setw(20) << "Temperature" <<
@@ -68,7 +67,7 @@ int main(int numberOfArguments, char **argumentList){
             setw(20) << "PotentialEnergy" <<
             setw(20) << "TotalEnergy" << endl;
 
-    for(int timestep=0; timestep<1000; timestep++) {
+    for(int timestep=0; timestep<10000; timestep++) {
         system.step(dt);
         statisticsSampler.sample(system); // system - same as *this within a object.
         if( timestep % 100 == 0 ) {

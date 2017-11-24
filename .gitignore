@@ -2,6 +2,9 @@
 *.o
 *.so
 *.a
+# build folder:
+build*
+
 # temporary files:
 *.pyc
 *.bak
