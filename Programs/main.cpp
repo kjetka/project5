@@ -16,10 +16,10 @@ int main(int numberOfArguments, char **argumentList){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =3;
-    double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
+    double initialTemperature = UnitConverter::temperatureFromSI(50.0); // measured in Kelvin
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
-    int timeLimit = 1e4;
+    int timeLimit = 1e5;
     //IF we are using the command line for input variables:
     /*
     // If a first argument is provided, it is the number of unit cells
@@ -58,7 +58,7 @@ int main(int numberOfArguments, char **argumentList){
     system.removeTotalMomentum();
 
     StatisticsSampler statisticsSampler;
-    IO movie("../results/movie_c.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+    IO movie("../results/movie_low_T.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
     IO properties("../results/properties.txt");
     cout << setw(20) << "Timestep" <<
             setw(20) << "Time" <<
