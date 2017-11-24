@@ -20,7 +20,7 @@ int main(){
     vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
-    int timeLimit = 1e4;
+    int timeLimit = 1e5;
     //IF we are using the command line for input variables:
 
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
@@ -42,6 +42,15 @@ int main(){
 
         system.createFCCLattice(latticeConstant, initialTemperature);
         //system.potential().setEpsilon(1.0);
+    StatisticsSampler statisticsSampler;
+    IO movie("../results/movie_low_T.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+    IO properties("../results/properties.txt");
+    cout << setw(20) << "Timestep" <<
+            setw(20) << "Time" <<
+            setw(20) << "Temperature" <<
+            setw(20) << "KineticEnergy" <<
+            setw(20) << "PotentialEnergy" <<
+            setw(20) << "TotalEnergy" << endl;
 
         //system.potential().setSigma(1.0);
         system.potential().setEpsilon(UnitConverter::temperatureFromSI(119.8));
