@@ -12,7 +12,6 @@ public:
     ~IO();
 
     void saveState(System &system);
-    void saveProperties(System &system);
     void open(const char *filename);
     void close();
 
