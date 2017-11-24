@@ -2,8 +2,7 @@
 #include "system.h"
 #include "atom.h"
 
-void VelocityVerlet::integrate(System &system, double dt)
-{
+void VelocityVerlet::integrate(System &system, double dt){
     if(m_firstStep) {
         system.calculateForces();
         m_firstStep = false;
@@ -13,6 +12,7 @@ void VelocityVerlet::integrate(System &system, double dt)
         atom->velocity += atom->force*0.5*dt/atom->mass();
         atom->position += atom->velocity*dt/atom->mass();
     }
+
     system.applyPeriodicBoundaryConditions();
     system.calculateForces(); // New positions, recompute forces
 
@@ -20,3 +20,4 @@ void VelocityVerlet::integrate(System &system, double dt)
         atom->velocity += atom->force*0.5*dt/atom->mass();
     }
 }
+
