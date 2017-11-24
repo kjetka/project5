@@ -4,7 +4,6 @@ from subprocess import Popen, PIPE
 from matplotlib.pyplot import *
 from numpy import *
 
-#energy, probability = loadtxt("probability.txt", unpack=True, skiprows=1)
 
 
 output = Popen(["ls"], stdout=PIPE).communicate()[0]
