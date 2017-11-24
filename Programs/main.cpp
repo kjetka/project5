@@ -11,26 +11,17 @@
 
 using namespace std;
 
-int main(int numberOfArguments, char **argumentList){
+int main(){
 
 
     // Initial values setting up system
-    int nrUnitCellsEachDirection =3;
-    double initialTemperature = UnitConverter::temperatureFromSI(300.0); // measured in Kelvin
+    int nrUnitCellsEachDirection =5;
+
+    vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26); // measured in angstroms
     //double sigma = UnitConverter::lengthFromAngstroms(3.405)
-    int timeLimit = 1e5;
+    int timeLimit = 1e4;
     //IF we are using the command line for input variables:
- /*
-    // If a first argument is provided, it is the number of unit cells
-    if(numberOfArguments > 1) numberOfUnitCells = atoi(argumentList[1]);
-    // If a second argument is provided, it is the initial temperature (measured in kelvin)
-    if(numberOfArguments > 2)
-        initialTemperature = UnitConverter::temperatureFromSI(atof(argumentList[2]));
-    // If a third argument is provided, it is the lattice constant determining the density (measured in angstroms)
-    if(numberOfArguments > 3)
-        latticeConstant = UnitConverter::lengthFromAngstroms(atof(argumentList[3]));
-*/
 
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
     /*
@@ -40,43 +31,53 @@ int main(int numberOfArguments, char **argumentList){
     cout << "One unit of mass is " << UnitConverter::massToSI(1.0) << " kg" << endl;
     cout << "One unit of temperature is " << UnitConverter::temperatureToSI(1.0) << " K" << endl;
 */
-    // setting up system
-    System system(nrUnitCellsEachDirection);
 
-    system.createFCCLattice(latticeConstant, initialTemperature);
-    //system.potential().setEpsilon(1.0);
 
-    //system.potential().setSigma(1.0);
-    system.potential().setEpsilon(UnitConverter::temperatureFromSI(119.8));
-    system.potential().setSigma(UnitConverter::lengthFromAngstroms(3.405));
-    system.removeTotalMomentum();
+    for(int temperature_current:Temperatures_si){
 
-    StatisticsSampler statisticsSampler;
-    IO movie("../results/movie_c.xyz"); // To write the state to file. here: ofstream "../results/movie.xyz"
+        double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); // measured in Kelvin
 
-    cout << setw(20) << "Timestep" <<
-            setw(20) << "Time" <<
-            setw(20) << "Temperature" <<
-            setw(20) << "KineticEnergy" <<
-            setw(20) << "PotentialEnergy" <<
-            setw(20) << "TotalEnergy" << endl;
+        // setting up system
+        System system(nrUnitCellsEachDirection);
 
-    for(int timestep=0; timestep<timeLimit; timestep++) {
-        system.step(dt);
-        statisticsSampler.sample(system); // system - same as *this within a object.
-        if( timestep % 100 == 0 ) {
-            // Print the timestep every 100 timesteps
-            propertiesFile << setw(20) << system.steps() <<
-                    setw(20) << system.time() <<
-                    setw(20) << statisticsSampler.temperature() <<
-                    setw(20) << statisticsSampler.kineticEnergy() <<
-                    setw(20) << statisticsSampler.potentialEnergy() <<
-                    setw(20) << statisticsSampler.totalEnergy() << endl;
+        system.createFCCLattice(latticeConstant, initialTemperature);
+        //system.potential().setEpsilon(1.0);
+
+        //system.potential().setSigma(1.0);
+        system.potential().setEpsilon(UnitConverter::temperatureFromSI(119.8));
+        system.potential().setSigma(UnitConverter::lengthFromAngstroms(3.405));
+        system.removeTotalMomentum();
+
+        StatisticsSampler statisticsSampler;
+        string movietitle = "../results/movie_T_"+to_string(temperature_current)+".xyz";
+        IO movie(movietitle.c_str());
+
+        /*cout << setw(20) << "Timestep" <<
+                setw(20) << "Time" <<
+                setw(20) << "Temperature" <<
+                setw(20) << "KineticEnergy" <<
+                setw(20) << "PotentialEnergy" <<
+                setw(20) << "TotalEnergy" << endl;
+        */
+
+        for(int timestep=0; timestep<timeLimit; timestep++) {
+            system.step(dt);
+            statisticsSampler.sample(system); // system - same as *this within a object.
+            if( timestep % 50 == 0 ) {
+                // Print the timestep every 100 timesteps
+                /*cout << setw(20) << system.steps() <<
+                        setw(20) << system.time() <<
+                        setw(20) << statisticsSampler.temperature() <<
+                        setw(20) << statisticsSampler.kineticEnergy() <<
+                        setw(20) << statisticsSampler.potentialEnergy() <<
+                        setw(20) << statisticsSampler.totalEnergy() << endl;
+                */
+
+            movie.saveState(system);
+            }
         }
-        movie.saveState(system);
+        //cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
+        movie.close();
     }
-    cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
-    movie.close();
-
     return 0;
 }

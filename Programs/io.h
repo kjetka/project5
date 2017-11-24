@@ -7,7 +7,6 @@ using std::ofstream;
 class IO{
 private:
     ofstream file;
-    ofstream propertiesFile;
 public:
     IO(const char *filename);
     ~IO();

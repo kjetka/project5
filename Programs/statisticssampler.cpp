@@ -15,6 +15,7 @@ void StatisticsSampler::saveToFile(System &system){
     if(!m_file.good()) {
         m_file.open("statistics.txt", ofstream::out);
         // If it's still not open, something bad happened...
+
         if(!m_file.good()) {
             cout << "Error, could not open statistics.txt" << endl;
             exit(1);
@@ -50,7 +51,7 @@ void StatisticsSampler::sampleTemperature(System &system){
 }
 
 void StatisticsSampler::sampleDensity(System &system){
-    double V = system.volume(system.systemSize());
-    int atoms = system.atoms();
+    double V = system.volume();
+    int atoms = system.atoms().size();
     m_density = atoms/V;
 }
