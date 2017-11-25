@@ -11,9 +11,11 @@ private:
     double m_potentialEnergy = 0;
     double m_temperature = 0;
     double m_density = 0;
-
 public:
-    StatisticsSampler();
+    StatisticsSampler(const char *filename);
+    void openFileStats(const char *filename);
+    void headerToFile();
+
     void saveToFile(System &system);
     void sample(System &system);
     void sampleKineticEnergy(System &system);
