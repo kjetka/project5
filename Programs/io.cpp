@@ -30,7 +30,6 @@ void IO::close() {
     }
 }
 
-// This saves the current state to a file following the xyz-standard (see http://en.wikipedia.org/wiki/XYZ_file_format )
 // It can easily be opened in Ovito. Note that you can also output more properties than just the position. You can print the
 // velocities per particle (or kinetic energy etc), and color the atoms in Ovito based on these properties.
 
@@ -43,7 +42,8 @@ void IO::saveState(System &system)
             file << "H " <<
                     UnitConverter::lengthToAngstroms(atom->position.x()) << " " <<
                     UnitConverter::lengthToAngstroms(atom->position.y()) << " " <<
-                    UnitConverter::lengthToAngstroms(atom->position.z()) << "\n";
+                    UnitConverter::lengthToAngstroms(atom->position.z()) << " " <<
+                    atom->velocity.length() << endl;
         }
     }
 }

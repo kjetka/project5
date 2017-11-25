@@ -16,8 +16,11 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 1e5;
+    int timeLimit = 1e6;
     vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
+    //vector<double> Temperatures_si = {85.0};
+    //vector<double> Temperatures_si = {300.0,500.0};
+
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
 
@@ -29,10 +32,23 @@ int main(){
     cout << "One unit of temperature is " << UnitConverter::temperatureToSI(1.0) << " K" << endl;
 */
 
+    cout << "discussion: better to have kinetic energy in Lennard Jones class? Atom class?"<<endl;
 
     for(int temperature_current:Temperatures_si){
 
         double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); // in Kelvin
+
+        cout << "------------------------------------------------"<<endl;
+        cout << "Md temp: "<<initialTemperature<< "Si temp: "<< temperature_current<<endl;
+//        cout << setw(20) << "Timestep" <<
+//                setw(20) << "Time" <<
+//                setw(20) << "Temperature" <<
+//                setw(20) << "KineticEnergy" <<
+//                setw(20) << "PotentialEnergy" <<
+//                setw(20) << "TotalEnergy"  << endl;
+
+
+
 
         // setting up system
         System system(nrUnitCellsEachDirection);
@@ -50,26 +66,39 @@ int main(){
 
 
         for(int timestep=0; timestep<timeLimit; timestep++) {
-            system.step(dt);
-            statisticsSampler.sample(system); // system - same as *this within a object.
-            if( timestep % 50 == 0 ) {
-                //cout << setw(20) << system.steps() << ;
 
-                // Print the timestep every 100 timesteps
-                /*cout << setw(20) << system.steps() <<
-                        setw(20) << system.time() <<
-                        setw(20) << statisticsSampler.temperature() <<
-                        setw(20) << statisticsSampler.kineticEnergy() <<
-                        setw(20) << statisticsSampler.potentialEnergy() <<
-                        setw(20) << statisticsSampler.totalEnergy() << endl;
-                */
+           system.step(dt);
+           statisticsSampler.sample(system); // system - same as *this within a object.
+
+            // Defining the interval the variables are written to .txt and .xyz file
+            if( timestep % 100 == 0||timestep ==0 ) { //approx 24*4=96 frames second.
+//                cout << setw(20) << system.steps()<<
+//                        setw(20) << system.time() <<
+//                        setw(20) << statisticsSampler.temperature() <<
+//                        setw(20) << statisticsSampler.kineticEnergy() <<
+//                        setw(20) << statisticsSampler.potentialEnergy() <<
+//                        setw(20) << statisticsSampler.totalEnergy() << endl;
+
+
                 statisticsSampler.saveToFile(system);
                 movie.saveState(system);
-
             }
-        }
+        } // End integration loop
         //cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
         movie.close();
-    }
+        statisticsSampler.closeFile();
+    } // end Temperature loop :)
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }

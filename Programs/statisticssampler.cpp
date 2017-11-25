@@ -30,6 +30,13 @@ void StatisticsSampler::headerToFile(){
               "\t\t" << "TotalE" << endl;
 }
 
+void StatisticsSampler::closeFile(){
+    if(m_file.is_open()) {
+        m_file.close();
+    }
+
+}
+
 void StatisticsSampler::saveToFile(System &system){
     // Save the statistical properties for each timestep for plotting etc.
     // First, open the file if it's not open already
@@ -47,7 +54,7 @@ void StatisticsSampler::saveToFile(System &system){
                "\t\t" << temperature() <<
                "\t\t" << kineticEnergy() <<
                "\t\t" << potentialEnergy() <<
-               "\t\t" << totalEnergy() << endl;
+               "\t\t" << totalEnergy() << "\n"; //\n faster than endl;
 }
 
 void StatisticsSampler::sample(System &system)
@@ -57,8 +64,28 @@ void StatisticsSampler::sample(System &system)
     samplePotentialEnergy(system);
     sampleTemperature(system);
     sampleDensity(system);
-    saveToFile(system);
+    testEnergyConservation();
+    //saveToFile(system);
 }
+void StatisticsSampler::testEnergyConservation(){
+    double conservecriteria = 1e-4;
+    if (m_totEnergyPreviousStep!=0){
+        if((totalEnergy()/ (double) m_totEnergyPreviousStep-1) > conservecriteria){
+            std::cout<<   "ERROR: " <<std::endl;
+            std::cout<< "  Energy is not conserved! "<<endl;
+            std::cout<< "  check StatisticsSampler class"<<endl;
+            std::cout<< "  current/previous energy - 1 ="<< totalEnergy()/ m_totEnergyPreviousStep -1 <<endl;
+            std::cout <<  "  current/previous energy -1 must be less than" <<conservecriteria <<endl;
+            std::cout<< "  current energy = "<< totalEnergy()<<std::endl;
+            std::cout<< " m_totEnergyPreviousStep = "<<m_totEnergyPreviousStep <<endl;
+
+            exit(EXIT_FAILURE);
+
+        }
+    }
+    m_totEnergyPreviousStep = totalEnergy();
+}
+
 
 void StatisticsSampler::sampleKineticEnergy(System &system){
     m_kineticEnergy = 0; // Remember to reset the value from the previous timestep
@@ -72,6 +99,7 @@ void StatisticsSampler::samplePotentialEnergy(System &system){
 }
 
 void StatisticsSampler::sampleTemperature(System &system){
+    //Instantanous temperature
     m_temperature = (2.0/3.0)*m_kineticEnergy/(double)(system.nrAtoms());
 }
 
@@ -80,3 +108,5 @@ void StatisticsSampler::sampleDensity(System &system){
     int atoms = system.atoms().size();
     m_density = atoms/V;
 }
+
+
