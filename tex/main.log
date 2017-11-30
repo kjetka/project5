@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  22 NOV 2017 10:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  28 NOV 2017 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2084,26 +2084,26 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 9.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -2136,15 +2136,15 @@ e
 \c@lstlisting=\count212
 \symgns@font=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 7.
-Package gensymb Info: Math companion symbols declared on input line 7.
-LaTeX Info: Redefining \degree on input line 7.
-LaTeX Info: Redefining \celsius on input line 7.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 9.
+Package gensymb Info: Math companion symbols declared on input line 9.
+LaTeX Info: Redefining \degree on input line 9.
+LaTeX Info: Redefining \celsius on input line 9.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 7.
-LaTeX Info: Redefining \ohm on input line 7.
-Package gensymb Info: Using \textohm for \ohm on input line 7.
-Package gensymb Info: Using \textmu for \micro on input line 7.
+erthousand on input line 9.
+LaTeX Info: Redefining \ohm on input line 9.
+Package gensymb Info: Using \textohm for \ohm on input line 9.
+Package gensymb Info: Using \textmu for \micro on input line 9.
 \AtBeginShipoutBox=\box78
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -2211,7 +2211,7 @@ LaTeX Info: Redefining \selectfont on input line 126.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 7.
+Package hyperref Info: Link coloring ON on input line 9.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -2220,20 +2220,20 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count213
 )
-LaTeX Info: Redefining \ref on input line 7.
-LaTeX Info: Redefining \pageref on input line 7.
-LaTeX Info: Redefining \nameref on input line 7.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
 
 (./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2241,18 +2241,73 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- (./introduction.tex) (./theory.tex) (./method.tex) (./result.tex) (./discussio
-n.tex) (./conclusion.tex) [1
+ (./introduction.tex [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./the
+ory.tex) (./method.tex) (./result.tex
+<../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/bands_111.pdf, id=95, 361
+.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/bands_111.pdf Graphi
+c file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/bands_111.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/b
+ands_111.pdf used on input line 43.
+(pdftex.def)             Requested size: 510.78302pt x 357.55179pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (./main.bbl) (./appendix.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
+[2]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3 <../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/bands_111.pdf>]
+<../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/total_DOS_111.pdf, id=131
+, 361.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/total_DOS_111.pdf Gr
+aphic file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/total_DOS_111.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/t
+otal_DOS_111.pdf used on input line 89.
+(pdftex.def)             Requested size: 510.78302pt x 357.55179pt.
+
+<../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/Total_DOS_222.pdf, id=132
+, 361.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/Total_DOS_222.pdf Gr
+aphic file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/Total_DOS_222.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/T
+otal_DOS_222.pdf used on input line 97.
+(pdftex.def)             Requested size: 510.78302pt x 357.55179pt.
+
+<../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS1_111.pdf, id=133, 36
+1.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS1_111.pdf Graphi
+c file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS1_111.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/L
+DOS1_111.pdf used on input line 110.
+(pdftex.def)             Requested size: 250.28648pt x 175.19995pt.
+
+<../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS5_111.pdf, id=134, 36
+1.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS5_111.pdf Graphi
+c file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS5_111.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/L
+DOS5_111.pdf used on input line 116.
+(pdftex.def)             Requested size: 250.28648pt x 175.19995pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2260,22 +2315,69 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
+[4 <../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/total_DOS_111.pdf>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5 <../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/Total_DOS_222.pdf>]
+<../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/LDOS29_222.pdf, id=171, 3
+61.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/LDOS29_222.pdf Graph
+ic file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/LDOS29_222.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/L
+DOS29_222.pdf used on input line 127.
+(pdftex.def)             Requested size: 250.28648pt x 175.19995pt.
+
+<../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/LDOS47_222.pdf, id=172, 3
+61.35pt x 252.945pt>
+File: ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/LDOS47_222.pdf Graph
+ic file (type pdf)
+
+<use ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/LDOS47_222.pdf>
+Package pdftex.def Info: ../../../fysmena4111/datalab/prosjekt/resultat/2_2_2/L
+DOS47_222.pdf used on input line 133.
+(pdftex.def)             Requested size: 250.28648pt x 175.19995pt.
+)
+(./discussion.tex) (./conclusion.tex)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <../../../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS1_111.pdf> <../../
+../fysmena4111/datalab/prosjekt/resultat/1_1_1/LDOS5_111.pdf> <../../../fysmena
+4111/datalab/prosjekt/resultat/2_2_2/LDOS29_222.pdf> <../../../fysmena4111/data
+lab/prosjekt/resultat/2_2_2/LDOS47_222.pdf>] (./main.bbl) (./appendix.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F9310D3C9CDAF08DAB6F3FC49ED71336;261.
+(rerunfilecheck)             Checksum: 2857589AABBF0B262D5AEEA843644961;681.
  ) 
 Here is how much of TeX's memory you used:
- 21238 strings out of 493089
- 340832 string characters out of 6134841
- 486277 words of memory out of 5000000
- 24343 multiletter control sequences out of 15000+600000
- 28790 words of font info for 85 fonts, out of 8000000 for 9000
+ 21346 strings out of 493089
+ 344107 string characters out of 6134841
+ 487277 words of memory out of 5000000
+ 24419 multiletter control sequences out of 15000+600000
+ 33602 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,11n,72p,10425b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,11n,75p,10425b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{/us
 r/local/texlive/2015/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/lo
@@ -2283,19 +2385,24 @@ cal/texlive/2015/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}</usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on main.pdf (3 pages, 176062 bytes).
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/cm-super/sfti1200.pfb>
+Output written on main.pdf (7 pages, 404824 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 306 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 

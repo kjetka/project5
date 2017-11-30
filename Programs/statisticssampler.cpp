@@ -64,22 +64,21 @@ void StatisticsSampler::sample(System &system)
     samplePotentialEnergy(system);
     sampleTemperature(system);
     sampleDensity(system);
-    testEnergyConservation();
+    sampleDiffusionConst(system);
+    //testEnergyConservation();
     //saveToFile(system);
 }
 void StatisticsSampler::testEnergyConservation(){
-    double conservecriteria = 1e-4;
+    double conservecriteria = 1e-3;
     if (m_totEnergyPreviousStep!=0){
         if((totalEnergy()/ (double) m_totEnergyPreviousStep-1) > conservecriteria){
-            std::cout<<   "ERROR: " <<std::endl;
-            std::cout<< "  Energy is not conserved! "<<endl;
-            std::cout<< "  check StatisticsSampler class"<<endl;
+            std::cout<<   "ERROR: Energy is not conserved! check StatisticsSampler class" <<std::endl;
             std::cout<< "  current/previous energy - 1 ="<< totalEnergy()/ m_totEnergyPreviousStep -1 <<endl;
-            std::cout <<  "  current/previous energy -1 must be less than" <<conservecriteria <<endl;
+            std::cout <<  "  current/previous energy -1 must be less than " <<conservecriteria <<endl;
             std::cout<< "  current energy = "<< totalEnergy()<<std::endl;
             std::cout<< " m_totEnergyPreviousStep = "<<m_totEnergyPreviousStep <<endl;
 
-            exit(EXIT_FAILURE);
+            //exit(EXIT_FAILURE);
 
         }
     }
@@ -108,5 +107,17 @@ void StatisticsSampler::sampleDensity(System &system){
     int atoms = system.atoms().size();
     m_density = atoms/V;
 }
+
+void StatisticsSampler::sampleMSD(System &system){
+    for(Atom *atom : system.atoms()) {
+        atom->MSD=(atom->position - atom->position0).length();
+    }
+}
+
+void StatisticsSampler::sampleDiffusionConst(System &system){
+    sampleMSD(system);
+}
+
+
 
 

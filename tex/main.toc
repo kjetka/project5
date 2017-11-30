@@ -2,5 +2,12 @@
 \contentsline {section}{\numberline {2}Theory}{2}{section.2}
 \contentsline {section}{\numberline {3}Method}{2}{section.3}
 \contentsline {section}{\numberline {4}Result }{2}{section.4}
-\contentsline {section}{\numberline {5}Discussion}{2}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{2}{section.6}
+\contentsline {section}{\numberline {5}O2}{2}{section.5}
+\contentsline {section}{\numberline {6}Supercells:}{3}{section.6}
+\contentsline {subsection}{\numberline {6.1}Bandstructure}{3}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Energy, force and pressure}{3}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Bandgap and electronic structure}{3}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}DOS}{4}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}LDOS}{6}{subsubsection.6.4.1}
+\contentsline {section}{\numberline {7}Discussion}{6}{section.7}
+\contentsline {section}{\numberline {8}Conclusion}{6}{section.8}

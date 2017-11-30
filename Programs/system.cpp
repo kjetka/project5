@@ -36,6 +36,7 @@ void System::removeTotalMomentum(){
     vec3 totalMomentum;
     for(auto& atom : m_atoms){
         totalMomentum += atom->velocity*atom->mass();
+        //std::cout << atom->velocity<<std::endl;
     }
 
 
@@ -79,7 +80,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
     setSystemSize(vec3(10, 10, 10)); // Remember to set the correct system size!
     */
 
-
+/*
     vec3 iHat(1,0,0); iHat *= latticeConstant;
     vec3 jHat(0,1,0); jHat *= latticeConstant;
     vec3 kHat(0,0,1); kHat *= latticeConstant;
@@ -92,7 +93,8 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
     std::vector<vec3> basisvectors = {r1,r2,r3,r4};
     //std::cout << basisvectors[3]<<std::endl;
     int atomsInEachUnitscell = basisvectors.size();
-    int antallatomer = 0;
+    Random::randomSeed();
+    Random::nextGaussian(1,0.5);
 
     for(int Nx =0;Nx < numberOfUnitCellsEachDimension; Nx++){
         for(int Ny =0;Ny < numberOfUnitCellsEachDimension; Ny++){
@@ -105,18 +107,30 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
                     double y = whichAtomInUnitCell[1] + Ny*latticeConstant;
                     double z = whichAtomInUnitCell[2] + Nz*latticeConstant;
                     atom->position.set(x,y,z);
+                    atom->position0.set(x,y,z);
                     atom->resetVelocityMaxwellian(temperature);
                     m_atoms.push_back(atom);
-                    antallatomer+=1;
                 }
             }
         }
     }
-    //std::cout<< antallatomer<<std::endl;
     double L = numberOfUnitCellsEachDimension*latticeConstant;
     setSystemSize(vec3(L, L, L)); // Remember to set the correct system size!
 
+*/
 
+        Atom *atom = new Atom(UnitConverter::massFromSI(6.63352088e-26));
+        atom->position.set(5,5,5);
+        atom->velocity.zeros();
+
+        m_atoms.push_back(atom);
+        Atom *atom2= new Atom(UnitConverter::massFromSI(6.63352088e-26));
+        atom2->position.set(9,5,5);
+        atom2->velocity.zeros();
+
+
+        m_atoms.push_back(atom2);
+        setSystemSize(vec3(20, 20, 20));
 }
 
 
@@ -124,9 +138,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
 void System::calculateForces() {
     for(Atom *atom : m_atoms) {
         atom->resetForce();
-
     }
-
     m_potential_class.calculateForces(*this); // this is a pointer, *this is a reference to this object
 }
 

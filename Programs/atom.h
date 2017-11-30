@@ -10,6 +10,8 @@ public:
     vec3 position;
     vec3 velocity;
     vec3 force;
+    vec3 position0;
+    double MSD=0;
 
     Atom(double mass);
     void resetForce();

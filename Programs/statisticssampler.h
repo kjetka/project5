@@ -24,6 +24,8 @@ public:
     void samplePotentialEnergy(System &system);
     void sampleTemperature(System &system);
     void sampleDensity(System &system);
+    void sampleMSD(System &system);
+    void sampleDiffusionConst(System &system);
 
     void testEnergyConservation();
 
