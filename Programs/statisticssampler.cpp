@@ -69,7 +69,7 @@ void StatisticsSampler::sample(System &system)
     //saveToFile(system);
 }
 void StatisticsSampler::testEnergyConservation(){
-    double conservecriteria = 1e-3;
+    double conservecriteria = 1e-5;
     if (m_totEnergyPreviousStep!=0){
         if((totalEnergy()/ (double) m_totEnergyPreviousStep-1) > conservecriteria){
             std::cout<<   "ERROR: Energy is not conserved! check StatisticsSampler class" <<std::endl;
@@ -78,7 +78,7 @@ void StatisticsSampler::testEnergyConservation(){
             std::cout<< "  current energy = "<< totalEnergy()<<std::endl;
             std::cout<< " m_totEnergyPreviousStep = "<<m_totEnergyPreviousStep <<endl;
 
-            //exit(EXIT_FAILURE);
+            exit(EXIT_FAILURE);
 
         }
     }

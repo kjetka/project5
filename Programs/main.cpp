@@ -19,7 +19,7 @@ int main(){
     //vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
     //vector<double> Temperatures_si = {50.0,85.0};
     //vector<double> Temperatures_si = {300.0,500.0};
-    vector<double> Temperatures_si = {100};
+    vector<double> Temperatures_si = {300};
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
 
@@ -87,7 +87,7 @@ int main(){
 
             statisticsSampler.sample(system); // system - same as *this within a object.
 
-            if( timestep % 10 == 0||timestep ==0 ) { //approx 24*4=96 frames second.
+            if( timestep % 100 == 0||timestep ==0 ) { //approx 24*4=96 frames second.
               cout << setw(20) << system.steps()<<
                       setw(20) << system.time() <<
                       setw(20) << statisticsSampler.temperature() <<
