@@ -97,6 +97,7 @@ void StatisticsSampler::samplePotentialEnergy(System &system){
     m_potentialEnergy = system.potential().potentialEnergy();
 }
 
+
 void StatisticsSampler::sampleTemperature(System &system){
     //Instantanous temperature
     m_temperature = (2.0/3.0)*m_kineticEnergy/(double)(system.nrAtoms());
