@@ -65,7 +65,7 @@ void StatisticsSampler::sample(System &system)
     sampleTemperature(system);
     sampleDensity(system);
     sampleDiffusionConst(system);
-    //testEnergyConservation();
+    testEnergyConservation();
     //saveToFile(system);
 }
 void StatisticsSampler::testEnergyConservation(){

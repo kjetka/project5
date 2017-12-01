@@ -39,7 +39,6 @@ void System::removeTotalMomentum(){
         //std::cout << atom->velocity<<std::endl;
     }
 
-
     vec3 everyMomentumChange = totalMomentum/m_nrAtoms;
     for(auto& atom : m_atoms){
         atom->velocity -= everyMomentumChange/atom->mass();
@@ -80,7 +79,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
     setSystemSize(vec3(10, 10, 10)); // Remember to set the correct system size!
     */
 
-/*
+
     vec3 iHat(1,0,0); iHat *= latticeConstant;
     vec3 jHat(0,1,0); jHat *= latticeConstant;
     vec3 kHat(0,0,1); kHat *= latticeConstant;
@@ -117,7 +116,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
     double L = numberOfUnitCellsEachDimension*latticeConstant;
     setSystemSize(vec3(L, L, L)); // Remember to set the correct system size!
 
-*/
+/*
 
         Atom *atom = new Atom(UnitConverter::massFromSI(6.63352088e-26));
         atom->position.set(5,5,5);
@@ -131,6 +130,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
 
         m_atoms.push_back(atom2);
         setSystemSize(vec3(20, 20, 20));
+*/
 }
 
 

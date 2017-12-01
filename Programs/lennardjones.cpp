@@ -45,10 +45,12 @@ void LennardJones::calculateForces(System &system){
             double temp = m_sigma/r;
             double sigmaDivR6 = 1.0;
             for(int gange=0;gange<6;gange++) { sigmaDivR6*=temp;}
+
             double sigmaDivR12 = sigmaDivR6*sigmaDivR6;
-            atom_i->force +=  epsilon24*( 2*sigmaDivR12 - sigmaDivR6  ) * r_vec/(r*r);
-            atom_j->force -=  epsilon24*( 2*sigmaDivR12 - sigmaDivR6  ) * r_vec/(r*r);
-            m_potentialEnergy += 8*m_epsilon*(  sigmaDivR12- sigmaDivR6   );
+            vec3 force = epsilon24*( 2*sigmaDivR12 - sigmaDivR6  ) * r_vec/(r*r);
+            atom_i->force +=  force;
+            atom_j->force -=  force;
+            m_potentialEnergy += 4*m_epsilon*(  sigmaDivR12- sigmaDivR6   );
 
         }
     }

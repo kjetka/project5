@@ -11,10 +11,8 @@ void VelocityVerlet::integrate(System &system, double dt){
     //std::cout << "initial " <<system.atoms()[1]->velocity;
     //std::cout <<"new step"<<std::endl;
     for(Atom *atom : system.atoms()) {
-        //std::cout <<atom->position<<std::endl;
-
         atom->velocity += dthalf*atom->force/(atom->mass());
-        atom->position += atom->velocity*dt;// /atom->mass();
+        atom->position += atom->velocity*dt;///atom->mass();
     }
     system.applyPeriodicBoundaryConditions();
     system.calculateForces(); // New positions, recompute forces

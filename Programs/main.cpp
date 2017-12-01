@@ -14,16 +14,14 @@ using namespace std;
 int main(){
 
     // Initial values setting up system
-    int nrUnitCellsEachDirection =2;
-    int timeLimit = 1e4;
+    int nrUnitCellsEachDirection =5;
+    int timeLimit = 4e3;
     //vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
     //vector<double> Temperatures_si = {50.0,85.0};
     //vector<double> Temperatures_si = {300.0,500.0};
-    vector<double> Temperatures_si = {300};
-
+    vector<double> Temperatures_si = {100};
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-
 
 /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
@@ -56,6 +54,7 @@ int main(){
         system.createFCCLattice(latticeConstant, initialTemperature);
 
         system.potential().setEpsilon(UnitConverter::energyFromSI(119.8*UnitConverter::kb));
+
         system.potential().setSigma(UnitConverter::lengthToAngstroms(3.405));
 
         system.removeTotalMomentum();
@@ -82,12 +81,13 @@ int main(){
                 setw(20) << statisticsSampler.potentialEnergy() <<
                 setw(20) << statisticsSampler.totalEnergy() << endl;
 */
+
         system.calculateForces();
         for(int timestep=0; timestep<timeLimit; timestep++) {
 
             statisticsSampler.sample(system); // system - same as *this within a object.
 
-            if( timestep % 100 == 0||timestep ==0 ) { //approx 24*4=96 frames second.
+            if( timestep % 10 == 0||timestep ==0 ) { //approx 24*4=96 frames second.
               cout << setw(20) << system.steps()<<
                       setw(20) << system.time() <<
                       setw(20) << statisticsSampler.temperature() <<
