@@ -1,0 +1,6 @@
+Feil som ble funnet: 	
+	se kommentar i  velocity verlet!
+	Glemte å ta med kraft, motkraft når oppdaterte kraft
+	Telte potensialet dobbelt.
+	
+
