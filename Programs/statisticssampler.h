@@ -13,6 +13,7 @@ private:
     double m_temperature = 0;
     double m_density = 0;
 public:
+
     StatisticsSampler(const char *filename);
     void openFileStats(const char *filename);
     void headerToFile();
