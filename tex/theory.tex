@@ -1,3 +1,16 @@
 
 
 Discuss why the velocity of atoms are given from Maxwell-Boltzmann distrubution.  - nonzero net momentum. 
+
+
+
+
+\begin{align}
+	U(r_{ij}) = 4\epsilon \left(		\left(\frac{\sigma}{r_{ij}}	\right)^{12}		- \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right)\\
+		F_{ij} = -\nabla U(r_{ij}) = - \pdv{U}{r_{ij}} \pdv{r_{ij}}{x_{ij}}	\\	
+		\pdv{r_{ij}}{x_{ij}} 		= 		\dv{x_{ij}} \abs{\textbf{r}_i - \textbf{r}_j} 		=		 \dv{x_{ij}} \sqrt{ (\textbf{r}_i - \textbf{r}_j)^2}			\\
+		 = \frac{x_{ij}}{ \abs{\textbf{r}_i - \textbf{r}_j} } = \frac{x_{ij}}{r_{ij}}\\
+		 \pdv{U}{r_{ij}} = 4\epsilon \left[\frac{-12}{r_{ij}}\left(	\frac{\sigma}{r_{ij}}\right)^{12}		+  \frac{6}{r_{ij}} \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right]\\
+		 F_x(r_{ij}) = 24 \epsilon \left[		2	\left(\frac{\sigma}{r_{ij}}	\right)^{12}		- \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right] \frac{x_{ij}}{r_{ij}^2}\\
+		  \textbf{F}(r_{ij}) = 24 \epsilon \left[		2	\left(\frac{\sigma}{r_{ij}}	\right)^{12}		- \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right] \frac{\textbf{r}_{ij}}{r_{ij}^2}
+\end{align}
