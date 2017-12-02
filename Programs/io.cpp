@@ -33,17 +33,16 @@ void IO::close() {
 // It can easily be opened in Ovito. Note that you can also output more properties than just the position. You can print the
 // velocities per particle (or kinetic energy etc), and color the atoms in Ovito based on these properties.
 
-void IO::saveState(System &system)
-{
+void IO::saveState(System &system){
     if(file.is_open()) {
         file << system.atoms().size() << endl;
         file << "The is an optional comment line that can be empty. The reason we use H is so particles get smaller in Ovito" << endl;
         for(Atom *atom : system.atoms()) {
             file << "H " <<
-                    UnitConverter::lengthToAngstroms(atom->position.x()) << " " <<
-                    UnitConverter::lengthToAngstroms(atom->position.y()) << " " <<
-                    UnitConverter::lengthToAngstroms(atom->position.z()) << " " <<
-                    atom->velocity.length() << endl;
+                   UnitConverter::lengthToAngstroms(atom->position.x()) << " " <<
+                   UnitConverter::lengthToAngstroms(atom->position.y()) << " " <<
+                   UnitConverter::lengthToAngstroms(atom->position.z()) << " " <<
+                   UnitConverter::lengthToAngstroms( (atom->position-atom->position0).length()) <<endl;
         }
     }
 }

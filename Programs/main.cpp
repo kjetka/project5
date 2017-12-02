@@ -17,6 +17,8 @@ int main(){
     int nrUnitCellsEachDirection =5;
     int timeLimit = 5e4;
     vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
+     Temperatures_si = {80, 300};
+
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
     int printrate = 50;
@@ -31,7 +33,10 @@ int main(){
 */
     cout << "discussion: better to have kinetic energy in Lennard Jones class? Atom class?"<<endl;
     cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
-    cout << "  I started on the framework for Diffusion sampling in statiscssampler (diffusion samler). MSD is mean square distance - see task     "
+    cout << " Kjetil: I started on the framework for Diffusion sampling in statiscssampler (diffusion samler). MSD is mean square distance - see task     "<<endl;
+    cout << "Changes in .xyz file: H, x, y, z, |r-r0|"<< endl;
+    cout << "To see how behaves: Color code displacement in Ovito"<< endl;
+
     cout << "------------------------------------" <<endl;
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
@@ -42,9 +47,9 @@ int main(){
     for(int temperature_current:Temperatures_si){
 
         double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); //Kelvin
+        cout << "Md temp: "<<initialTemperature<< " Si temp: "<< temperature_current<<endl;
 
         /*cout << "------------------------------------------------"<<endl;
-        cout << "Md temp: "<<initialTemperature<< " Si temp: "<< temperature_current<<endl;
         cout << setw(20) << "Timestep" <<
                 setw(20) << "Time" <<
                 setw(20) << "Temperature" <<
