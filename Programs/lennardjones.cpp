@@ -27,6 +27,8 @@ void LennardJones::calculateForces(System &system){
 
     m_potentialEnergy = 0;
     double epsilon24 = m_epsilon*24;
+    double epsilon4 = m_epsilon*4;
+
     double L = system.systemSize()[0];
     //std::cout <<L<<std::endl;
     int i_length = system.atoms().size();
@@ -50,8 +52,7 @@ void LennardJones::calculateForces(System &system){
             vec3 force = epsilon24*( 2*sigmaDivR12 - sigmaDivR6  ) * r_vec/(r*r);
             atom_i->force +=  force;
             atom_j->force -=  force;
-            m_potentialEnergy += 4*m_epsilon*(  sigmaDivR12- sigmaDivR6   );
-
+            m_potentialEnergy += epsilon4*(  sigmaDivR12- sigmaDivR6   );
         }
     }
 }

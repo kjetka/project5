@@ -6,13 +6,11 @@
 #include "math/random.h"
 
 System::System(int numberOfUnitCellsEachDimension_){
- //nrAtoms = nrAtoms_;
  numberOfUnitCellsEachDimension = numberOfUnitCellsEachDimension_;
  int AtomsPerUnitCell = 4;
  m_nrAtoms = pow(numberOfUnitCellsEachDimension,3) * AtomsPerUnitCell;
 }
 
-// spr ???
 System::~System(){
     for(Atom *atom : m_atoms) {
         delete atom;
@@ -32,11 +30,9 @@ void System::applyPeriodicBoundaryConditions() {
 }
 
 void System::removeTotalMomentum(){
-    // Find the total momentum and remove momentum equally on each atom so the total momentum becomes zero.
     vec3 totalMomentum;
     for(auto& atom : m_atoms){
         totalMomentum += atom->velocity*atom->mass();
-        //std::cout << atom->velocity<<std::endl;
     }
 
     vec3 everyMomentumChange = totalMomentum/m_nrAtoms;
@@ -65,20 +61,6 @@ void System::test_removeTotalMomentum(){
 
 
 void System::createFCCLattice(double latticeConstant, double temperature) {
-    // You should implement this function properly. Right now, 100 atoms are created uniformly placed in the system of size (10, 10, 10).
-    /*
-    for(int i=0; i<nrAtoms; i++) {
-        Atom *atom = new Atom(UnitConverter::massFromSI(6.63352088e-26));
-        double x = Random::nextDouble(0, 10); // random number in the interval [0,10]
-        double y = Random::nextDouble(0, 10);
-        double z = Random::nextDouble(0, 10);
-        atom->position.set(x,y,z);
-        atom->resetVelocityMaxwellian(temperature);
-        m_atoms.push_back(atom);
-    }
-    setSystemSize(vec3(10, 10, 10)); // Remember to set the correct system size!
-    */
-
 
     vec3 iHat(1,0,0); iHat *= latticeConstant;
     vec3 jHat(0,1,0); jHat *= latticeConstant;
@@ -90,7 +72,6 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
     vec3 r4 = iHat/2.0  + jHat*0 + kHat/2.0;
 
     std::vector<vec3> basisvectors = {r1,r2,r3,r4};
-    //std::cout << basisvectors[3]<<std::endl;
     int atomsInEachUnitscell = basisvectors.size();
     Random::randomSeed();
     Random::nextGaussian(1,0.5);
@@ -114,23 +95,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
         }
     }
     double L = numberOfUnitCellsEachDimension*latticeConstant;
-    setSystemSize(vec3(L, L, L)); // Remember to set the correct system size!
-
-/*
-
-        Atom *atom = new Atom(UnitConverter::massFromSI(6.63352088e-26));
-        atom->position.set(5,5,5);
-        atom->velocity.zeros();
-
-        m_atoms.push_back(atom);
-        Atom *atom2= new Atom(UnitConverter::massFromSI(6.63352088e-26));
-        atom2->position.set(9,5,5);
-        atom2->velocity.zeros();
-
-
-        m_atoms.push_back(atom2);
-        setSystemSize(vec3(20, 20, 20));
-*/
+    setSystemSize(vec3(L, L, L));
 }
 
 

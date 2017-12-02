@@ -15,13 +15,11 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 4e3;
-    //vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
-    //vector<double> Temperatures_si = {50.0,85.0};
-    //vector<double> Temperatures_si = {300.0,500.0};
-    vector<double> Temperatures_si = {100};
+    int timeLimit = 5e4;
+    vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
+    int printrate = 50;
 
 /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
@@ -32,12 +30,20 @@ int main(){
 
 */
     cout << "discussion: better to have kinetic energy in Lennard Jones class? Atom class?"<<endl;
+    cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
+    cout << "  I started on the framework for Diffusion sampling in statiscssampler (diffusion samler). MSD is mean square distance - see task     "
+    cout << "------------------------------------" <<endl;
+    cout << "writing to file " << timeLimit/printrate << " times "<<endl;
+
+
+
+
 
     for(int temperature_current:Temperatures_si){
 
-        double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); // in Kelvin
+        double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); //Kelvin
 
-        cout << "------------------------------------------------"<<endl;
+        /*cout << "------------------------------------------------"<<endl;
         cout << "Md temp: "<<initialTemperature<< " Si temp: "<< temperature_current<<endl;
         cout << setw(20) << "Timestep" <<
                 setw(20) << "Time" <<
@@ -46,66 +52,47 @@ int main(){
                 setw(20) << "PotentialEnergy" <<
                 setw(20) << "TotalEnergy"  << endl;
 
-
+        */
 
         // setting up system
-        System system(nrUnitCellsEachDirection);
-
+        System system(nrUnitCellsEachDirection);        
         system.createFCCLattice(latticeConstant, initialTemperature);
-
-        system.potential().setEpsilon(UnitConverter::energyFromSI(119.8*UnitConverter::kb));
-
-        system.potential().setSigma(UnitConverter::lengthToAngstroms(3.405));
-
         system.removeTotalMomentum();
 
+        // input parametres for force and pot.
+        system.potential().setEpsilon(UnitConverter::energyFromSI(119.8*UnitConverter::kb));
+        system.potential().setSigma(UnitConverter::lengthToAngstroms(3.405));
+
+        // preparing output files
         string movietitle = "../results/movies/movie_T_"+to_string(temperature_current)+".xyz";
         IO movie(movietitle.c_str());
         string txtfilename = "../results/txt/5d_T_"+to_string(temperature_current)+".txt";
         StatisticsSampler statisticsSampler(txtfilename.c_str());
 
-       /* system.calculateForces();
-        statisticsSampler.sample(system);
-        cout << setw(20) << system.steps()<<
-                setw(20) << system.time() <<
-                setw(20) << statisticsSampler.temperature() <<
-                setw(20) << statisticsSampler.kineticEnergy() <<
-                setw(20) << statisticsSampler.potentialEnergy() <<
-                setw(20) << statisticsSampler.totalEnergy() << endl;
-        system.step(dt);
-        statisticsSampler.sample(system);
-        cout << setw(20) << system.steps()<<
-                setw(20) << system.time() <<
-                setw(20) << statisticsSampler.temperature() <<
-                setw(20) << statisticsSampler.kineticEnergy() <<
-                setw(20) << statisticsSampler.potentialEnergy() <<
-                setw(20) << statisticsSampler.totalEnergy() << endl;
-*/
 
-        system.calculateForces();
+        // integration loop
+        system.calculateForces();   // in order to sample both kin and pot energy at t=0
         for(int timestep=0; timestep<timeLimit; timestep++) {
 
             statisticsSampler.sample(system); // system - same as *this within a object.
-
-            if( timestep % 10 == 0||timestep ==0 ) { //approx 24*4=96 frames second.
-              cout << setw(20) << system.steps()<<
+            //write  to file (and print)
+            if( timestep % printrate == 0||timestep ==0 ) {
+              /*cout << setw(20) << system.steps()<<
                       setw(20) << system.time() <<
                       setw(20) << statisticsSampler.temperature() <<
                       setw(20) << statisticsSampler.kineticEnergy() <<
                       setw(20) << statisticsSampler.potentialEnergy() <<
                       setw(20) << statisticsSampler.totalEnergy() << endl;
 
-
+                */
                 statisticsSampler.saveToFile(system);
                 movie.saveState(system);
             }
 
            system.step(dt);
 
-            // Defining the interval the variables are written to .txt and .xyz file
         } // End integration loop
 
-        //cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
         movie.close();
         statisticsSampler.closeFile();
 
