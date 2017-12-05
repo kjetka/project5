@@ -12,10 +12,11 @@ void VelocityVerlet::integrate(System &system, double dt){
         atom->velocity += dthalf*atom->force/(atom->mass());
         atom->position += atom->velocity*dt;// /atom->mass(); // This comment should not be here!!!!
     }
-    //system.applyPeriodicBoundaryConditions();
+    system.applyPeriodicBoundaryConditions();
     system.calculateForces();
 
     for(Atom *atom : system.atoms()) {
         atom->velocity += dthalf*atom->force/(atom->mass());
     }
 }
+

@@ -12,7 +12,6 @@ private:
     double m_totEnergyPreviousStep = 0;
     double m_temperature = 0;
     double m_density = 0;
-    double m_MSD = 0;
 public:
 
     StatisticsSampler(const char *filename);
@@ -37,6 +36,5 @@ public:
     double prevTotalEnergy(){return m_totEnergyPreviousStep;}
     double temperature() { return m_temperature; }
     double density() { return m_density; }
-    double MSD() { return m_MSD; }
 };
 #endif

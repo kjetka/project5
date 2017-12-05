@@ -42,7 +42,8 @@ void IO::saveState(System &system){
                    UnitConverter::lengthToAngstroms(atom->position.x()) << " " <<
                    UnitConverter::lengthToAngstroms(atom->position.y()) << " " <<
                    UnitConverter::lengthToAngstroms(atom->position.z()) << " " <<
-                   UnitConverter::lengthToAngstroms(atom->Displacement) << endl;
+                   UnitConverter::lengthToAngstroms( (atom->position-atom->position0).length()) <<endl;
         }
+
     }
 }
