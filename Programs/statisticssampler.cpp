@@ -120,6 +120,7 @@ void StatisticsSampler::sampleMSD(System &system){
     m_MSD = sum_SquaredDisplacement/system.nrAtoms();
 }
 
+
 void StatisticsSampler::sampleDiffusionConst(System &system){
     sampleMSD(system);
 
