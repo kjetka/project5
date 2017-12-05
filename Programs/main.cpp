@@ -33,11 +33,7 @@ int main(){
 */
     cout << "discussion: better to have kinetic energy in Lennard Jones class? Atom class?"<<endl;
     cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
-    cout << " Kjetil: I started on the framework for Diffusion sampling in statiscssampler (diffusion samler). MSD is mean square distance - see task     "<<endl;
-    cout << "Changes in .xyz file: H, x, y, z, |r-r0|"<< endl;
-    cout << "To see how behaves: Color code displacement in Ovito"<< endl;
 
-    cout << "------------------------------------" <<endl;
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
     cout << UnitConverter::temperatureToSI(2.0)<<endl;
