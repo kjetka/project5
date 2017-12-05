@@ -3,8 +3,6 @@
 #include <cmath>
 
 using namespace std;
-
-
 double UnitConverter::m0 = 0;
 double UnitConverter::q0 = 0;
 double UnitConverter::hbar0 = 0;

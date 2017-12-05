@@ -15,17 +15,15 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 5e6;
+    int timeLimit = 1e4;
     //vector<double> Temperatures_si = {50.0,85.0,300.0};
-    vector<double> Temperatures_si = {150.0};
+    vector<double> Temperatures_si = {100.0};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-    int printrate = 1.e3;
-
+    int printrate = 1e2;
 
 /*
-
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
     cout << "One unit of velocity is " << UnitConverter::velocityToSI(1.0) << " meters/second" << endl;
     cout << "One unit of time is " << UnitConverter::timeToSI(1.0) << " seconds" << endl;
@@ -35,21 +33,16 @@ int main(){
 */
     cout << "discussion: better to have kinetic energy in Lennard Jones class? Atom class?"<<endl;
     cout << "check if applyPeriodicBoundaryConditions works for diffusion"<< endl;
-    cout << " Kjetil: I started on the framework for Diffusion sampling in statiscssampler (diffusion samler). MSD is mean square distance - see task     "<<endl;
-    cout << "Changes in .xyz file: H, x, y, z, |r-r0|"<< endl;
-    cout << "To see how behaves: Color code displacement in Ovito"<< endl;
 
-    cout << "------------------------------------" <<endl;
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
-
-
+    cout << UnitConverter::temperatureToSI(2.0)<<endl;
 
 
     for(int temperature_current:Temperatures_si){
 
         double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); //Kelvin
-        cout << "Md temp: "<<initialTemperature<< " Si temp: "<< temperature_current<<endl;
+        cout << "MD temp: "<<initialTemperature<< " SI temp: "<< temperature_current<<endl;
 
         cout << "------------------------------------------------"<<endl;
         cout << setw(20) << "Timestep" <<
@@ -62,7 +55,7 @@ int main(){
 
 
         // setting up system
-        System system(nrUnitCellsEachDirection);        
+        System system(nrUnitCellsEachDirection);
         system.createFCCLattice(latticeConstant, initialTemperature);
         system.removeTotalMomentum();
 
@@ -106,7 +99,6 @@ int main(){
 
 
     } // end Temperature loop :)
-
 
 
 
