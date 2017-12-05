@@ -20,11 +20,17 @@ System::~System(){
 
 void System::applyPeriodicBoundaryConditions() {
     // Read here: http://en.wikipedia.org/wiki/Periodic_boundary_conditions#Practical_implementation:_continuity_and_the_minimum_image_convention
-
     for(auto& atom : m_atoms){ //python: for i in list...
+
         for(int i=0;i<3; i++){
-            if (atom->position[i] < 0) atom->position[i] += m_systemSize[i];
-            if (atom->position[i] > m_systemSize[i]) atom->position[i] -= m_systemSize[i];
+            if (atom->position[i] < 0){
+                atom->position[i] += m_systemSize[i];
+                atom->boundaryJumps[i] += m_systemSize[i];
+            }
+            if (atom->position[i] > m_systemSize[i]){
+                atom->position[i] -= m_systemSize[i];
+                atom->boundaryJumps[i] -= m_systemSize[i];
+            }
         }
     }
 }
@@ -90,6 +96,7 @@ void System::createFCCLattice(double latticeConstant, double temperature) {
                     atom->position.set(x,y,z);
                     atom->position0.set(x,y,z);
                     atom->resetVelocityMaxwellian(temperature);
+                    atom->boundaryJumps.set(0,0,0);
                     m_atoms.push_back(atom);
                 }
             }

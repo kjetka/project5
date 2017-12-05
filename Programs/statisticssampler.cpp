@@ -78,7 +78,7 @@ void StatisticsSampler::testEnergyConservation(){
             std::cout<< "  current energy = "<< totalEnergy()<<std::endl;
             std::cout<< " m_totEnergyPreviousStep = "<<m_totEnergyPreviousStep <<endl;
 
-            exit(EXIT_FAILURE);
+           exit(EXIT_FAILURE);
 
         }
     }
@@ -111,7 +111,7 @@ void StatisticsSampler::sampleDensity(System &system){
 
 void StatisticsSampler::sampleMSD(System &system){
     for(Atom *atom : system.atoms()) {
-        atom->MSD=(atom->position - atom->position0).length();
+        atom->MSD=((atom->position-atom->boundaryJumps) - atom->position0).length();
     }
 }
 
