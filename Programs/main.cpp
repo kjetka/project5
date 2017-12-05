@@ -15,13 +15,13 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 5e4;
-    vector<double> Temperatures_si = {50.0,85.0,300.0,500.0};
-     Temperatures_si = {80, 300};
+    int timeLimit = 5e6;
+    //vector<double> Temperatures_si = {50.0,85.0,300.0};
+    vector<double> Temperatures_si = {150.0};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-    int printrate = 50;
+    int printrate = 1.e3;
 
 /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
