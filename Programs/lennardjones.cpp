@@ -48,6 +48,7 @@ void LennardJones::calculateForces(System &system){
             double sigmaDivR6 = 1.0;
             for(int gange=0;gange<6;gange++) { sigmaDivR6*=temp;}
 
+
             double sigmaDivR12 = sigmaDivR6*sigmaDivR6;
             vec3 force = epsilon24*( 2*sigmaDivR12 - sigmaDivR6  ) * r_vec/(r*r);
             atom_i->force +=  force;
