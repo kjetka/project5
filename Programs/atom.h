@@ -12,7 +12,7 @@ public:
     vec3 force;
     vec3 position0;
     vec3 boundaryJumps;
-    double MSD=0;
+    double Displacement = 0;
 
     Atom(double mass);
     void resetForce();

@@ -17,7 +17,7 @@ int main(){
     int nrUnitCellsEachDirection =5;
     int timeLimit = 1e4;
     //vector<double> Temperatures_si = {50.0,85.0,300.0};
-    vector<double> Temperatures_si = {1000.0};
+    vector<double> Temperatures_si = {100.0};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
