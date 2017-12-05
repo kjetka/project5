@@ -24,6 +24,7 @@ void System::applyPeriodicBoundaryConditions() {
     for(auto& atom : m_atoms){ //python: for i in list...
         for(int i=0;i<3; i++){
             if (atom->position[i] < 0) atom->position[i] += m_systemSize[i];
+
             if (atom->position[i] > m_systemSize[i]) atom->position[i] -= m_systemSize[i];
         }
     }

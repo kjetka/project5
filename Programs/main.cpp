@@ -15,13 +15,13 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 5e6;
+    int timeLimit = 5e3;
     //vector<double> Temperatures_si = {50.0,85.0,300.0};
-    vector<double> Temperatures_si = {150.0};
+    vector<double> Temperatures_si = {1100.0};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-    int printrate = 1.e3;
+    int printrate = 1.e2;
 
 /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
@@ -40,8 +40,7 @@ int main(){
     cout << "------------------------------------" <<endl;
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
-
-
+    cout << UnitConverter::temperatureToSI(2.0)<<endl;
 
 
     for(int temperature_current:Temperatures_si){
@@ -49,7 +48,7 @@ int main(){
         double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); //Kelvin
         cout << "Md temp: "<<initialTemperature<< " Si temp: "<< temperature_current<<endl;
 
-        /*cout << "------------------------------------------------"<<endl;
+            cout << "------------------------------------------------"<<endl;
         cout << setw(20) << "Timestep" <<
                 setw(20) << "Time" <<
                 setw(20) << "Temperature" <<
@@ -57,10 +56,10 @@ int main(){
                 setw(20) << "PotentialEnergy" <<
                 setw(20) << "TotalEnergy"  << endl;
 
-        */
+
 
         // setting up system
-        System system(nrUnitCellsEachDirection);        
+        System system(nrUnitCellsEachDirection);
         system.createFCCLattice(latticeConstant, initialTemperature);
         system.removeTotalMomentum();
 
@@ -82,14 +81,14 @@ int main(){
             statisticsSampler.sample(system); // system - same as *this within a object.
             //write  to file (and print)
             if( timestep % printrate == 0||timestep ==0 ) {
-              /*cout << setw(20) << system.steps()<<
+              cout << setw(20) << system.steps()<<
                       setw(20) << system.time() <<
                       setw(20) << statisticsSampler.temperature() <<
                       setw(20) << statisticsSampler.kineticEnergy() <<
                       setw(20) << statisticsSampler.potentialEnergy() <<
                       setw(20) << statisticsSampler.totalEnergy() << endl;
 
-                */
+
                 statisticsSampler.saveToFile(system);
                 movie.saveState(system);
             }
@@ -104,7 +103,6 @@ int main(){
 
 
     } // end Temperature loop :)
-
 
 
 
