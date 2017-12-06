@@ -19,3 +19,4 @@ void VelocityVerlet::integrate(System &system, double dt){
         atom->velocity += dthalf*atom->force/(atom->mass());
     }
 }
+

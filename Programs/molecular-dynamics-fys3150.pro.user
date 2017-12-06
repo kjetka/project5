@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< Kjetil_dev
-<!-- Written by QtCreator 4.4.1, 2017-12-04T20:24:13. -->
-=======
-<!-- Written by QtCreator 4.4.1, 2017-12-01T15:18:39. -->
->>>>>>> added notes about errors in program
+<!-- Written by QtCreator 4.4.1, 2017-11-24T17:17:36. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>

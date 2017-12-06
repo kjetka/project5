@@ -27,7 +27,8 @@ void StatisticsSampler::headerToFile(){
               "\t\t" << "Temperature" <<
               "\t\t" << "Kin" <<
               "\t\t" << "Pot" <<
-              "\t\t" << "TotalE" << endl;
+              "\t\t" << "TotalE" <<
+              "\t\t" << "MSD" << endl;
 }
 
 void StatisticsSampler::closeFile(){
@@ -54,7 +55,8 @@ void StatisticsSampler::saveToFile(System &system){
                "\t\t" << temperature() <<
                "\t\t" << kineticEnergy() <<
                "\t\t" << potentialEnergy() <<
-               "\t\t" << totalEnergy() << "\n"; //\n faster than endl;
+               "\t\t" << totalEnergy() <<
+               "\t\t" << MSD() << "\n";;//\n faster than endl;
 }
 
 void StatisticsSampler::sample(System &system){
@@ -105,13 +107,17 @@ void StatisticsSampler::sampleDensity(System &system){
 }
 
 void StatisticsSampler::sampleMSD(System &system){
+    double sum_SquaredDisplacement;
     for(Atom *atom : system.atoms()) {
-        atom->MSD=(atom->position - atom->position0).length();
+        atom->Displacement=((atom->position-atom->boundaryJumps) - atom->position0).length();
+        sum_SquaredDisplacement += atom->Displacement*atom->Displacement;
     }
+    m_MSD = sum_SquaredDisplacement/system.nrAtoms();
 }
 
 void StatisticsSampler::sampleDiffusionConst(System &system){
     sampleMSD(system);
+
 }
 
 
