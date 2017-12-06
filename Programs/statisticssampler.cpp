@@ -57,8 +57,7 @@ void StatisticsSampler::saveToFile(System &system){
                "\t\t" << totalEnergy() << "\n"; //\n faster than endl;
 }
 
-void StatisticsSampler::sample(System &system)
-{
+void StatisticsSampler::sample(System &system){
     // Here you should measure different kinds of statistical properties and save it to a file.
     sampleKineticEnergy(system);
     samplePotentialEnergy(system);
@@ -69,17 +68,13 @@ void StatisticsSampler::sample(System &system)
     //sampleDiffusionConst(system);
 }
 void StatisticsSampler::testEnergyConservation(){
-    double conservecriteria = 1e-5;
+    double conservecriteria = 5e-5;
     if (m_totEnergyPreviousStep!=0){
         if((totalEnergy()/ (double) m_totEnergyPreviousStep-1) > conservecriteria){
             std::cout<<   "ERROR: Energy is not conserved! check StatisticsSampler class" <<std::endl;
             std::cout<< "  current/previous energy - 1 ="<< totalEnergy()/ m_totEnergyPreviousStep -1 <<endl;
             std::cout <<  "  current/previous energy -1 must be less than " <<conservecriteria <<endl;
-            std::cout<< "  current energy = "<< totalEnergy()<<std::endl;
-            std::cout<< " m_totEnergyPreviousStep = "<<m_totEnergyPreviousStep <<endl;
-
             exit(EXIT_FAILURE);
-
         }
     }
     m_totEnergyPreviousStep = totalEnergy();
@@ -118,7 +113,6 @@ void StatisticsSampler::sampleMSD(System &system){
 void StatisticsSampler::sampleDiffusionConst(System &system){
     sampleMSD(system);
 }
-
 
 
 

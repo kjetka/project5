@@ -17,7 +17,7 @@ int main(){
     int nrUnitCellsEachDirection =5;
     int timeLimit = 5e3;
     //vector<double> Temperatures_si = {50.0,85.0,300.0};
-    vector<double> Temperatures_si = {1100.0};
+    vector<double> Temperatures_si = {550,600,650};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
@@ -36,7 +36,6 @@ int main(){
 
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
-    cout << UnitConverter::temperatureToSI(2.0)<<endl;
 
 
     for(int temperature_current:Temperatures_si){
