@@ -11,6 +11,7 @@ System::System(int numberOfUnitCellsEachDimension_){
  m_nrAtoms = pow(numberOfUnitCellsEachDimension,3) * AtomsPerUnitCell;
 }
 
+
 System::~System(){
     for(Atom *atom : m_atoms) {
         delete atom;

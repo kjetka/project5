@@ -58,6 +58,7 @@ public:
 
     void setSteps(int steps) {
         m_steps = steps; }
+
     int nrAtoms(){
         return m_nrAtoms;
     }

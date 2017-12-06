@@ -10,10 +10,14 @@ Atom::Atom(double mass) :
     
 }
 
+
 void Atom::resetForce(){
     force.zeros();
 }
 
+void Atom::resetBoundaryJumps(){
+    boundaryJumps.zeros();
+}
 
 void Atom::resetVelocityMaxwellian(double temperature){
     // Resetting the velocity according to a Maxwell-Boltzmann distribution (see http://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution )

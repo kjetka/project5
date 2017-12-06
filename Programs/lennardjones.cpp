@@ -5,6 +5,7 @@ double LennardJones::potentialEnergy() const{
     return m_potentialEnergy;
 }
 
+
 double LennardJones::sigma() const{
     return m_sigma;
 }
@@ -47,7 +48,6 @@ void LennardJones::calculateForces(System &system){
             double temp = m_sigma/r;
             double sigmaDivR6 = 1.0;
             for(int gange=0;gange<6;gange++) { sigmaDivR6*=temp;}
-
 
             double sigmaDivR12 = sigmaDivR6*sigmaDivR6;
             vec3 force = epsilon24*( 2*sigmaDivR12 - sigmaDivR6  ) * r_vec/(r*r);
