@@ -19,9 +19,11 @@ int main(){
     vector<double> Temperatures_si = {600, 650, 700, 750, 800, 850, 900, 950, 1000};
     //vector<double> Temperatures_si = {100.0};
 
+
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
     int printrate = 1e3;
+
 
 /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
@@ -36,6 +38,7 @@ int main(){
 
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
+    cout << UnitConverter::temperatureToSI(2.0)<<endl;
 
 
     for(int temperature_current:Temperatures_si){

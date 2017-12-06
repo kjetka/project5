@@ -5,6 +5,7 @@ double LennardJones::potentialEnergy() const{
     return m_potentialEnergy;
 }
 
+
 double LennardJones::sigma() const{
     return m_sigma;
 }

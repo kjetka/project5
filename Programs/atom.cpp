@@ -10,6 +10,7 @@ Atom::Atom(double mass) :
     
 }
 
+
 void Atom::resetForce(){
     force.zeros();
 }
