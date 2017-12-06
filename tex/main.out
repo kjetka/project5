@@ -1,6 +1,13 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Theory}{}% 2
-\BOOKMARK [1][-]{section.3}{Method}{}% 3
-\BOOKMARK [1][-]{section.4}{Result }{}% 4
-\BOOKMARK [1][-]{section.5}{Discussion}{}% 5
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Crystal structure}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Probability distribution}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Lennard Jones potential}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Method}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Code structure}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Overview of the classes}{subsection.3.1}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Program flow}{subsection.3.1}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Bugs and unit tests}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Result }{}% 11
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 12
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 13

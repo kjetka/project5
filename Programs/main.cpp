@@ -36,7 +36,6 @@ int main(){
 
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
-    cout << UnitConverter::temperatureToSI(2.0)<<endl;
 
 
     for(int temperature_current:Temperatures_si){
