@@ -15,13 +15,13 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 1e4;
-    //vector<double> Temperatures_si = {50.0,85.0,300.0};
-    vector<double> Temperatures_si = {100.0};
+    int timeLimit = 5e4;
+    vector<double> Temperatures_si = {600, 650, 700, 750, 800, 850, 900, 950, 1000};
+    //vector<double> Temperatures_si = {100.0};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-    int printrate = 1e2;
+    int printrate = 1e3;
 
 /*
     cout << "One unit of length is " << UnitConverter::lengthToSI(1.0) << " meters" << endl;
@@ -43,7 +43,7 @@ int main(){
 
         double initialTemperature = UnitConverter::temperatureFromSI(temperature_current); //Kelvin
         cout << "MD temp: "<<initialTemperature<< " SI temp: "<< temperature_current<<endl;
-
+/*
         cout << "------------------------------------------------"<<endl;
         cout << setw(20) << "Timestep" <<
                 setw(20) << "Time" <<
@@ -51,7 +51,7 @@ int main(){
                 setw(20) << "KineticEnergy" <<
                 setw(20) << "PotentialEnergy" <<
                 setw(20) << "TotalEnergy"  << endl;
-
+*/
 
 
         // setting up system
@@ -77,13 +77,13 @@ int main(){
             statisticsSampler.sample(system); // system - same as *this within a object.
             //write  to file (and print)
             if( timestep % printrate == 0||timestep ==0 ) {
-              cout << setw(20) << system.steps()<<
+/*              cout << setw(20) << system.steps()<<
                       setw(20) << system.time() <<
                       setw(20) << statisticsSampler.temperature() <<
                       setw(20) << statisticsSampler.kineticEnergy() <<
                       setw(20) << statisticsSampler.potentialEnergy() <<
                       setw(20) << statisticsSampler.totalEnergy() << endl;
-
+*/
 
                 statisticsSampler.saveToFile(system);
                 movie.saveState(system);

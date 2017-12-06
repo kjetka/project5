@@ -1,1 +1,0 @@
-		timesteps		t		Temperature		Kin		Pot		TotalE
