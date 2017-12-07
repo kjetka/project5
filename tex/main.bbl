@@ -23,4 +23,16 @@ Martin Karplus and Gregory~A. Petsko.
 \newblock Molecular dynamics simulations in biology.
 \newblock {\em Nature}, 347:631 EP --, 10 1990.
 
+\bibitem{Jensen}
+Morten Hjorth-Jensen.
+\newblock Computational physics: Lecture notes fall 2015.
+\newblock Department of Physics, University of Oslo, 8 2015.
+\newblock Chapter 12 and 13.
+
+\bibitem{VESTA}
+K.~Momma and F.~Izumi.
+\newblock Vesta: a three-dimensional visualization system for electronic and
+  structural analysis.
+\newblock {\em J. Appl. Crystallogr.}, 41:653--658, 2008.
+
 \end{thebibliography}

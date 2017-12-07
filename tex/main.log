@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  6 DEC 2017 14:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.11)  7 DEC 2017 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2245,10 +2245,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./the
 ory.tex
-<../figures/fcc.jpg, id=96, 1670.24pt x 803.0pt>
+Overfull \hbox (5.75174pt too wide) in paragraph at lines 16--20
+[]\T1/cmr/m/n/12 v-distribution: why Mbolzt-mann Dis-cuss why the ve-loc-ity of
+ atoms are given from Maxwell-Boltzmann
+ []
+
+<../figures/fcc.jpg, id=107, 1670.24pt x 803.0pt>
 File: ../figures/fcc.jpg Graphic file (type jpg)
  <use ../figures/fcc.jpg>
-Package pdftex.def Info: ../figures/fcc.jpg used on input line 8.
+Package pdftex.def Info: ../figures/fcc.jpg used on input line 30.
 (pdftex.def)             Requested size: 357.54655pt x 171.89421pt.
 
 
@@ -2257,33 +2262,41 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <../figures/fcc.jpg>]
-Overfull \hbox (5.75174pt too wide) in paragraph at lines 23--25
-\T1/cmr/m/n/12 v-distribution: why Mbolzt-mann Dis-cuss why the ve-loc-ity of a
-toms are given from Maxwell-Boltzmann
- []
-
+[2]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]) (./method.tex
+[3 <../figures/fcc.jpg>] <../figures/LJ.pdf, id=140, 578.16pt x 433.62pt>
+File: ../figures/LJ.pdf Graphic file (type pdf)
+
+<use ../figures/LJ.pdf>
+Package pdftex.def Info: ../figures/LJ.pdf used on input line 75.
+(pdftex.def)             Requested size: 357.54655pt x 268.16013pt.
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4] <../figures/klasser_proj5.pdf, id=135, 744.7825pt x 410.53375pt>
+[4 <../figures/LJ.pdf>] (./method.tex
+<../figures/klasser_proj5.pdf, id=213, 744.7825pt x 410.53375pt>
 File: ../figures/klasser_proj5.pdf Graphic file (type pdf)
 
 <use ../figures/klasser_proj5.pdf>
 Package pdftex.def Info: ../figures/klasser_proj5.pdf used on input line 44.
 (pdftex.def)             Requested size: 510.78302pt x 281.55846pt.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2303,15 +2316,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <../figures/klasser_proj5.pdf>]) (./result.tex) (./discussion.tex)
-(./conclusion.tex)
+[6 <../figures/klasser_proj5.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] (./main.bbl) (./appendix.tex)
+[7]) (./result.tex) (./discussion.tex) (./conclusion.tex)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8] (./main.bbl) (./appendix.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
 
 
@@ -2320,22 +2339,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7]
+[9]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F695BF7A6649567DEDF138D60B4C1A3B;760.
+(rerunfilecheck)             Checksum: FC2630591D06628525D5ECABFF674D8C;899.
  ) 
 Here is how much of TeX's memory you used:
- 21806 strings out of 493089
- 347365 string characters out of 6134841
- 523277 words of memory out of 5000000
- 24843 multiletter control sequences out of 15000+600000
+ 21840 strings out of 493089
+ 347805 string characters out of 6134841
+ 531277 words of memory out of 5000000
+ 24856 multiletter control sequences out of 15000+600000
  41143 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,14n,97p,10425b,1972s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,12n,97p,10425b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{
 /usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr
@@ -2346,29 +2365,30 @@ ve/2015/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}</usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-cm-super/sfrm2074.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm
--super/sfsl1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
-uper/sfti1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-sup
-er/sftt1200.pfb>
-Output written on main.pdf (7 pages, 515166 bytes).
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/cm-super/sfrm0800.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1000.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+cm-super/sfrm1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm
+-super/sfrm2074.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
+uper/sfsl1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-sup
+er/sfti1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super
+/sftt1200.pfb>
+Output written on main.pdf (9 pages, 556247 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 234 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 291 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

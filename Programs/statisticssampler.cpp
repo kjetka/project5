@@ -71,7 +71,7 @@ void StatisticsSampler::sample(System &system)
     //sampleDiffusionConst(system);
 }
 void StatisticsSampler::testEnergyConservation(){
-    double conservecriteria = 1e-4;
+    double conservecriteria = 2e-4;
     if (m_totEnergyPreviousStep!=0){
         if((totalEnergy()/ (double) m_totEnergyPreviousStep-1) > conservecriteria){
             std::cout<<   "ERROR: Energy is not conserved! check StatisticsSampler class" <<std::endl;
