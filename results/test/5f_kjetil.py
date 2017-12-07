@@ -14,7 +14,7 @@ font = {'family' : 'normal',
 matplotlib.rc('font', **font)
 
 output = Popen(["ls"], stdout=PIPE).communicate()[0]
-txtfiles = re.findall("5d_T_.*\.txt",output,re.IGNORECASE)
+txtfiles = re.findall("5_T_.*\.txt",output,re.IGNORECASE)
 print txtfiles
 i = -1
 
@@ -54,16 +54,16 @@ for txtfile in txtfiles:
         labell = txtfile[start+2:stopp]
         print labell   
         
-        a,b = polyfit(data["t"], data["MSD"], 1)
-        #D_= a/6*1e-16 #from AA to cm        
-        D_= a/6
+        a,b = polyfit(data["t"][-len(data["t"])/2:], data["MSD"][-len(data["t"])/2:], 1)
+        D_= a/6*1e-16 #from AA to cm        
+        #D_= a/6
         D = "%0.3g"%D_        
         
                 
         
         diffusion[i] = D_
         
-        temp[i] = sum(data["Temperature"][-100:])*T0/100.0
+        temp[i] = sum(data["Temperature"][-100:])/100.0
         
         if data["Temperature"][0] < 5.2:        
             figure(1, figsize=(9,7))
@@ -71,7 +71,7 @@ for txtfile in txtfiles:
             figure(2, figsize=(9,7))
             
         plot(data["t"], data["MSD"], colors[i]+markers[i], Markersize=4,markeredgecolor=colors[i],label = r"T = %.0f K"%temp[i])
-        plot(data["t"], a*data["t"]+b, colors[i], label = "D = "+ D + " $\AA^2$/s")
+        plot(data["t"], a*data["t"]+b, colors[i], label = "D = "+ D + " cm$^2$/s")
 
 ax = subplot(111)            
 
@@ -80,7 +80,7 @@ title("Diffusion constants")
 ylabel(r"$<r^2(t)>$")
 xlabel("t")
 legend(loc=4,fontsize=12, fancybox=True, framealpha=0.5)
-savefig("../../figures/diffusion_constants_low.pdf")
+savefig("diffusion_constants_low.pdf")
 
 ax2 = subplot(111)
 
@@ -89,14 +89,14 @@ title("Diffusion constants")
 ylabel(r"$<r^2(t)>$")
 xlabel("t")
 legend(loc=2,fontsize=12, fancybox=True, framealpha=0.5)
-savefig("../../figures/diffusion_constants_high.pdf")
+savefig("diffusion_constants_high.pdf")
 
 figure(3, figsize=(8,6))
 title("Diffusion constant T dependence")
 ylabel("D")
 xlabel("T [K]")
 plot(temp, diffusion, 'o')
-savefig("../../figures/diffusion_temp.pdf")
+savefig("diffusion_temp.pdf")
 
 show()
 

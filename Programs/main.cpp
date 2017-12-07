@@ -16,7 +16,7 @@ int main(){
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
     int timeLimit = 6e4;
-    vector<double> Temperatures_si = {20, 50, 100, 200};
+    vector<double> Temperatures_si = {900, 1000};
     //vector<double> Temperatures_si = {100.0};
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
