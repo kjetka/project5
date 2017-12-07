@@ -15,14 +15,13 @@ int main(){
 
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
-    int timeLimit = 5e4;
-    vector<double> Temperatures_si = {600, 650, 700, 750, 800, 850, 900, 950, 1000};
+    int timeLimit = 6e4;
+    vector<double> Temperatures_si = {20, 50, 100, 200};
     //vector<double> Temperatures_si = {100.0};
-
 
     double latticeConstant = UnitConverter::lengthFromAngstroms(5.26);
     double dt = UnitConverter::timeFromSI(1e-15); // Measured in seconds.
-    int printrate = 1e3;
+    int printrate = timeLimit/(double) 1e3;
 
 
 /*
@@ -66,9 +65,9 @@ int main(){
         system.potential().setSigma(UnitConverter::lengthToAngstroms(3.405));
 
         // preparing output files
-        string movietitle = "../results/movies/movie_T_"+to_string(temperature_current)+".xyz";
+        string movietitle = "../results/movies2/movie_T_"+to_string(temperature_current)+".xyz";
         IO movie(movietitle.c_str());
-        string txtfilename = "../results/txt/5d_T_"+to_string(temperature_current)+".txt";
+        string txtfilename = "../results/txt2/5_T_"+to_string(temperature_current)+".txt";
         StatisticsSampler statisticsSampler(txtfilename.c_str());
 
 

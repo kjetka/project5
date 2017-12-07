@@ -2,6 +2,7 @@
 #include "statisticssampler.h"
 #include "lennardjones.h"
 #include <iostream>
+#include "unitconverter.h"
 
 using std::ofstream; using std::cout; using std::endl;
 
@@ -51,11 +52,11 @@ void StatisticsSampler::saveToFile(System &system){
     }
 
     m_file <<  "\t\t" << system.steps() <<
-               "\t\t" << system.time() <<
-               "\t\t" << temperature() <<
-               "\t\t" << kineticEnergy() <<
-               "\t\t" << potentialEnergy() <<
-               "\t\t" << totalEnergy() <<
+               "\t\t" << UnitConverter::timeToSI(system.time()) <<
+               "\t\t" << UnitConverter::temperatureToSI(temperature()) <<
+               "\t\t" << UnitConverter::energyToEv(kineticEnergy()) <<
+               "\t\t" << UnitConverter::energyToEv(potentialEnergy()) <<
+               "\t\t" << UnitConverter::energyToEv(totalEnergy()) <<
                "\t\t" << MSD() << "\n";;//\n faster than endl;
 }
 
@@ -71,7 +72,7 @@ void StatisticsSampler::sample(System &system)
     //sampleDiffusionConst(system);
 }
 void StatisticsSampler::testEnergyConservation(){
-    double conservecriteria = 1e-4;
+    double conservecriteria = 3e-4;
     if (m_totEnergyPreviousStep!=0){
         if((totalEnergy()/ (double) m_totEnergyPreviousStep-1) > conservecriteria){
             std::cout<<   "ERROR: Energy is not conserved! check StatisticsSampler class" <<std::endl;
