@@ -48,7 +48,7 @@ The code provided for the project were made up of several classes, each with dif
 
 Figure \ref{fig:klasserproj5} illustrates the work flow in the code somewhat simplified. Due to the amount of classes in this project, every time the \textit{atom} class is called is marked by *. As  \textit{system} contains several atoms, each time \textit{atom} is called is by a loop over all the atoms in \textit{system}, updating i.e. the position. To some extent, all the classes can be viewed as a blackbox, with \textit{main} controlling the sequence and what is being performed. 
 
-Step 1)specifies the initial values, like temperature and number of unit cells, sending them to step 1a, which creates the fcc lattice as specified by main. In addition, it also creates instances of \textit{io} and \textit{staticssampler} and initialize  the output files.  It also creates the specified amount of \textit{atom}-instances. In order to integrate the system through time, a time loop is performed in \textit{main}. However, each integration step is then micromanaged by \textit{system} which has a defined instance of \textit{VelocityVerlet}, which does the actual integration over every instance of \textit{atom} in \textit{system}. Through the instance "system" the periodic boundary conditions are applied and forces are calculated, see snippet below. 
+Step 1)specifies the initial values, like temperature and number of unit cells, sending them to step 1a, which creates the fcc lattice as specified by main. In addition, it also creates instances of \textit{io} and \textit{staticssampler} and initialize  the output files.  It also creates the specified amount of \textit{atom}-instances. In order to integrate the system through time, a time loop is performed in \textit{main}. However, each integration step is then micromanaged by \textit{system} through an instance of \textit{VelocityVerlet}, which does the actual integration over every instance of \textit{atom} in \textit{system}. Through the instance "system" the periodic boundary conditions are applied and forces are calculated, see snippet below. 
 
 \lstset{language=C++,
 	numbers=left,
@@ -81,12 +81,45 @@ Step 1)specifies the initial values, like temperature and number of unit cells, 
   
 
 
+
+\subsection{Computational details}
+
+This project used the velocity verlet algorithm in order to integrate the partial differential equations which arises from the newtons second law. 	The velocity Verlet can be derived from a  Taylor expansion around the position $ r(t+\Delta t) $. However, for the velocity there exist a similar Taylor series: $  v_{i+1} = v_i + h\dot{v}_i + \frac{h}{2} \ddot{v}_i + O(h^3)$. Unfortunately, there is no expression for $ \ddot{v}_i $, but it can be approximated by $ h\ddot{v}_i \simeq \dot{v}_{i+1}-\dot{v}_i$. Adding this to the expression for $ v_{i+1} $ and doing some simple algebra one get the final expression for the velocity:
+
+\begin{equation}
+v_{i+1} = v_i +  \frac{h}{2} \left(\dot{v}_{i+1}+\dot{v}_i\right)+ O(h^3) \label{eq:vel_verlet}
+\end{equation}
+
+Looking a bit closer at equation \ref{eq:vel_verlet}, there is a immediate problem. In order to calculate $ v_{i+1} $ one need to already know $ v_{i+1} $. This problem can be solved by updating the velocity in two steps, which gives the following algorithm:
+
+\begin{align}
+v_{i+\frac{1}{2}} &= v_i + \frac{h}{2} a_i\\
+x_{i+1} &= x_i + v_{i+\frac{1}{2}}\\
+a_{i+1} &= \frac{F_{i+1}}{m}\\
+v_{i+1} &=v_{i+\frac{1}{2}}. + \frac{h}{2} a_{i+1}
+\end{align} 
+
+
+
+
+
+
 \subsection{Bugs and unit tests}
 
 As the structure  of the program was provided, a large array of unit tests were not necessary. However, two simple test became very useful. The first, checking that the total momentum was set to 0 provided useful input, as the initial version of "removeTotalMomentum" did not take the changing unit cell size into account. Secondly, the unit test for the conservation of energy revealed several mistakes. One example of this is that we counted the potential energy per atom in interacting pair, instead of each pair. A more serious bug were found in \textit{velocityVerlet} through this unit test. Line 5 in snippet \ref{listing} shows the original, first position update in the algorithm. Here the velocity of each atom is divided by the atom mass, which has no place in the relationship $ \dv{v}{t} = x(t) $. Most likely this is due to a copy and paste error of the line above, simply substituting the force with velocity. 
 
+\subsubsection{Units} \label{sec:units}
 
+In order to avoid round off errors and produce results with direct physical meaning, a specific set of units were used. These molecular dynamics units are presented in the project description, and are:
 
+\begin{align}
+\text{1 unit of mass } &= 1 \text{ a.m.u} = 1.661\times 10^{-27}\mathrm{kg},\\
+\text{1 unit of length } &= 1.0 \text{ \AA} \\
+\text{1 unit of energy } &= 1.651\times 10^{-21}\mathrm{J},\\
+\text{1 unit of temperature} &= 119.735\mathrm{K}.\\
+\text{1 unit of Force}  &= \\
+\text{1 unit of Pressure}  &= 
+\end{align}
 
 
 

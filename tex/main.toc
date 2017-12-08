@@ -1,16 +1,17 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {section}{\numberline {2}Theory}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Crystal structure}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Probability distribution}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Lennard Jones potential}{3}{subsection.2.3}
-\contentsline {section}{\numberline {3}Method}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Code structure}{4}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Overview of the classes}{4}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Program flow}{6}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Bugs and unit tests}{7}{subsection.3.2}
-\contentsline {section}{\numberline {4}Result and Discussion}{7}{section.4}
-\contentsline {subsection}{\numberline {4.1}Density}{7}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Initial temperature for melting}{8}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Real melting temperature}{9}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Diffusion constant}{9}{subsection.4.4}
-\contentsline {section}{\numberline {5}Conclusion}{12}{section.5}
+\contentsline {subsection}{\numberline {2.2}Crystal structure}{2}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Lennard Jones potential }{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}The microcanonical ensemble}{4}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Diffusion and phase transition}{5}{subsubsection.2.4.1}
+\contentsline {section}{\numberline {3}Method}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Code structure}{5}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Overview of the classes}{5}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Program flow}{7}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Computational details}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Bugs and unit tests}{8}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Units}{8}{subsubsection.3.3.1}
+\contentsline {section}{\numberline {4}Result }{9}{section.4}
+\contentsline {section}{\numberline {5}Discussion}{9}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}

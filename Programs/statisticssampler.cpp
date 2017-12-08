@@ -60,8 +60,7 @@ void StatisticsSampler::saveToFile(System &system){
                "\t\t" << MSD() << "\n";;//\n faster than endl;
 }
 
-void StatisticsSampler::sample(System &system)
-{
+void StatisticsSampler::sample(System &system){
     // Here you should measure different kinds of statistical properties and save it to a file.
     sampleKineticEnergy(system);
     samplePotentialEnergy(system);
@@ -125,7 +124,6 @@ void StatisticsSampler::sampleDiffusionConst(System &system){
     sampleMSD(system);
 
 }
-
 
 
 
