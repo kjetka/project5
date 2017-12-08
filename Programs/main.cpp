@@ -16,9 +16,7 @@ int main(){
     // Initial values setting up system
     int nrUnitCellsEachDirection =5;
     int timeLimit = 5e4;
-    //vector<double> Temperatures_si = {900, 950, 1000};
-    //vector<double> Temperatures_si = {610,620,630};
-    vector<double> Temperatures_si = {640};
+    vector<double> Temperatures_si = {590, 595, 600, 605, 610, 615};
 
     //vector<double> Temperatures_si = {100.0};
 
@@ -70,9 +68,9 @@ int main(){
         system.potential().setSigma(UnitConverter::lengthToAngstroms(3.405));
 
 //        // preparing output files
-        string movietitle = "../results/movies/movie_T_"+to_string(temperature_current)+".xyz";
+        string movietitle = "../results/movies2/movie_T_"+to_string(temperature_current)+".xyz";
         IO movie(movietitle.c_str());
-        string txtfilename = "../results/txt/5d_T_"+to_string(temperature_current)+".txt";
+        string txtfilename = "../results/txt2/nearTc_T_"+to_string(temperature_current)+".txt";
         StatisticsSampler statisticsSampler(txtfilename.c_str());
 
 
