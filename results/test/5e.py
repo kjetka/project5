@@ -10,7 +10,7 @@ from numpy import *
 #energy, probability = loadtxt("probability.txt", unpack=True, skiprows=1)
 
 output = Popen(["ls"], stdout=PIPE).communicate()[0]
-txtfiles = re.findall("5d_T_.*\.txt",output,re.IGNORECASE)
+txtfiles = re.findall("5_T_.*\.txt",output,re.IGNORECASE)
 print txtfiles
 i = -1
 
@@ -59,7 +59,7 @@ ax = subplot(111)
 title("Development of temperature")
 ylabel(r"$T/T_{ini}$")
 xlabel("t")
-xlim([0,100])
+xlim([0,1.5e-12])
 # Shrink current axis's height by 10% on the bottom
 #box = ax.get_position()
 #ax.set_position([box.x0, box.y0 + box.height * 0.1,

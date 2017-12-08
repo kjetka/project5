@@ -1,4 +1,4 @@
-
+\subsection{Density}
 
 Density:
 when gas 1.784 g/L
@@ -20,12 +20,12 @@ Our case:
 
 \subsection{Initial temperature for melting}
 
-When looking at the simulation in Ovito, we found that the melting point seem to be around an initial temperature of 600 K. We added the displacement of the atoms to the movie-file, so we could color code the distance the atom had made, to make it easier to see the melting. Figure \ref{fig:solid_20K} shows the supercell when it is clearly solid and Figure \ref{fig:solid_600K}, Figure \ref{fig:almost_melted_600K} and Figure \ref{fig:melted_600K} shows the development from the ordered initial FCC structure to the melted state. The red color represent a displacement of 6 Å or more, the blue a displacement near 0 Å and the green is a medium displacement, around 3 Å. 
+When looking at the simulation in Ovito, we found that the melting point seem to be around an initial temperature of 600 K. We added the displacement of the atoms to the movie-file, so we could color code the displacement of the atom, to make it easier to see the melting. Figure \ref{fig:solid_100K} shows the supercell when it is clearly solid and Figure \ref{fig:solid_600K}, Figure \ref{fig:almost_melted_600K} and Figure \ref{fig:melted_600K} shows the development from the ordered initial FCC structure to the melted state. The red color represent a displacement of 6 Å or more, the blue a displacement near 0 Å and the green is a medium displacement, around 3 Å. 
 
 \begin{multicols}{2}
 
 \begin{figure}[H]
-\includegraphics[width=\linewidth]{../figures/solid_20}\caption{This is a snap shot of the supercell of argon with an initial temperature of 20 K. The structure is clearly solid.}\label{fig:solid_20K}
+\includegraphics[width=\linewidth]{../figures/solid_100}\caption{This is a snap shot of the supercell of argon with an initial temperature of 100 K. The structure is clearly solid.}\label{fig:solid_100K}
 \end{figure}
 
 \begin{figure}[H]
@@ -44,48 +44,48 @@ When looking at the simulation in Ovito, we found that the melting point seem to
 
 Tell if the system is solid? When is it melting?
 
-
 \subsection{Real melting temperature}
 
-The system starts in a very ordered state, so the potential energy is very low. In the first time step the atoms have moved away from this high symmetric low potential state and the potential energy increases very much. Because the total energy has to be conserved, the kinetic energy decreases a lot to compensated. The drop in kinetic energy gives a drop in temperature because of the relating between them (see Equation \ref.). Figure \ref{fig:temperature} shows the development of the temperature with time. The temperature is approximately half the initial temperature in equilibrium. 
+The system starts in a very ordered state, so the potential energy is very low. In the first time step the atoms have moved away from this high symmetric low potential state and the potential energy increases very much. Because the total energy has to be conserved, the kinetic energy decreases a lot to compensate. The drop in kinetic energy gives a drop in temperature because of the relation between them (see Equation \ref.). Equation \ref. is only accurate in thermal equilibrium, considering that, the initial temperatures are not that relevant. Figure \ref{fig:temperature} shows the development of the temperature with time. The temperature is approximately half the initial temperature in equilibrium. 
 
 \begin{figure}[H]
 \center
 \includegraphics[width=0.8\linewidth]{../figures/temp_development}\caption{This is a  plot of the ratio between the initial temperature and the temperature calculated from the kinetic energy (see Equation \ref.) to show how it decreases to an equilibrium which is approximately half the initial temperature.}\label{fig:temperature}
 \end{figure}
 
+As a consequence, we chose to use the average of temperature form the kinetic energy at the last 10 \% of the time ($6\cdot 10^{-12}$ s) to find the temperature at equilibrium.
 
 What temp is it really melting at?
 
 
 \subsection{Diffusion constant}
 
-Something is wrong - high diffusion constants at low T and the other way around?
+Figure \ref{fig:below_melting} is a plot of the mean square displacement against temperature. According to the Einstein relation it should be a linear plot with slope $6D$, where $D$ is the diffusion constant. We did a linear regression on the data and extracted the diffusion constant for different temperatures. The temperatures in the legend are the equilibrium temperatures.
 
-The behavior around the phase transition seems to be strange, but the tendencies above and beneath in temperature seems correct.
-
-\begin{figure}[H]
-\center
-\includegraphics[width=0.8\linewidth]{../figures/diffusion_constants_low}\caption{This is a plot of Einstein relation, the diffusion constant is extraced from the slope of the linear regression.}\label{fig:diffusion_low}
-\end{figure}
+%\begin{multicols}{2}
 
 \begin{figure}[H]
 \center
-\includegraphics[width=0.8\linewidth]{../figures/diffusion_constants_high}\caption{This is a plot of Einstein relation, the diffusion constant is extraced from the slope of the linear regression.}\label{fig:diffusion_high}
+\includegraphics[width=0.8\linewidth]{../figures/below_melting}\caption{This is a plot of Einstein relation (see Equation \ref.), the diffusion constant is extraced from the slope of the linear regression. The temperatures are below the melting point.}\label{fig:below_melting}
 \end{figure}
+
+Figure \ref{fig:above_melting} is a plot of the mean square displacement against temperatures above the melting temperature. Because most of the data series has a kink and Equation \ref. applies in thermal equilibrium, we chose to use the last half of the data to do the linear regression and extract the diffusion constant form that. We assumed that the equilibrium temperature was reach after $3\cdot 10^{-11}$ seconds. 
 
 \begin{figure}[H]
 \center
-\includegraphics[width=0.8\linewidth]{../figures/diffusion_constants}\caption{This is a plot of Einstein relation, the diffusion constant is extraced from the slope of the linear regression. The temperature is near the phase transition between solid and liquid/gas.}\label{fig:diffusion_near_Tc}
+\includegraphics[width=0.8\linewidth]{../figures/above_melting}\caption{This is a plot of Einstein relation (see Equation \ref.), the diffusion constant is extraced from the slope of the linear regression. The temperatures are above the melting point.}\label{fig:above_melting}
 \end{figure}
 
+%\end{multicols}
 
-Should we only find the linear regression where the data looks linear?
+The diffusion constants from Figure \ref{fig:below_melting} and Figure \ref{fig:above_melting} were plotted against temperature in Figure \ref{fig:diffusion_temp}. Diffusion constant makes a jump at around 300 K.
 
 \begin{figure}[H]
 \center
 \includegraphics[width=0.8\linewidth]{../figures/diffusion_temp}\caption{This is a plot of the diffusion constant with respect to temperature. The values are taken from the slope of the linear regression of the mean squared distance versus time because of Einsteins relation (see Equation \ref.). The plos shows how the diffusion constant increases drastically after the melting point around 300 K.}\label{fig:diffusion_temp}
 \end{figure}
+
+The highest temperature with the relatively low diffusion constant is at $T = 272$ K. 
 
 
 

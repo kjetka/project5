@@ -9,7 +9,8 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Program flow}{6}{subsubsection.3.1.2}
 \contentsline {subsection}{\numberline {3.2}Bugs and unit tests}{7}{subsection.3.2}
 \contentsline {section}{\numberline {4}Result and Discussion}{7}{section.4}
-\contentsline {subsection}{\numberline {4.1}Initial temperature for melting}{8}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Real melting temperature}{9}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Diffusion constant}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.1}Density}{7}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Initial temperature for melting}{8}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Real melting temperature}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Diffusion constant}{9}{subsection.4.4}
 \contentsline {section}{\numberline {5}Conclusion}{12}{section.5}

@@ -65,7 +65,7 @@ for txtfile in txtfiles:
         
         temp[i] = sum(data["Temperature"][-100:])/100.0
         
-        if data["Temperature"][0] < 5.2:        
+        if data["Temperature"][0] < 600:        
             figure(1, figsize=(9,7))
         else:
             figure(2, figsize=(9,7))
@@ -79,8 +79,9 @@ figure(1)
 title("Diffusion constants")
 ylabel(r"$<r^2(t)>$")
 xlabel("t")
-legend(loc=4,fontsize=12, fancybox=True, framealpha=0.5)
-savefig("diffusion_constants_low.pdf")
+ylim([0,1.2])
+legend(fontsize=12, fancybox=True, framealpha=0.5)
+savefig("../../figures/below_melting.pdf")
 
 ax2 = subplot(111)
 
@@ -89,14 +90,14 @@ title("Diffusion constants")
 ylabel(r"$<r^2(t)>$")
 xlabel("t")
 legend(loc=2,fontsize=12, fancybox=True, framealpha=0.5)
-savefig("diffusion_constants_high.pdf")
+savefig("../../figures/above_melting.pdf")
 
 figure(3, figsize=(8,6))
 title("Diffusion constant T dependence")
 ylabel("D")
 xlabel("T [K]")
-plot(temp, diffusion, 'o')
-savefig("diffusion_temp.pdf")
+plot(temp, diffusion, '-o')
+savefig("../../figures/diffusion_temp.pdf")
 
 show()
 
