@@ -14,7 +14,7 @@ font = {'family' : 'normal',
 matplotlib.rc('font', **font)
 
 output = Popen(["ls"], stdout=PIPE).communicate()[0]
-txtfiles = re.findall("5_T_.*\.txt",output,re.IGNORECASE)
+txtfiles = re.findall("nearTc_T_.*\.txt",output,re.IGNORECASE)
 print txtfiles
 i = -1
 
@@ -63,61 +63,31 @@ for txtfile in txtfiles:
         
         diffusion[i] = D_
         
-        temp[i] = sum(data["Temperature"][-100:])/100.0
+        temp[i] = sum(data["Temperature"][500:600])/100.0
         
-        if data["Temperature"][0] < 600:        
-            figure(1, figsize=(9,7))
-        else:
-            figure(2, figsize=(9,7))
-            
+        figure(1,figsize=(8,6)) 
         plot(data["t"], data["MSD"], colors[i]+markers[i], Markersize=4,markeredgecolor=colors[i],label = r"T = %.0f K"%temp[i])
         plot(data["t"], a*data["t"]+b, colors[i], label = "D = "+ D + " cm$^2$/s")
-        
-        if labell == "300": #or labell == "800":
-            figure(4, figsize=(9,7))
-            plot(data["t"],data["Kin"],label = r"E$_k$(T = %.0f K)"%temp[i])
-        
-            plot(data["t"],data["Pot"],label = r"E$_p$(T = %.0f K)"%temp[i])
-        
-            plot(data["t"],data["TotalE"],label = r"E$_{tot}$(T = %.0f K)"%temp[i])
-            
 
-
-ax = subplot(111)            
-
-figure(1)
-title("Displacement - diffusivity")
-ylabel(r"$<r^2(t)> \,[\AA^2]$",fontsize=16)
-xlabel("t [s]")
-ylim([0,1.2])
-legend(fontsize=12, fancybox=True, framealpha=0.5)
-savefig("../../figures/below_melting.pdf")
 
 ax2 = subplot(111)
 
-figure(2)
+figure(1)
+
 title("Displacement - diffusivity")
 ylabel(r"$<r^2(t)> \,[\AA^2]$",fontsize=16)
 xlabel("time [s]")
 legend(loc=2,fontsize=12, fancybox=True, framealpha=0.5)
-savefig("../../figures/above_melting.pdf")
+savefig("../../figures/nearTc.pdf")
 
-figure(3, figsize=(8,6))
-gca().get_yaxis().get_major_formatter().set_powerlimits((0, 0))
+figure(2, figsize=(8,6))
 title("Diffusion constant")
+gca().get_yaxis().get_major_formatter().set_powerlimits((0, 0))
 ylabel("D [cm$^2$/s]")
 xlabel("temperature [K]")
-#ylim([-1e-5,7e-5])
-plot(temp, diffusion, '-o')
-savefig("../../figures/diffusion_temp.pdf")
+plot(temp, diffusion, 'o')
+savefig("../../figures/diffusion_temp_nearTc.pdf")
 
-figure(4)
-title("Energy")
-ylabel("Energy [eV]")
-xlabel("time [s]")
-xlim([0,1e-11])
-legend(loc=5,fancybox=True, framealpha=0.5)
-savefig("../../figures/energy.pdf")
 show()
 
 

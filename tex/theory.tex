@@ -16,10 +16,9 @@ In numerical calculations it is not possible to calculate on a infinite lattice 
 
 A surface experience different potential compared to bulk, as there are no neighbouring atoms in one of the directions, giving rise to different physics at the surface compared to the bulk. As infinite lattices does not have a surface, the surface effect needs to be minimized. By implementing the minimum image convention these effects can be reduced. This convention states that if a distance $ r_{ij} $ between two atoms $ i $ and $ j $ is larger than $ \frac{L}{2} $, the distance between them is $  r_{ij}'  = r_{ij}-L$. Thus an atom  near an edge experiences forces of approximately equal magnitude to an atom near the centre of the supercell. 
 
-The PBC's and minimum image convention models an infinite supercell, by ignoring surface effects. However, it is not a true representation of an infinite cell. A perfect infinite cell consists of an infinite number of particles with random initial velocities, while a finite supercell will only have a finite number of atoms with sudorandom\footnote{If a computer is used to generate the random initial velocities. For the theoretical infinite lattice one usually assumes true random initial conditions} initial velocities. These atoms interact, leading to a stronger codependence of the neighbours for the finite case. By increasing the supercell this effect will decrease.   
- 	
- 
+When we calculated the diffusivity we used the mean square displacement. To find the true displacement like we did not have periodic boundary conditions, we needed to keep track of how the atoms had moved back and forth due to the conditions. We saved a vector, for every atom, containing the length of the supercell, with the right sign, in the direction it had moved, updated it in the function for periodic boundary conditions and subtracted it when calculating the displacement. 
 
+The PBC's and minimum image convention models an infinite supercell, by ignoring surface effects. However, it is not a true representation of an infinite cell. A perfect infinite cell consists of an infinite number of particles with random initial velocities, while a finite supercell will only have a finite number of atoms with sudorandom\footnote{If a computer is used to generate the random initial velocities. For the theoretical infinite lattice one usually assumes true random initial conditions} initial velocities. These atoms interact, leading to a stronger codependence of the neighbours for the finite case. By increasing the supercell this effect will decrease.   	
 
 
 \subsection{Lennard Jones potential \label{sec:LJ}}
@@ -91,4 +90,21 @@ Diffusion is a property of any microcanonical ensemble, characterized by the dif
 \langle r^2(t) \rangle = 6Dt
 \end{equation}
 
-the diffusivity is related to the mean square displacement $ r_i^2(t) = \abs{r_i(t) - r_i(o)}^2 $. 
+the diffusivity is related to the mean square displacement $ r_i^2(t) = \abs{r_i(t) - r_i(o)}^2 $. The diffusivity is approximately 10$^-5$ cm$^2$/s in liquids and 10$^-9$ cm$^2$/s for in solids, for example hydrogen in iron \cite{wiki_diff}. 
+
+\subsection{Density}
+
+39.948 g/mol
+
+The density of argon is 0.001784 g/cm$^3$ at STP when gas and 1.3954 g/cm$^3$ at the boiling point when liquid \cite{argon}. Table \ref{tab:density} compare these numbers with the system in this project. The densities implies that even though argon has only 3 degrees in liquid the state at 1 atm, the density of our system is too high for it to transit to gas. 
+
+\begin{table}\caption{This table compares the density of liquid argon, argon gas and our system.}\label{tab:density}
+\begin{tabular}{ll}
+Gas:& \\
+$\frac{0.001784 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 4.46580$\cdot 10^{-5}$ mol/cm$^3$ = & 2.6893$\cdot$ 10$^{19}$ \# of atoms/cm$^3$\\
+Liquid:&\\
+$\frac{1.3954 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 0.0349304 mol/cm$^3$ =& 2.10350$\cdot$ 10$^{22}$ \# of atoms/cm$^3$\\
+This system:& \\
+ 4/a$^3$ = 4/5.26$^3$ = 0.027485 \# of atoms/Å$^3$ =& 2.74854 $\cdot$ 10$^{22}$ \# of atoms/cm$^3$\\
+\end{tabular}
+\end{table}

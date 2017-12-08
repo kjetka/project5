@@ -1,17 +1,22 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
 \contentsline {section}{\numberline {2}Theory}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Crystal structure}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Crystal structure}{2}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Lennard Jones potential }{3}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}The microcanonical ensemble}{4}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Diffusion and phase transition}{5}{subsubsection.2.4.1}
-\contentsline {section}{\numberline {3}Method}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Code structure}{5}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Overview of the classes}{5}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Program flow}{7}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}Computational details}{8}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Bugs and unit tests}{8}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Units}{8}{subsubsection.3.3.1}
-\contentsline {section}{\numberline {4}Result }{9}{section.4}
-\contentsline {section}{\numberline {5}Discussion}{9}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}
+\contentsline {subsection}{\numberline {2.3}Lennard Jones potential }{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}The microcanonical ensemble}{5}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Diffusion and phase transition}{6}{subsubsection.2.4.1}
+\contentsline {subsection}{\numberline {2.5}Density}{6}{subsection.2.5}
+\contentsline {section}{\numberline {3}Method}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Code structure}{7}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Overview of the classes}{7}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Program flow}{8}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Computational details}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Bugs and unit tests}{10}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Units}{10}{subsubsection.3.3.1}
+\contentsline {section}{\numberline {4}Result and Discussion}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Initial temperature for melting}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Real melting temperature}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Energy}{12}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Diffusion constant}{13}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Equilibrium temperature}{17}{subsection.4.5}
+\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}

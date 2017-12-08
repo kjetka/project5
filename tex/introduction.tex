@@ -1,23 +1,29 @@
-MD: 
-"Numerical method for studying many-particle systems
-such as molecules, clusters, and even macroscopic
-systems such as gases, liquids and solids "
+%MD: 
+%"Numerical method for studying many-particle systems
+%such as molecules, clusters, and even macroscopic
+%systems such as gases, liquids and solids "
 
 
-Kjetils notater:
-Simulere bevegelse N atomer og molekyler basert på klassisk newtonsk dynamikk: $ F_i = m\dv{ri}{t}  = - \pdv{U}{r:i}$. Kraften er ofte sterkt avstandsavhengig og kan komme fra eks. Lennard Jones potensial.  \cite{article_A_Hands-On_Introduction_to_Molecular_Dynamics}.
+Molecular dynamics is a numerical method to simulate the movement of atoms and molecules based on classical Newtonian dynamics. The method can be used to study many-particle systems of molecules, clusters and macroscopic systems as solids, liquids and gases, such as in this project. It is used in different science fields. It can be used in material science with non-relativistic Schrödinger equation to investigate lattice and defect dynamics \cite{materialphysics}. In chemistry it can be used to see the behaviour of ideal gases and chemical reactions with hard sphere potential and Lennard Jones potential \cite{GORECKI1989245}. It can be used to simulate behavior at membranes in biology, fluctuations of biological marcomolecules and to determine protein structures from NMR \cite{biology}.
 
+In this project we have a program with many classes and we have used a lot of time to get to know the structure of the classes and the flow of the program. The program simulates a system of 500 atoms and uses Lennard Jones potential to calculated the forces between them. The Velocity Verlet method was used to solve Newtons second law and give the motion of all atoms.
 
-Fysikk:
+The report first  the relevant theory. Thereafter, the classes of the program are described and the flow of the program presented. After that, the result of the energy, temperature and diffusion are disclosed together with a discussion of it. At last some concluding remarks are made. 
 
-Material science:
-	Can use potentials dervied from non-relativistic Schrödinger equation to investigate lattic and defect dynamics at atomistic scale. \cite{materialphysics}
-
-Kjemi:
-	behavoiur ideal gas, chemical reacton $ A + A \rightarrow B+B $ with hard sphere potential and Lennard Jones potential, \cite{GORECKI1989245}
-	
-Bio:
-	Simulate membranes
-Molecular dynamics—the science of simulating the motions of a system of particles—applied to biological macromolecules gives the fluctuations in the relative positions of the atoms in a protein or in DNA as a function of time. Knowledge of these motions provides insights into biological phenomena such as the role of flexibility in ligand binding and the rapid solvation of the electron transfer state in photosynthesis. Molecular dynamics is also being used to determine protein structures from NMR \cite{biology}
-
-God link til "hva er MD": https://udel.edu/~arthij/MD.pdf
+%Kjetils notater:
+%Simulere bevegelse N atomer og molekyler basert på klassisk newtonsk dynamikk: $ F_i = m\dv{ri}{t}  = - \pdv{U}{r:i}$. Kraften er ofte sterkt avstandsavhengig og kan komme fra eks. Lennard Jones potensial.  \cite{article_A_Hands-On_Introduction_to_Molecular_Dynamics}.
+%
+%
+%Fysikk:
+%
+%Material science:
+%	Can use potentials dervied from non-relativistic Schrödinger equation to investigate lattic and defect dynamics at atomistic scale. \cite{materialphysics}
+%
+%Kjemi:
+%	behavoiur ideal gas, chemical reacton $ A + A \rightarrow B+B $ with hard sphere potential and Lennard Jones potential, \cite{GORECKI1989245}
+%	
+%Bio:
+%	Simulate membranes
+%Molecular dynamics—the science of simulating the motions of a system of particles—applied to biological macromolecules gives the fluctuations in the relative positions of the atoms in a protein or in DNA as a function of time. Knowledge of these motions provides insights into biological phenomena such as the role of flexibility in ligand binding and the rapid solvation of the electron transfer state in photosynthesis. Molecular dynamics is also being used to determine protein structures from NMR \cite{biology}
+%
+%God link til "hva er MD": https://udel.edu/~arthij/MD.pdf

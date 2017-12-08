@@ -1,23 +1,3 @@
-\subsection{Density}
-
-Density:
-when gas 1.784 g/L
-when liquid 1.3954 g/cm$^3$
-
-when gas:
-1.784 g/L = 0.001784 g/cm$^3$
-
-0.001784 g/cm$^3$ /39.948 g/mol = 4.46580$\cdot 10^{-5}$ mol/cm$^3$ = 2.6893$\cdot$ 10$^{19}$ \# of atoms/cm$^3$
-
-when liquid:
-1.3954g/cm$^3$ /39.948 g/mol = 0.0349304 mol/cm$^3$ = 2.10350$\cdot$ 10$^{22}$ \# of atoms/cm$^3$
-
-Our case:
-4/a$^3$ = 4/5.26$^3$ = 0.027485 \# of atoms/Å$^3$ = 2.74854 $\cdot$ 10$^{22}$ \# of atoms/cm$^3$
-
-
-39.948 g/mol
-
 \subsection{Initial temperature for melting}
 
 When looking at the simulation in Ovito, we found that the melting point seem to be around an initial temperature of 600 K. We added the displacement of the atoms to the movie-file, so we could color code the displacement of the atom, to make it easier to see the melting. Figure \ref{fig:solid_100K} shows the supercell when it is clearly solid and Figure \ref{fig:solid_600K}, Figure \ref{fig:almost_melted_600K} and Figure \ref{fig:melted_600K} shows the development from the ordered initial FCC structure to the melted state. The red color represent a displacement of 6 Å or more, the blue a displacement near 0 Å and the green is a medium displacement, around 3 Å. 
@@ -46,7 +26,7 @@ Tell if the system is solid? When is it melting?
 
 \subsection{Real melting temperature}
 
-The system starts in a very ordered state, so the potential energy is very low. In the first time step the atoms have moved away from this high symmetric low potential state and the potential energy increases very much. Because the total energy has to be conserved, the kinetic energy decreases a lot to compensate. The drop in kinetic energy gives a drop in temperature because of the relation between them (see Equation \ref.). Equation \ref. is only accurate in thermal equilibrium, considering that, the initial temperatures are not that relevant. Figure \ref{fig:temperature} shows the development of the temperature with time. The temperature is approximately half the initial temperature in equilibrium. 
+The system starts in a very ordered state, so the potential energy is very low. In the first time step the atoms have moved away from this high symmetric low potential state and the potential energy increases very much. Because the total energy has to be conserved, the kinetic energy decreases a lot to compensate. The drop in kinetic energy gives a drop in temperature because of the relation between them (see Equation \ref{eq:Einstein}.). Equation \ref{eq:Einstein} is only accurate in thermal equilibrium, considering that, the initial temperatures are not that relevant. Figure \ref{fig:temperature} shows the development of the temperature with time. The temperature is approximately half the initial temperature in equilibrium. 
 
 \begin{figure}[H]
 \center
@@ -57,6 +37,14 @@ As a consequence, we chose to use the average of temperature form the kinetic en
 
 What temp is it really melting at?
 
+\subsection{Energy}
+
+Figure \ref{fig:energy} shows the kinetic, the potential and the total energy of the system initially and how it reaches an equilibrium. The figure shows how the potential starts in a minimum and the kinetic in a maximum. The total energy seems to be well converged. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.8\linewidth]{../figures/energy}\caption{This is a plot of the energy at initial temperature 300 K and equilibrium temperature 153 K. The plot shows how the potential energy starts in a minimum and the kinetic in a maximum, and how the total energy is well conserved even though both the kinetic and potential fluctuates.}\label{fig:energy}
+\end{figure}
 
 \subsection{Diffusion constant}
 
@@ -78,20 +66,37 @@ Figure \ref{fig:above_melting} is a plot of the mean square displacement against
 
 %\end{multicols}
 
-The diffusion constants from Figure \ref{fig:below_melting} and Figure \ref{fig:above_melting} were plotted against temperature in Figure \ref{fig:diffusion_temp}. Diffusion constant makes a jump at around 300 K.
+The diffusion constants from Figure \ref{fig:below_melting} and Figure \ref{fig:above_melting} were plotted against temperature in Figure \ref{fig:diffusion_temp}. Diffusion constant makes a jump at around 300 K, implying that the melting temperature is around 300 K. The values before the jump is around $10^{-9}$ cm$^2$/s (see Figure \ref{fig:below_melting}) which match the values for solids and the values after the melting matches the values for diffusion in liquid. This shows that it is a transition from solid to liquid.
 
 \begin{figure}[H]
 \center
 \includegraphics[width=0.8\linewidth]{../figures/diffusion_temp}\caption{This is a plot of the diffusion constant with respect to temperature. The values are taken from the slope of the linear regression of the mean squared distance versus time because of Einsteins relation (see Equation \ref.). The plos shows how the diffusion constant increases drastically after the melting point around 300 K.}\label{fig:diffusion_temp}
 \end{figure}
 
-The highest temperature with the relatively low diffusion constant is at $T = 272$ K. 
+The highest temperature with the relatively low diffusion constant is at $T = 272$ K and the highest with the high diffusion constants are at $T = 282$ K. That implies that the melting temperature is between that. The system behave strangely around the melting temperature, as Figure \ref{fig:near_Tc} shows, so it was difficult to set a specific melting point.
 
+\begin{figure}[H]
+\center
+\includegraphics[width=0.8\linewidth]{../figures/nearTc}\caption{This shows the mean square displacement near the melting temperature showing some weird result, that the highest temperatures have the smallest slopes and then also the lowest diffusion constants.}\label{fig:near_Tc}
+\end{figure}
 
+The real melting temperature of argon is 84 K, and thus a lot smaller than our result. The reason might be that ... \ref.
+
+\subsection{Equilibrium temperature}
+
+The temperature development shows that the system with temperatures around melting point do not reach a proper equilibrium. There is a shift after half the time, making the results strange. Figure \ref{fig:temp_development_all} shows the temperature development with different initial temperatures. Figure \ref{fig:temp_development_nearTc}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.8\linewidth]{../figures/temp_development_all}\caption{This is a plot of the temperature development of systems with different initial temperatures. The system with initial temperatures that end up around the melting temperatures (600 K and 700 K) makes a shift after a while.}\label{fig:temp_development_all}
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.8\linewidth]{../figures/temp_development_nearTc}\caption{This is a plot of the temperature development of systems with different initial temperatures around the melting temperature. This might explain the strange numbers around the melting temperature.}\label{fig:temp_development_nearTc}
+\end{figure}
 
 ------------------
 Discuss benefits of periodic boundary conditions.
 
 Why do the atoms have velocity from Maxwell-Boltzmann distribution?
-
-What is the density?

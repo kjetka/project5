@@ -52,14 +52,15 @@ for txtfile in txtfiles:
 
         figure(1, figsize=(9,7))
        
-        plot(data["t"],data["Temperature"]/data["Temperature"][0], label = "T$_{ini}$ = " + labell + " K")
+        plot(data["t"],data["Temperature"], label = "T$_{ini}$ = " + labell + " K")
 
 ax = subplot(111)       
 
 title("Development of temperature")
 ylabel(r"$T/T_{ini}$")
 xlabel("t")
-xlim([0,1.5e-12])
+ylim([0,600])
+#xlim([0,3e-12])
 # Shrink current axis's height by 10% on the bottom
 #box = ax.get_position()
 #ax.set_position([box.x0, box.y0 + box.height * 0.1,
@@ -69,5 +70,5 @@ xlim([0,1.5e-12])
 #ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.085),
 #          fancybox=True, shadow=True, ncol=5, fontsize=12)
 legend(fancybox=True, framealpha=0.5)
-savefig("../../figures/temp_development.pdf")
+savefig("../../figures/temp_development_all.pdf")
 show()
