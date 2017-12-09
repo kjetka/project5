@@ -57,8 +57,8 @@ for txtfile in txtfiles:
 ax = subplot(111)       
 
 title("Development of temperature")
-ylabel(r"$T/T_{ini}$")
-xlabel("t")
+ylabel("Temperature [K]")
+xlabel("Time [s]")
 ylim([0,600])
 #xlim([0,3e-12])
 # Shrink current axis's height by 10% on the bottom

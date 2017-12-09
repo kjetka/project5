@@ -14,7 +14,7 @@ font = {'family' : 'normal',
 matplotlib.rc('font', **font)
 
 output = Popen(["ls"], stdout=PIPE).communicate()[0]
-txtfiles = re.findall("nearTc_T_.*\.txt",output,re.IGNORECASE)
+txtfiles = re.findall("nearTc_long_T_.*\.txt",output,re.IGNORECASE)
 print txtfiles
 i = -1
 
@@ -63,7 +63,7 @@ for txtfile in txtfiles:
         
         diffusion[i] = D_
         
-        temp[i] = sum(data["Temperature"][500:600])/100.0
+        temp[i] = sum(data["Temperature"][-100:])/100.0
         
         figure(1,figsize=(8,6)) 
         plot(data["t"], data["MSD"], colors[i]+markers[i], Markersize=4,markeredgecolor=colors[i],label = r"T = %.0f K"%temp[i])
@@ -86,7 +86,7 @@ gca().get_yaxis().get_major_formatter().set_powerlimits((0, 0))
 ylabel("D [cm$^2$/s]")
 xlabel("temperature [K]")
 plot(temp, diffusion, 'o')
-savefig("../../figures/diffusion_temp_nearTc.pdf")
+savefig("../../figures/diffusion_temp_nearTc_long.pdf")
 
 show()
 
