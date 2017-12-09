@@ -3,7 +3,6 @@
 #include <cmath>
 
 
-// spr: Funker dette?
 Atom::Atom(double mass) :
     m_mass(mass)
 {

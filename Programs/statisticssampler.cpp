@@ -68,7 +68,7 @@ void StatisticsSampler::sample(System &system){
     sampleDensity(system);
     sampleDiffusionConst(system);
     testEnergyConservation();
-    //sampleDiffusionConst(system);
+
 }
 void StatisticsSampler::testEnergyConservation(){
     double conservecriteria = 3e-4;
