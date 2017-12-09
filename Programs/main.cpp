@@ -37,7 +37,7 @@ int main(){
 
     cout << "writing to file " << timeLimit/printrate << " times "<<endl;
 
-    cout << UnitConverter::temperatureToSI(2.0)<<endl;
+    cout << "force: "  << UnitConverter::forceToSI(1)<<endl;
 
     cout << UnitConverter::energyFromSI(119.8*UnitConverter::kb)<<endl;
 

@@ -9,13 +9,14 @@
 \BOOKMARK [2][-]{subsection.3.1}{Code structure}{section.3}% 9
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Overview of the classes}{subsection.3.1}% 10
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Program flow}{subsection.3.1}% 11
-\BOOKMARK [2][-]{subsection.3.2}{Computational details}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.3}{Bugs and unit tests}{section.3}% 13
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Units}{subsection.3.3}% 14
-\BOOKMARK [1][-]{section.4}{Result and Discussion}{}% 15
-\BOOKMARK [2][-]{subsection.4.1}{Initial temperature for melting}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.2}{Real melting temperature}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.3}{Energy}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.4}{Diffusion constant}{section.4}% 19
-\BOOKMARK [2][-]{subsection.4.5}{Equilibrium temperature}{section.4}% 20
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 21
+\BOOKMARK [2][-]{subsection.3.2}{Periodic Boundary Conditions}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Velocity Verlet}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.4}{Bugs and unit tests}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Units}{subsection.3.4}% 15
+\BOOKMARK [1][-]{section.4}{Result and Discussion}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Initial temperature for melting}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Real melting temperature}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Energy}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.4}{Diffusion constant}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.5}{Equilibrium temperature}{section.4}% 21
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 22

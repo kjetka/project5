@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.2)  9 DEC 2017 22:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.2)  9 DEC 2017 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2119,11 +2119,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3 <../figures/fcc.jpg>] <../figures/LJ.pdf, id=166, 578.16pt x 433.62pt>
+[3 <../figures/fcc.jpg>] <../figures/LJ.pdf, id=170, 578.16pt x 433.62pt>
 File: ../figures/LJ.pdf Graphic file (type pdf)
 
 <use ../figures/LJ.pdf>
-Package pdftex.def Info: ../figures/LJ.pdf used on input line 51.
+Package pdftex.def Info: ../figures/LJ.pdf used on input line 42.
 (pdftex.def)             Requested size: 306.95775pt x 230.2145pt.
 
 
@@ -2132,34 +2132,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
+[4 <../figures/LJ.pdf>]
+
+LaTeX Warning: Citation `wiki_diff' on page 5 undefined on input line 83.
+
+
+LaTeX Warning: Citation `argon' on page 5 undefined on input line 87.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <../figures/LJ.pdf>]
-
-LaTeX Warning: Citation `wiki_diff' on page 6 undefined on input line 90.
-
-
-LaTeX Warning: Citation `argon' on page 6 undefined on input line 94.
-
-) (./method.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
+[5]) (./method.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2167,11 +2159,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] <../figures/klasser_proj5.pdf, id=266, 744.7825pt x 410.53375pt>
+[6] <../figures/klasser_proj5.pdf, id=257, 744.7825pt x 410.53375pt>
 File: ../figures/klasser_proj5.pdf Graphic file (type pdf)
 
 <use ../figures/klasser_proj5.pdf>
-Package pdftex.def Info: ../figures/klasser_proj5.pdf used on input line 44.
+Package pdftex.def Info: ../figures/klasser_proj5.pdf used on input line 41.
 (pdftex.def)             Requested size: 438.513pt x 241.71794pt.
 
 
@@ -2180,8 +2172,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <../figures/klasser_proj5.pdf>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[7] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2190,7 +2181,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 64.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 61.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -2201,28 +2192,48 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9]) (./result.tex
+[8 <../figures/klasser_proj5.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10] <../figures/solid_100.jpg, id=317, 481.8pt x 361.35pt>
+[9]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]) (./result.tex <../figures/solid_100.jpg, id=310, 481.8pt x 361.35pt>
 File: ../figures/solid_100.jpg Graphic file (type jpg)
 
 <use ../figures/solid_100.jpg>
 Package pdftex.def Info: ../figures/solid_100.jpg used on input line 8.
 (pdftex.def)             Requested size: 214.2565pt x 160.69272pt.
 
-<../figures/solid_600.jpg, id=318, 481.8pt x 361.35pt>
+<../figures/solid_600.jpg, id=311, 481.8pt x 361.35pt>
 File: ../figures/solid_600.jpg Graphic file (type jpg)
 
 <use ../figures/solid_600.jpg>
 Package pdftex.def Info: ../figures/solid_600.jpg used on input line 12.
 (pdftex.def)             Requested size: 214.2565pt x 160.69272pt.
 
-<../figures/middle_melted_600.jpg, id=319, 481.8pt x 361.35pt>
+Overfull \vbox (95.50247pt too high) has occurred while \output is active []
+
+
+Overfull \vbox (95.50247pt too high) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <../figures/solid_100.jpg>]
+<../figures/middle_melted_600.jpg, id=326, 481.8pt x 361.35pt>
 File: ../figures/middle_melted_600.jpg Graphic file (type jpg)
 
 <use ../figures/middle_melted_600.jpg>
@@ -2230,40 +2241,33 @@ Package pdftex.def Info: ../figures/middle_melted_600.jpg used on input line 16
 .
 (pdftex.def)             Requested size: 214.2565pt x 160.69272pt.
 
-<../figures/melted_600.jpg, id=320, 481.8pt x 361.35pt>
+<../figures/melted_600.jpg, id=327, 481.8pt x 361.35pt>
 File: ../figures/melted_600.jpg Graphic file (type jpg)
 
 <use ../figures/melted_600.jpg>
 Package pdftex.def Info: ../figures/melted_600.jpg used on input line 20.
 (pdftex.def)             Requested size: 214.2565pt x 160.69272pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[11 <../figures/solid_100.jpg> <../figures/solid_600.jpg> <../figures/middle_me
-lted_600.jpg> <../figures/melted_600.jpg>]
-<../figures/temp_development.pdf, id=332, 650.43pt x 505.89pt>
+<../figures/temp_development.pdf, id=331, 650.43pt x 505.89pt>
 File: ../figures/temp_development.pdf Graphic file (type pdf)
 
 <use ../figures/temp_development.pdf>
-Package pdftex.def Info: ../figures/temp_development.pdf used on input line 33.
+Package pdftex.def Info: ../figures/temp_development.pdf used on input line 31.
 
 (pdftex.def)             Requested size: 350.81174pt x 272.86003pt.
 
 
-LaTeX Warning: Reference `.' on page 12 undefined on input line 33.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-
-LaTeX Warning: Reference `.' on page 12 undefined on input line 33.
-
-<../figures/energy.pdf, id=334, 650.43pt x 505.89pt>
+[12 <../figures/solid_600.jpg> <../figures/middle_melted_600.jpg> <../figures/m
+elted_600.jpg>] <../figures/energy.pdf, id=341, 650.43pt x 505.89pt>
 File: ../figures/energy.pdf Graphic file (type pdf)
 
 <use ../figures/energy.pdf>
-Package pdftex.def Info: ../figures/energy.pdf used on input line 46.
+Package pdftex.def Info: ../figures/energy.pdf used on input line 42.
 (pdftex.def)             Requested size: 350.81174pt x 272.86003pt.
 
 
@@ -2272,19 +2276,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12 <../figures/temp_development.pdf>]
-<../figures/below_melting.pdf, id=386, 650.43pt x 505.89pt>
+[13 <../figures/temp_development.pdf>]
+<../figures/below_melting.pdf, id=396, 650.43pt x 505.89pt>
 File: ../figures/below_melting.pdf Graphic file (type pdf)
 
 <use ../figures/below_melting.pdf>
-Package pdftex.def Info: ../figures/below_melting.pdf used on input line 57.
+Package pdftex.def Info: ../figures/below_melting.pdf used on input line 53.
 (pdftex.def)             Requested size: 350.81174pt x 272.86003pt.
-
-
-LaTeX Warning: Reference `.' on page 13 undefined on input line 57.
-
-
-LaTeX Warning: Reference `.' on page 13 undefined on input line 57.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2292,42 +2290,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13 <../figures/energy.pdf>]
-
-LaTeX Warning: Reference `.' on page 14 undefined on input line 60.
-
-<../figures/above_melting.pdf, id=437, 650.43pt x 505.89pt>
+[14 <../figures/energy.pdf>]
+<../figures/above_melting.pdf, id=449, 650.43pt x 505.89pt>
 File: ../figures/above_melting.pdf Graphic file (type pdf)
 
 <use ../figures/above_melting.pdf>
-Package pdftex.def Info: ../figures/above_melting.pdf used on input line 64.
+Package pdftex.def Info: ../figures/above_melting.pdf used on input line 60.
 (pdftex.def)             Requested size: 350.81174pt x 272.86003pt.
 
 
-LaTeX Warning: Reference `.' on page 14 undefined on input line 64.
-
-
-LaTeX Warning: Reference `.' on page 14 undefined on input line 64.
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14 <../figures/below_melting.pdf>]
-<../figures/diffusion_temp.pdf, id=516, 578.16pt x 433.62pt>
+[15 <../figures/below_melting.pdf>]
+<../figures/diffusion_temp.pdf, id=530, 578.16pt x 433.62pt>
 File: ../figures/diffusion_temp.pdf Graphic file (type pdf)
 
 <use ../figures/diffusion_temp.pdf>
-Package pdftex.def Info: ../figures/diffusion_temp.pdf used on input line 73.
+Package pdftex.def Info: ../figures/diffusion_temp.pdf used on input line 69.
 (pdftex.def)             Requested size: 350.81174pt x 263.10512pt.
-
-
-LaTeX Warning: Reference `.' on page 15 undefined on input line 73.
-
-
-LaTeX Warning: Reference `.' on page 15 undefined on input line 73.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2335,12 +2318,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15 <../figures/above_melting.pdf>]
-<../figures/nearTc.pdf, id=591, 578.16pt x 433.62pt>
+[16 <../figures/above_melting.pdf>]
+<../figures/nearTc.pdf, id=607, 578.16pt x 433.62pt>
 File: ../figures/nearTc.pdf Graphic file (type pdf)
 
 <use ../figures/nearTc.pdf>
-Package pdftex.def Info: ../figures/nearTc.pdf used on input line 80.
+Package pdftex.def Info: ../figures/nearTc.pdf used on input line 77.
 (pdftex.def)             Requested size: 350.81174pt x 263.10512pt.
 
 
@@ -2349,16 +2332,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16 <../figures/diffusion_temp.pdf>]
-
-LaTeX Warning: Reference `.' on page 17 undefined on input line 83.
-
-<../figures/temp_development_all.pdf, id=638, 650.43pt x 505.89pt>
+[17 <../figures/diffusion_temp.pdf>]
+<../figures/temp_development_all.pdf, id=658, 650.43pt x 505.89pt>
 File: ../figures/temp_development_all.pdf Graphic file (type pdf)
 
 <use ../figures/temp_development_all.pdf>
 Package pdftex.def Info: ../figures/temp_development_all.pdf used on input line
- 91.
+ 88.
 (pdftex.def)             Requested size: 350.81174pt x 272.86003pt.
 
 
@@ -2367,34 +2347,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17 <../figures/nearTc.pdf>]
-<../figures/temp_development_nearTc.pdf, id=716, 650.43pt x 505.89pt>
-File: ../figures/temp_development_nearTc.pdf Graphic file (type pdf)
+[18 <../figures/nearTc.pdf>]
+<../figures/temp_development_nearTc_long.pdf, id=735, 650.43pt x 505.89pt>
+File: ../figures/temp_development_nearTc_long.pdf Graphic file (type pdf)
 
-<use ../figures/temp_development_nearTc.pdf>
-Package pdftex.def Info: ../figures/temp_development_nearTc.pdf used on input l
-ine 96.
+<use ../figures/temp_development_nearTc_long.pdf>
+Package pdftex.def Info: ../figures/temp_development_nearTc_long.pdf used on in
+put line 93.
 (pdftex.def)             Requested size: 350.81174pt x 272.86003pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[18 <../figures/temp_development_all.pdf> <../figures/temp_development_nearTc.p
-df
-
-pdfTeX warning: pdflatex (file ../figures/temp_development_nearTc.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
->]) (./conclusion.tex)
+) (./conclusion.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19] (./main.bbl) (./appendix.tex)
+[19 <../figures/temp_development_all.pdf> <../figures/temp_development_nearTc_l
+ong.pdf
+
+pdfTeX warning: pdflatex (file ../figures/temp_development_nearTc_long.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20] (./main.bbl) (./appendix.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
 
 
@@ -2403,71 +2383,56 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]
+[21]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 680808CAFAB2173644CC968D3D4DC361;1439.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 9D7154B38632432ACD7C65663B44D17C;1434
-(rerunfilecheck)             After:  E3901A2403BF6A752514CECB4ABBBD30;1367.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 21478 strings out of 494910
- 345710 string characters out of 6179836
- 535572 words of memory out of 5000000
- 24305 multiletter control sequences out of 15000+600000
+ 21477 strings out of 494910
+ 345720 string characters out of 6179836
+ 526572 words of memory out of 5000000
+ 24304 multiletter control sequences out of 15000+600000
  26379 words of font info for 66 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,13n,97p,10425b,1274s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{subsection.2.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2.4.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
- </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home
-/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/vildem
-ari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vildemari/.te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vildemari/.texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/vildemari/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecrm0800.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/ecbx1440.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecsl1200.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm12
-00.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600p
-k> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </ho
-me/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/vild
-emari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/vildemari/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/vildemari/.texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (20 pages, 1003860 bytes).
+ 48i,13n,97p,10425b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </ho
+me/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </home/vild
+emari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/vildemari/.
+texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/vildemari/.texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/vildemari/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/vildemari/.texmf-var/fonts/pk/lj
+four/jknappen/ec/ecbx1200.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecbx1440.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecsl1200.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
+1200.600pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.60
+0pk> </home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </
+home/vildemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/vi
+ldemari/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/vildemari
+/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/vildemari/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (21 pages, 1010397 bytes).
 PDF statistics:
- 1397 PDF objects out of 1440 (max. 8388607)
- 518 compressed objects within 6 object streams
+ 1421 PDF objects out of 1440 (max. 8388607)
+ 527 compressed objects within 6 object streams
  105 named destinations out of 1000 (max. 500000)
  252 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,3 @@
-
-
-
 \subsection{Code structure}
 
 \subsubsection{Overview of the classes}
@@ -79,12 +76,23 @@ Step 1)specifies the initial values, like temperature and number of unit cells, 
  
  The sampling of properties are done in step 3, by applying the "sample" function in \textit{Staticssampler}, 3a. This function updates the private variables of  \textit{Staticssampler}, describing properties like temperature and kinetic energy. This is done by calling several specific \textit{Staticssampler} - functions sampling each property individually. The last step, step 4, writes .xyz-file through the \textit{io} instance "movie" in \textit{main}. In addition, the information stored in \textit{Staticssampler} is saved in a separate output file. This should be done in \textit{io} for the most logical flow, but we found it simplest to do this through \textit{Staticssampler}. 
   
+\subsection{Periodic Boundary Conditions}
+
+In numerical calculations it is not possible to calculate on a infinite lattice of atoms. As an infinite lattice have neighbouring atoms in every direction for every atom, an atom can not move into vacuum. By applying periodic boundary conditions (PBC's) to the position of the lattice, every atom moving out of the predefined supercell is put on the other side of the box. In one dimension, this is expressed as $ r_{xi} = r_{xi}' - L $ if $ r_{xi} >L $, with $ L $ being the supercell size. This ensures that the density is constrained and the volume of the supercell remain constant. Applying periodic boundary condition make it possible to simulate an infinitely big system with few atoms, making the results relevant for real systems which contain $\sim 10^{23}$ atoms. The real systems do not contain infinitely many atoms, but the infinite case is a better approximation than just 500 atoms as would be the case in this project if we did not apply periodic boundary conditions.
+
+A surface experience different potential compared to bulk, as there are no neighbouring atoms in one of the directions, giving rise to different physics at the surface compared to the bulk. As infinite lattices does not have a surface, the surface effect needs to be minimized. By implementing the minimum image convention these effects can be reduced. This convention states that if a distance $ r_{ij} $ between two atoms $ i $ and $ j $ is larger than $ \frac{L}{2} $, the distance between them is $  r_{ij}'  = r_{ij}-L$. Thus an atom  near an edge experiences forces of approximately equal magnitude to an atom near the centre of the supercell. 
+
+Trodde vi trengte image-greia fordi vi har periodic boundary conditions og et atom som er på andre siden av unit cella er da egentlig rett ved siden av (burde vel egentlig være begge deler, men når den er på andre siden så er den så langt borte at det ikke har noe å si). Så det som står her er egentlig et argument for periodic boundary conditions og image-greia er noe man må legge til for at periodc bounadry conditions funker som det skal?
+
+When we calculated the diffusivity we used the mean square displacement. To find the true displacement like we did not have periodic boundary conditions, we needed to keep track of how the atoms had moved back and forth due to the conditions. We saved a vector, for every atom, containing the length of the supercell, with the right sign, in the direction it had moved, updated it in the function for periodic boundary conditions and subtracted it when calculating the displacement. 
+
+The PBC's and minimum image convention models an infinite supercell, by ignoring surface effects. However, it is not a true representation of an infinite cell. A perfect infinite cell consists of an infinite number of particles with random initial velocities, while a this project's finite supercell will only have a finite number of atoms, with sudorandom\footnote{If a computer is used to generate the random initial velocities, repeated periodically. For the theoretical infinite lattice one usually assumes true random initial conditions.} initial velocities. These atoms interact, leading to a stronger codependence of the neighbours for the finite case. By increasing the supercell this effect will decrease.   	
 
 
 
-\subsection{Computational details}
+\subsection{Velocity Verlet}
 
-This project used the velocity verlet algorithm in order to integrate the partial differential equations which arises from the newtons second law. 	The velocity Verlet can be derived from a  Taylor expansion around the position $ r(t+\Delta t) $. However, for the velocity there exist a similar Taylor series: $  v_{i+1} = v_i + h\dot{v}_i + \frac{h}{2} \ddot{v}_i + O(h^3)$. Unfortunately, there is no expression for $ \ddot{v}_i $, but it can be approximated by $ h\ddot{v}_i \simeq \dot{v}_{i+1}-\dot{v}_i$. Adding this to the expression for $ v_{i+1} $ and doing some simple algebra one get the final expression for the velocity:
+This project used the Velocity Verlet algorithm in order to integrate the partial differential equations which arises from the newtons second law. 	The Velocity Verlet method can be derived from a Taylor expansion around the position $ r(t+\Delta t) $. However, for the velocity there exist a similar Taylor series: $  v_{i+1} = v_i + h\dot{v}_i + \frac{h}{2} \ddot{v}_i + O(h^3)$. Unfortunately, there is no expression for $ \ddot{v}_i $, but it can be approximated by $ h\ddot{v}_i \simeq \dot{v}_{i+1}-\dot{v}_i$. Adding this to the expression for $ v_{i+1} $ and doing some simple algebra one get the final expression for the velocity:
 
 \begin{equation}
 v_{i+1} = v_i +  \frac{h}{2} \left(\dot{v}_{i+1}+\dot{v}_i\right)+ O(h^3) \label{eq:vel_verlet}
@@ -100,25 +108,20 @@ v_{i+1} &=v_{i+\frac{1}{2}}. + \frac{h}{2} a_{i+1}
 \end{align} 
 
 
-
-
-
-
 \subsection{Bugs and unit tests}
 
 As the structure  of the program was provided, a large array of unit tests were not necessary. However, two simple test became very useful. The first, checking that the total momentum was set to 0 provided useful input, as the initial version of "removeTotalMomentum" did not take the changing unit cell size into account. Secondly, the unit test for the conservation of energy revealed several mistakes. One example of this is that we counted the potential energy per atom in interacting pair, instead of each pair. A more serious bug were found in \textit{velocityVerlet} through this unit test. Line 5 in snippet \ref{listing} shows the original, first position update in the algorithm. Here the velocity of each atom is divided by the atom mass, which has no place in the relationship $ \dv{v}{t} = x(t) $. Most likely this is due to a copy and paste error of the line above, simply substituting the force with velocity. 
 
 \subsubsection{Units} \label{sec:units}
 
-In order to avoid round off errors and produce results with direct physical meaning, a specific set of units were used. These molecular dynamics units are presented in the project description, and are:
+In order to avoid round off errors and produce results with direct physical meaning, a specific set of units were used in the program. These molecular dynamics units are presented in the project description, and are:
 
 \begin{align}
 \text{1 unit of mass } &= 1 \text{ a.m.u} = 1.661\times 10^{-27}\mathrm{kg},\\
 \text{1 unit of length } &= 1.0 \text{ \AA} \\
 \text{1 unit of energy } &= 1.651\times 10^{-21}\mathrm{J},\\
 \text{1 unit of temperature} &= 119.735\mathrm{K}.\\
-\text{1 unit of Force}  &= \\
-\text{1 unit of Pressure}  &= 
+\text{1 unit of force}  &= 1.65313\cdot10^{-11} N \\
 \end{align}
 
 

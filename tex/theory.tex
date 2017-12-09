@@ -9,15 +9,6 @@ There are different ways a solid could arrange itself in order to fill a given v
 	\label{fig:fcc}
 \end{figure}
 
-In numerical calculations it is not possible to calculate on a infinite lattice of atoms. As an infinite lattice have neighbouring atoms in every direction for every atom, an atom can not move into vacuum. By applying periodic boundary conditions (PBC's) to the position of the lattice, every atom moving out of the predefined supercell is put on the other side of the box. In one dimension, this is expressed as $ r_{xi} = r_{xi}' - L $ if $ r_{xi} >L $, with $ L $ being the supercell size. This ensures that the density is constrained and the volume of the supercell remain constant. 
-
-A surface experience different potential compared to bulk, as there are no neighbouring atoms in one of the directions, giving rise to different physics at the surface compared to the bulk. As infinite lattices does not have a surface, the surface effect needs to be minimized. By implementing the minimum image convention these effects can be reduced. This convention states that if a distance $ r_{ij} $ between two atoms $ i $ and $ j $ is larger than $ \frac{L}{2} $, the distance between them is $  r_{ij}'  = r_{ij}-L$. Thus an atom  near an edge experiences forces of approximately equal magnitude to an atom near the centre of the supercell. 
-
-When we calculated the diffusivity we used the mean square displacement. To find the true displacement like we did not have periodic boundary conditions, we needed to keep track of how the atoms had moved back and forth due to the conditions. We saved a vector, for every atom, containing the length of the supercell, with the right sign, in the direction it had moved, updated it in the function for periodic boundary conditions and subtracted it when calculating the displacement. 
-
-The PBC's and minimum image convention models an infinite supercell, by ignoring surface effects. However, it is not a true representation of an infinite cell. A perfect infinite cell consists of an infinite number of particles with random initial velocities, while a finite supercell will only have a finite number of atoms with sudorandom\footnote{If a computer is used to generate the random initial velocities. For the theoretical infinite lattice one usually assumes true random initial conditions} initial velocities. These atoms interact, leading to a stronger codependence of the neighbours for the finite case. By increasing the supercell this effect will decrease.   	
-
-
 \subsection{Lennard Jones potential \label{sec:LJ}}
 
 A very popular potential used in MD-simulations is the Lennard Jones potential, given in equation \ref{eq:LJ}. It describes the potential energy as a function of distance between two objects i and j, $ r_{ij} $. 
@@ -77,9 +68,11 @@ Through the equipartition theorem, the following relationship for a 3 dimensiona
 E_K = \frac{3	}{2}Nk_BT
 \end{equation}
 
-As the temperature at equilbrium is related to the kinetic energy, any system system resembling a real system needs to have kinetic energy >0. The pure lattice points of the FCC lattice has a high degree of symmetry and the force on each atom would for a infinite lattice cancel out to 0. It is therefore necessary to include an initial velocity in order to model the structure at different temperatures, due to the equipartition relation in equation \ref{eq:equipartition}. As the total kinetic energy does not provide any information about the velocity of each atom, the probability distribution utilized for the microcanonical ensemble is a good way to initialize the system to progress into a new, random microstate in the next timestep. 
+As the temperature at equilibrium is related to the kinetic energy, any system system resembling a real system needs to have kinetic energy >0. The pure lattice points of the FCC lattice has a high degree of symmetry and the force on each atom would for a infinite lattice cancel out to 0. It is therefore necessary to include an initial velocity in order to model the structure at different temperatures, due to the equipartition relation in equation \ref{eq:equipartition}. As the total kinetic energy does not provide any information about the velocity of each atom, the probability distribution utilized for the microcanonical ensemble is a good way to initialize the system to progress into a new, random microstate in the next time step. 
 
 By including an initial velocity, there is no guaranty that the total momentum $ p = \sum\limits_{i}^{N} m_i\textbf{v}_i $ is zero. In order to keep the system fixed in space, the total momentum need to be set to zero, by reducing the momentum of each atom by $ m_iv_i - \frac{p}{N}$. 
+
+Why do the atoms have velocity from Maxwell-Boltzmann distribution?
 
 \subsubsection{Diffusion and phase transition}
 Diffusion is a property of any microcanonical ensemble, characterized by the diffusivity $ D $. Through the Einstein relation
