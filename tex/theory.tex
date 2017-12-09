@@ -72,8 +72,6 @@ As the temperature at equilibrium is related to the kinetic energy, any system s
 
 By including an initial velocity, there is no guaranty that the total momentum $ p = \sum\limits_{i}^{N} m_i\textbf{v}_i $ is zero. In order to keep the system fixed in space, the total momentum need to be set to zero, by reducing the momentum of each atom by $ m_iv_i - \frac{p}{N}$. 
 
-Why do the atoms have velocity from Maxwell-Boltzmann distribution?
-
 \subsubsection{Diffusion and phase transition}
 Diffusion is a property of any microcanonical ensemble, characterized by the diffusivity $ D $. Through the Einstein relation
 \begin{equation}\label{eq:Einstein}
@@ -84,16 +82,15 @@ the diffusivity is related to the mean square displacement $ r_i^2(t) = \abs{r_i
 
 \subsection{Density}
 
-The density of argon is 0.001784 g/cm$^3$ at STP when gas and 1.3954 g/cm$^3$ at the boiling point when liquid \cite{argon}. Table \ref{tab:density} compare these numbers with the system in this project. The densities implies that even though argon has only 3 degrees in liquid the state at 1 atm, the density of our system is too high for it to transit to gas. 
+The density of argon is 0.001784 g/cm$^3$ at STP when gas and 1.3954 g/cm$^3$ at the boiling point when liquid \cite{argon}. Table \ref{tab:density} compare these numbers with the system in this project. Experimentally argon has a melting temperature at 84 K and a boiling temperature at 87 K at 1 atm \cite{argon}. The densities implies that even though argon has only 3 degrees in liquid the state at 1 atm, the density of our system is too high for it to transit to gas. 
 
-\begin{table}\caption{This table compares the density of liquid argon, argon gas and our system.}\label{tab:density}
-\begin{tabular}{ll}
-Molar mass of argon:& 39.948 g/mol\\ \hline
-Gas:& \\
-$\frac{0.001784 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 4.46580$\cdot 10^{-5}$ mol/cm$^3$ = & 2.6893$\cdot$ 10$^{19}$ \# of atoms/cm$^3$\\
-Liquid:&\\
-$\frac{1.3954 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 0.0349304 mol/cm$^3$ =& 2.10350$\cdot$ 10$^{22}$ \# of atoms/cm$^3$\\
-This system:& \\
- 4/a$^3$ = 4/5.26$^3$ = 0.027485 \# of atoms/Å$^3$ =& 2.74854 $\cdot$ 10$^{22}$ \# of atoms/cm$^3$\\
+\begin{table}[H]\caption{This table list the calculation of the density and compare the density of liquid argon, argon gas and our system. We used the molar mass of argon, 39.948 g/mol \cite{argon}.}\label{tab:density}
+\center
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{r|lr}
+ &calculation:&  density $\left[ \frac{\text{\# of atoms}}{\text{cm}^3} \right]$:\\ \hline
+Gas:& $\frac{0.001784 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 4.46580$\cdot 10^{-5}$ $\frac{\text{mol}}{\text{cm}^3}$ = & 2.6893$\cdot$ 10$^{19}$ \\
+Liquid:& $\frac{1.3954 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 0.0349304 $\frac{\text{mol}}{\text{cm}^3}$ =& 2.10350$\cdot$ 10$^{22}$\\
+This system:& $\frac{4}{a^3} = \frac{4}{5.26^3}$ = 0.027485 $\frac{\text{\# of atoms}}{\text{Å}^3}$ =& 2.74854 $\cdot$ 10$^{22}$\\
 \end{tabular}
 \end{table}
