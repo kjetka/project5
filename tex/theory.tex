@@ -20,12 +20,10 @@ A very popular potential used in MD-simulations is the Lennard Jones potential, 
 
 
 
-Through the relation $ 	F (\textbf{r} = -\nabla U(\textbf{r}) $, it is possible to determine the forces experienced by each atom by every other atom, simply as a function of the distance $ r_{ij} $ and relative position between two atoms. The distance $ r_{ij} $ is defined as  $ r_{ij}  = \abs{\textbf{r}_{ij}} = \abs{\textbf{r}_i - \textbf{r}_j} 	 $. By investigating each spatial direction separately, a relation for the forces between two atoms i and j arises: 
+Through the relation $ 	F (\textbf{r} = -\nabla U(\textbf{r}) $, it is possible to determine the forces experienced by each atom by every other atom, simply as a function of the distance $ r_{ij} $ and relative position between two atoms. The distance $ r_{ij} $ is defined as  $ r_{ij}  = \abs{\textbf{r}_{ij}} = \abs{\textbf{r}_i - \textbf{r}_j} 	 $. 
 
 \begin{align}
-		F_{ij}^x =& - \pdv{U}{r_{ij}} \pdv{r_{ij}}{x_{ij}}	\\	
-		\pdv{r_{ij}}{x_{ij}} 		=& 			 \dv{x_{ij}} \sqrt{ (\textbf{r}_i - \textbf{r}_j)^2}	= \frac{x_{ij}}{r_{ij}}\\
-		 \pdv{U}{r_{ij}} =& 4\epsilon \left[\frac{-12}{r_{ij}}\left(	\frac{\sigma}{r_{ij}}\right)^{12}		+  \frac{6}{r_{ij}} \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right]\\
+		F_{ij}^x =& - \pdv{U}{r_{ij}} \pdv{r_{ij}}{x_{ij}} = - \pdv{U}{r_{ij}} \frac{x_{ij}}{r_{ij}}	\\	
 		 F_x(r_{ij}) =& 24 \epsilon \left[		2	\left(\frac{\sigma}{r_{ij}}	\right)^{12}		- \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right] \frac{x_{ij}}{r_{ij}^2} \label{eq:Fx}
 \end{align}
 
