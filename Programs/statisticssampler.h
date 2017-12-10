@@ -29,6 +29,7 @@ public:
     void sampleMSD(System &system);
     void sampleDiffusionConst(System &system);
 
+
     void testEnergyConservation();
 
     double kineticEnergy() { return m_kineticEnergy; }
