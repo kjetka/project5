@@ -16,7 +16,7 @@
 \contentsline {section}{\numberline {4}Result and Discussion}{11}{section.4}
 \contentsline {subsection}{\numberline {4.1}Initial temperature for melting}{11}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Real melting temperature}{12}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Energy}{12}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Diffusion constant}{13}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Equilibrium temperature}{16}{subsection.4.5}
-\contentsline {section}{\numberline {5}Conclusion}{17}{section.5}
+\contentsline {subsection}{\numberline {4.3}Energy}{13}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Diffusion constant}{14}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Equilibrium temperature}{18}{subsection.4.5}
+\contentsline {section}{\numberline {5}Conclusion}{20}{section.5}
