@@ -10,10 +10,12 @@ double LennardJones::sigma() const{
     return m_sigma;
 }
 
+
 void LennardJones::setSigma(double sigma){
     m_sigma = sigma;
     m_maxRadii = 5*sigma;
 }
+
 
 double LennardJones::epsilon() const{
     return m_epsilon;
@@ -22,6 +24,7 @@ double LennardJones::epsilon() const{
 void LennardJones::setEpsilon(double epsilon){
     m_epsilon = epsilon;
 }
+
 
 
 void LennardJones::calculateForces(System &system){

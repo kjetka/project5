@@ -59,7 +59,6 @@ void UnitConverter::makeSureInitialized() {
 }
 
 
-// spr: ??? type == MDUnits????
 void UnitConverter::initialize(Units type) {
     if(type == MDUnits) UnitConverter::initializeMDUnits();
 }

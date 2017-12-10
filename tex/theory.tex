@@ -1,6 +1,3 @@
-
-\subsection{Crystal structure}
-
 \subsection{Crystal structure}
 
 There are different ways a solid could arrange itself in order to fill a given volume and minimize the overall energy of the structure. One of the densest is the face-centered cubic (FCC) structure of for instance NaCl. Assuming a hard sphere model of atoms, the FCC has together with the hexagonal close packed (HCP) the theoretically highest density of any structure. The unit cell of FCC is cubic with volume $ V_{unitCell} = a^3 $ made up by a basis of 4 atoms. These are in positions $ a(0,0,0), \ a(0,0,\frac{1}{2}),\ a(0,\frac{1}{2}, 0)   $ and $ a(\frac{1}{2}, 0,0) $. Due to symmetry, each of these atoms are repeated throughout the structure, as illustrated in figure \ref{fig:fcc}. The corner atoms are  repetitions of the $ a(0,0,0)$ position, and each of these atoms are shared by 8 neighbouring cells. For the side atoms, they are shared only by two unit cells, giving at total of $ 6\cdot \frac{1}{2}=3 $ side atoms per unit cell and $ 8\cdot  \frac{1}{8}$ corner atoms in the unit cell. The density of a unit cell size given in lengths of Angstrom, the density of a FCC cell  is $\rho=  \frac{4}{a^3} \text{\AA}^{-3}$. 
@@ -11,16 +8,6 @@ There are different ways a solid could arrange itself in order to fill a given v
 	\caption{Illustration of a fcc structure. Although there are 14 atoms in this figure, the unit cell is made up of 4 atoms. The rest of the atoms appear because of translation symmetry. Illustration is created by the VESTA software \cite{VESTA}}
 	\label{fig:fcc}
 \end{figure}
-
-In numerical calculations it is not possible to calculate on a infinite lattice of atoms. As an infinite lattice have neighbouring atoms in every direction for every atom, an atom can not move into vacuum. By applying periodic boundary conditions (PBC's) to the position of the lattice, every atom moving out of the predefined supercell is put on the other side of the box. In one dimension, this is expressed as $ r_{xi} = r_{xi}' - L $ if $ r_{xi} >L $, with $ L $ being the supercell size. This ensures that the density is constrained and the volume of the supercell remain constant. 
-
-A surface experience different potential compared to bulk, as there are no neighbouring atoms in one of the directions, giving rise to different physics at the surface compared to the bulk. As infinite lattices does not have a surface, the surface effect needs to be minimized. By implementing the minimum image convention these effects can be reduced. This convention states that if a distance $ r_{ij} $ between two atoms $ i $ and $ j $ is larger than $ \frac{L}{2} $, the distance between them is $  r_{ij}'  = r_{ij}-L$. Thus an atom  near an edge experiences forces of approximately equal magnitude to an atom near the centre of the supercell. 
-
-The PBC's and minimum image convention models an infinite supercell, by ignoring surface effects. However, it is not a true representation of an infinite cell. A perfect infinite cell consists of an infinite number of particles with random initial velocities, while a finite supercell will only have a finite number of atoms with sudorandom\footnote{If a computer is used to generate the random initial velocities. For the theoretical infinite lattice one usually assumes true random initial conditions} initial velocities. These atoms interact, leading to a stronger codependence of the neighbours for the finite case. By increasing the supercell this effect will decrease.   
- 	
- 
-
-
 
 \subsection{Lennard Jones potential \label{sec:LJ}}
 
@@ -33,12 +20,10 @@ A very popular potential used in MD-simulations is the Lennard Jones potential, 
 
 
 
-Through the relation $ 	F (\textbf{r} = -\nabla U(\textbf{r}) $, it is possible to determine the forces experienced by each atom by every other atom, simply as a function of the distance $ r_{ij} $ and relative position between two atoms. The distance $ r_{ij} $ is defined as  $ r_{ij}  = \abs{\textbf{r}_{ij}} = \abs{\textbf{r}_i - \textbf{r}_j} 	 $. By investigating each spatial direction separately, a relation for the forces between two atoms i and j arises: 
+Through the relation $ 	F (\textbf{r} = -\nabla U(\textbf{r}) $, it is possible to determine the forces experienced by each atom by every other atom, simply as a function of the distance $ r_{ij} $ and relative position between two atoms. The distance $ r_{ij} $ is defined as  $ r_{ij}  = \abs{\textbf{r}_{ij}} = \abs{\textbf{r}_i - \textbf{r}_j} 	 $. 
 
 \begin{align}
-		F_{ij}^x =& - \pdv{U}{r_{ij}} \pdv{r_{ij}}{x_{ij}}	\\	
-		\pdv{r_{ij}}{x_{ij}} 		=& 			 \dv{x_{ij}} \sqrt{ (\textbf{r}_i - \textbf{r}_j)^2}	= \frac{x_{ij}}{r_{ij}}\\
-		 \pdv{U}{r_{ij}} =& 4\epsilon \left[\frac{-12}{r_{ij}}\left(	\frac{\sigma}{r_{ij}}\right)^{12}		+  \frac{6}{r_{ij}} \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right]\\
+		F_{ij}^x =& - \pdv{U}{r_{ij}} \pdv{r_{ij}}{x_{ij}} = - \pdv{U}{r_{ij}} \frac{x_{ij}}{r_{ij}}	\\	
 		 F_x(r_{ij}) =& 24 \epsilon \left[		2	\left(\frac{\sigma}{r_{ij}}	\right)^{12}		- \left(\frac{\sigma}{r_{ij}}	\right)^{6}				\right] \frac{x_{ij}}{r_{ij}^2} \label{eq:Fx}
 \end{align}
 
@@ -81,9 +66,9 @@ Through the equipartition theorem, the following relationship for a 3 dimensiona
 E_K = \frac{3	}{2}Nk_BT
 \end{equation}
 
-As the temperature at equilbrium is related to the kinetic energy, any system system resembling a real system needs to have kinetic energy >0. The pure lattice points of the FCC lattice has a high degree of symmetry and the force on each atom would for a infinite lattice cancel out to 0. It is therefore necessary to include an initial velocity in order to model the structure at different temperatures, due to the equipartition relation in equation \ref{eq:equipartition}. As the total kinetic energy does not provide any information about the velocity of each atom, the probability distribution utilized for the microcanonical ensemble is a good way to initialize the system to progress into a new, random microstate in the next timestep. 
+As the temperature at equilibrium is related to the kinetic energy, any system system resembling a real system needs to have kinetic energy >0. The pure lattice points of the FCC lattice has a high degree of symmetry and the force on each atom would for a infinite lattice cancel out to 0. It is therefore necessary to include an initial velocity in order to model the structure at different temperatures, due to the equipartition relation in equation \ref{eq:equipartition}. As the total kinetic energy does not provide any information about the velocity of each atom, the probability distribution utilized for the microcanonical ensemble is a good way to initialize the system to progress into a new, random microstate in the next time step. 
 
-By including an initial velocity, there is no guaranty that the total momentum $ p = \sum\limits_{i}^{N} m_i\textbf{v}_i $ is zero. In order to keep the system fixed in space, the total momentum need to be set zero, by reducing the momentum of each atom by $ m_iv_i - \frac{p}{N}$. 
+By including an initial velocity, there is no guaranty that the total momentum $ p = \sum\limits_{i}^{N} m_i\textbf{v}_i $ is zero. In order to keep the system fixed in space, the total momentum need to be set to zero, by reducing the momentum of each atom by $ m_iv_i - \frac{p}{N}$. 
 
 \subsubsection{Diffusion and phase transition}
 Diffusion is a property of any microcanonical ensemble, characterized by the diffusivity $ D $. Through the Einstein relation
@@ -91,4 +76,19 @@ Diffusion is a property of any microcanonical ensemble, characterized by the dif
 \langle r^2(t) \rangle = 6Dt
 \end{equation}
 
-the diffusivity is related to the mean square displacement $ r_i^2(t) = \abs{r_i(t) - r_i(o)}^2 $. 
+the diffusivity is related to the mean square displacement $ r_i^2(t) = \abs{r_i(t) - r_i(o)}^2 $. The diffusivity is approximately 10$^-5$ cm$^2$/s in liquids and 10$^-9$ cm$^2$/s for in solids, for example hydrogen in iron \cite{wiki_diff}. 
+
+\subsection{Density}
+
+The density of argon is 0.001784 g/cm$^3$ at STP when gas and 1.3954 g/cm$^3$ at the boiling point when liquid \cite{argon}. Table \ref{tab:density} compare these numbers with the system in this project. Experimentally argon has a melting temperature at 84 K and a boiling temperature at 87 K at 1 atm \cite{argon}. The densities implies that even though argon has only 3 degrees in liquid the state at 1 atm, the density of our system is too high for it to transit to gas. 
+
+\begin{table}[H]\caption{This table list the calculation of the density and compare the density of liquid argon, argon gas and our system. We used the molar mass of argon, 39.948 g/mol \cite{argon}.}\label{tab:density}
+\center
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{r|lr}
+ &calculation:&  density $\left[ \frac{\text{\# of atoms}}{\text{cm}^3} \right]$:\\ \hline
+Gas:& $\frac{0.001784 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 4.46580$\cdot 10^{-5}$ $\frac{\text{mol}}{\text{cm}^3}$ = & 2.6893$\cdot$ 10$^{19}$ \\
+Liquid:& $\frac{1.3954 \text{ g/cm}^3 }{39.948 \text{ g/mol}}$ = 0.0349304 $\frac{\text{mol}}{\text{cm}^3}$ =& 2.10350$\cdot$ 10$^{22}$\\
+This system:& $\frac{4}{a^3} = \frac{4}{5.26^3}$ = 0.027485 $\frac{\text{\# of atoms}}{\text{Å}^3}$ =& 2.74854 $\cdot$ 10$^{22}$\\
+\end{tabular}
+\end{table}
