@@ -80,9 +80,8 @@ Step 1)specifies the initial values, like temperature and number of unit cells, 
 
 In numerical calculations it is not possible to calculate on a infinite lattice of atoms. As an infinite lattice have neighbouring atoms in every direction for every atom, an atom can not move into vacuum. By applying periodic boundary conditions (PBC's) to the position of the lattice, every atom moving out of the predefined supercell is put on the other side of the box. In one dimension, this is expressed as $ r_{xi} = r_{xi}' - L $ if $ r_{xi} >L $, with $ L $ being the supercell size. This ensures that the density is constrained and the volume of the supercell remain constant. Applying periodic boundary condition make it possible to simulate an infinitely big system with few atoms, making the results relevant for real systems which contain $\sim 10^{23}$ atoms. The real systems do not contain infinitely many atoms, but the infinite case is a better approximation than just 500 atoms as would be the case in this project if we did not apply periodic boundary conditions.
 
-A surface experience different potential compared to bulk, as there are no neighbouring atoms in one of the directions, giving rise to different physics at the surface compared to the bulk. As infinite lattices does not have a surface, the surface effect needs to be minimized. By implementing the minimum image convention these effects can be reduced. This convention states that if a distance $ r_{ij} $ between two atoms $ i $ and $ j $ is larger than $ \frac{L}{2} $, the distance between them is $  r_{ij}'  = r_{ij}-L$. Thus an atom  near an edge experiences forces of approximately equal magnitude to an atom near the centre of the supercell. 
+In order for the system to behave according to the PBC's, the forces need to follow the minimum image convention. This convention states that if a distance $ r_{ij} $ between two atoms $ i $ and $ j $ is larger than $ \frac{L}{2} $, the distance between them is $  r_{ij}'  = r_{ij}-L$. Thus an atom  near an edge experiences forces of approximately equal magnitude to an atom near the centre of the supercell. 
 
-Trodde vi trengte image-greia fordi vi har periodic boundary conditions og et atom som er på andre siden av unit cella er da egentlig rett ved siden av (burde vel egentlig være begge deler, men når den er på andre siden så er den så langt borte at det ikke har noe å si). Så det som står her er egentlig et argument for periodic boundary conditions og image-greia er noe man må legge til for at periodc bounadry conditions funker som det skal?
 
 When we calculated the diffusivity we used the mean square displacement. To find the true displacement like we did not have periodic boundary conditions, we needed to keep track of how the atoms had moved back and forth due to the conditions. We saved a vector, for every atom, containing the length of the supercell, with the right sign, in the direction it had moved, updated it in the function for periodic boundary conditions and subtracted it when calculating the displacement. 
 
@@ -121,7 +120,7 @@ In order to avoid round off errors and produce results with direct physical mean
 \text{1 unit of length } &= 1.0 \text{ \AA} \\
 \text{1 unit of energy } &= 1.651\times 10^{-21}\mathrm{J},\\
 \text{1 unit of temperature} &= 119.735\mathrm{K}.\\
-\text{1 unit of force}  &= 1.65313\cdot10^{-11} N \\
+\text{1 unit of force}  &= 1.65313\cdot10^{-11} N 
 \end{align}
 
 
